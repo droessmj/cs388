@@ -9,7 +9,7 @@ Answers
 -------
 1.
 	1. To check the current location, 'pwd'
-	2. To create a specific directory, 'mkdir unix/', then 'mkdir unix/rules/
+	2. To create a specific directory, 'mkdir -p unix/rules/
 	3. To move to the location, 'cd unix/rules/'
 	4. To list contents of this directory, 'ls'
 	5. To create an empty file, 'touch so.much'
