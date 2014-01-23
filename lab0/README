@@ -17,8 +17,8 @@ Answers
 	7. To rename the file, 'mv so.much windows.drools'
 	8. To remove the file, 'rm windows.drools'
 	9. To change to HOME directory, 'cd ~/'
-	10. To remove directory, 'rmdir -rf  unix/rules/'
-2. 
+	10. To remove directory, 'rmdir -p  unix/rules/'
+2. 'less file.name', press Spacebar to move to next page 
 3. 
 4. 
 5. 
