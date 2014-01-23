@@ -13,36 +13,36 @@ Answers
 	3. To move to the location, 'cd unix/rules/'
 	4. To list contents of this directory, 'ls'
 	5. To create an empty file, 'touch so.much'
-	6. To view contents of file, 'less so.much'
+	6. To view contents of file, 'cat so.much'
 	7. To rename the file, 'mv so.much windows.drools'
-	8. 
-	9. 
-	10. 
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-	1.
-	2.
-	3.
-10.
-11.
-12.
-	1.
-	2.
-	3.
-	4.
-	5.
-13.
-	1.
-	2.
-	3.
-14.
-15.
+	8. To remove the file, 'rm windows.drools'
+	9. To change to HOME directory, 'cd ~/'
+	10. To remove directory, 'rmdir -rf  unix/rules/'
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+	1. 
+	2. 
+	3. 
+10. 
+11. 
+12. 
+	1. 
+	2. 
+	3. 
+	4. 
+	5. 
+13. 
+	1. 
+	2. 
+	3. 
+14. 
+15. 
 
 Comments
 --------
