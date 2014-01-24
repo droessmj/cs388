@@ -19,10 +19,10 @@ Answers
 	9. To change to HOME directory, 'cd ~/'
 	10. To remove directory, 'rmdir -p  unix/rules/'
 2. 'less file.name', press Spacebar to move to next page 
-3. http://stackoverflow.com/questions/5746325/how-do-i-download-a-tarball-from-github-using-curl 
-4. Control Z  ,fg 1
-5. Control C ,open another terminal, find the process using ps -ef|grep , find the process ID (pid), and use the kill command: kill -9
-6. 
+3. curl -L https://www.kernel.org/pub/linux/kernel/v3.x/linux-3.13.tar.xz | tar xz 
+4. "control + z" to suspend session  , "fg 1" to resume seesion
+5. "control + C" to exit , otherwise open another terminal, find the process using ps -ef|grep , find the process ID (pid), and use the kill command: kill -9
+6. You can restore your shell with 'reset'. This happens due to non-ASCII characters messing with the shell's interpretation of commands.
 7. 
 8. 
 9. 
