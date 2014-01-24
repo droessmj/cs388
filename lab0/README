@@ -30,13 +30,13 @@ Answers
 	2. 'rm IMG_000?.JPG '
 	3. 'rm img_00*'
 10. You need to modify the $PATH variable. You would append the location of the program to the path by 'PATH=$PATH:./fileLocation' 
-11. The variable to change is $PS1. To make the change persist, the change must 
+11. The variable to change is $PS1. To make the change persist, the change must be made in ~/.bash_profile or ~/profile. You would then add the change within this file.
 12. 
-	1. &
-	2. 
-	3. 
-	4. 
-	5. 
+	1. Include an ampersand '&' when calling the program, 'ls &'
+	2. Use the following command to list background jobs, 'jobs'
+	3. To see all processes from a user, 'ps -u USERNAME'
+	4. To bring a background job to the foreground, 'fg JOB-ID' where JOB-ID is the number of the background process
+	5. To kill a background job, 'kill PID' or 'killall -9 process-name' 
 13. 
 	1. 
 	2. who > names
