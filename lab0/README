@@ -26,11 +26,11 @@ Answers
 7. You can use 'mesg n' to stop messages from coming in. You would refresh your screen with 'clear'.
 8. "Control + D"
 9.
-	1. 
-	2. 
-	3. 
+	1. 'rm images/*'
+	2. 'rm IMG_000?.JPG '
+	3. 'rm img_00*'
 10. You need to modify the $PATH variable. You would append the location of the program to the path by 'PATH=$PATH:./fileLocation' 
-11. 
+11. The variable to change is $PS1. To make the change persist, the change must 
 12. 
 	1. &
 	2. 
@@ -39,9 +39,9 @@ Answers
 	5. 
 13. 
 	1. 
-	2. 
+	2. who > names
 	3. 
-14. 
+14. put in user profile
 15. To date, all my experience is in nano. I will stick with what I know unless something else is proven to be better. If that happens, I'll switch editors with a smile on my face.
 
 Comments
