@@ -21,18 +21,18 @@ Answers
 2. 'less file.name', press Spacebar to move to next page 
 3. curl -L https://www.kernel.org/pub/linux/kernel/v3.x/linux-3.13.tar.xz | tar xz 
 4. "control + z" to suspend session  , "fg 1" to resume seesion
-5. "control + C" to exit , otherwise open another terminal, find the process using ps -ef|grep , find the process ID (pid), and use the kill command: kill -9
+5. "control + C" to exit , otherwise open another terminal, find the process using ps -ef|grep , find the process ID (pid), and use the kill command: kill $jobnumber where $jobnumber is the id that is returned
 6. You can restore your shell with 'reset'. This happens due to non-ASCII characters messing with the shell's interpretation of commands.
-7. 
-8. 
-9. 
+7. You can use 'mesg n' to stop messages from coming in. You would refresh your screen with 'clear'.
+8. "Control + D"
+9.
 	1. 
 	2. 
 	3. 
-10. 
+10. You need to modify the $PATH variable. You would append the location of the program to the path by 'PATH=$PATH:./fileLocation' 
 11. 
 12. 
-	1. 
+	1. &
 	2. 
 	3. 
 	4. 
@@ -42,7 +42,7 @@ Answers
 	2. 
 	3. 
 14. 
-15. 
+15. To date, all my experience is in nano. I will stick with what I know unless something else is proven to be better. If that happens, I'll switch editors with a smile on my face.
 
 Comments
 --------
