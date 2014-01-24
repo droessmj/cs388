@@ -38,10 +38,11 @@ Answers
 	4. To bring a background job to the foreground, 'fg JOB-ID' where JOB-ID is the number of the background process
 	5. To kill a background job, 'kill PID' or 'killall -9 process-name' 
 13. 
-	1. 
-	2. who > names
-	3. 
-14. put in user profile
+Standard input, output, and error are standarized streams of data that can be handled and piped between programs and files in Unix systems. 
+	1. To stream input, 'cat < list.txt'
+	2. To file output, 'list -la  > list.txt'
+	3. To push output to a program, then store it as a file 'file * | grep directory > directory.txt'
+14. To make this change, simply go the the .bash_profile and add the command 'alias ls='ls -la''
 15. To date, all my experience is in nano. I will stick with what I know unless something else is proven to be better. If that happens, I'll switch editors with a smile on my face.
 
 Comments
