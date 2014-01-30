@@ -3,11 +3,33 @@ Lab 1: It's boxes all the way down
 
 Group Members
 -------------
+Michael Droessler
 
 
 Answers
 -------
+1. I have Ubuntu installed already for Ruby on Rails dev on my personal laptop, and for the BSD version I just went with FreeBSD. I didn't 
+choose it for any particular reason at all, other than the fact that you mentioned some major companies that currently use it.
+	1. I've been using Ubuntu on and off for about 3 years, and I understand the background behind making a very user friendly distribution. 
+	Generally, I'm pretty comfortable using the package manager within Ubuntu.
+	For FreeBSD, I know nothing at all. It took me 3 attempts to just install the image and create a user, and to then log in with that 
+	user.  Up to this point, it seems to be a pretty straightforward Unix like OS. I guess I don't have enough experience with various
+	Unix OS's to love or hate any specific features of a given OS.  Personally, I enjoy Ubuntu because it has Unix under the hood, but
+	it still is familar and comfortable.
+	
+	2. Origin of Ubuntu - 
 
+	   Origin of FreeBSD
+
+	3. 
+
+	4. 
+
+2. 
+
+3. 
+
+4. 
 
 Comments
 --------
