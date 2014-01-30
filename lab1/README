@@ -33,18 +33,26 @@ choose it for any particular reason at all, other than the fact that you mention
 	1.Ubuntu - Comes with a bunch of graphical programs, but not everything under the hood. No git, vim out of the box.
 	  FreeBSD - No GUI, only CLI. No git out of the box. No emacs, vim, nano out of the box. Not sure how to install packages. Hope is
 	fading fast.
+	
 	2.Ubuntu - Package manager
 	  FreeBSD - Ports?
+	
 	3.Ubuntu - 
 	  FreeBSD -
-	4.Ubuntu - 
+	
+	4.Ubuntu - Releases in April and October. 
 	  FreeBSD -
+	
 	5.Ubuntu - 
 	  FreeBSD -
+	
 	6.Ubuntu -
 	  FreeBSD -
-	7.Ubuntu -
-	  FreeBSD -
+	
+	7.Ubuntu - Large and everywhere. You can get support from the askUbuntu wiki, irc channels, and linux forums everywhere. Ubuntu is  a
+	fairly popular distro, so specific help can be found in a wide variety of places.
+	  FreeBSD -So far for FreeBSD, most of the help I've had to find so far has come freebsd.org documentation. I've found much fewer forums
+	and unofficial wikis. I have not tried out IRC yet. 
 3. So the kernel is the base source code that an OS is built upon. Most forms of linux use the same linux kernel, albeit with slight modifications
 from one OS to another. An OS would be Linux or BSD, and distributions of linux would be Ubuntu, Debian, Fedora, etc. 
 
