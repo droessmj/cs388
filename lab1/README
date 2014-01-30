@@ -3,8 +3,7 @@ Lab 1: It's boxes all the way down
 
 Group Members
 -------------
-Michael Droessler
-
+Michael Droessler <droessmj@uwec.edu>
 
 Answers
 -------
@@ -19,14 +18,32 @@ choose it for any particular reason at all, other than the fact that you mention
 	
 	2. Origin of Ubuntu - 
 
-	   Origin of FreeBSD
+	   Origin of FreeBSD -
 
-	3. 
+	3. Differences with Ubuntu - 
+	   Differences with FreeBSD -
 
-	4. 
+	4. I've tried to use Ubuntu as my everyday OS a few times, but there are always games or features that Windows/OS X have that bring 
+	me back, namely Netflix and League of Legends. While it is possible to get these working on Ubuntu, at the end of the day it is easier
+	to keep a partition with Windows. This gradually turns into booting into Windows by default and Ubuntu for dev specific tasks. For 
+	the FreeBSD, I understand that it is good for servers. So I would suppose that I could use it to host my own server. I'm not sure what 
+	else I even could use it for.
 
 2. 
-
+	1.Ubuntu - Comes with a bunch of graphical programs, but not everything under the hood. No git, vim out of the box.
+	  FreeBSD -
+	2.Ubuntu -
+	  FreeBSD -
+	3.Ubuntu - 
+	  FreeBSD -
+	4.Ubuntu - 
+	  FreeBSD -
+	5.Ubuntu - 
+	  FreeBSD -
+	6.Ubuntu -
+	  FreeBSD -
+	7.Ubuntu -
+	  FreeBSD -
 3. 
 
 4. 
