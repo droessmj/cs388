@@ -31,9 +31,10 @@ choose it for any particular reason at all, other than the fact that you mention
 
 2. 
 	1.Ubuntu - Comes with a bunch of graphical programs, but not everything under the hood. No git, vim out of the box.
-	  FreeBSD -
-	2.Ubuntu -
-	  FreeBSD -
+	  FreeBSD - No GUI, only CLI. No git out of the box. No emacs, vim, nano out of the box. Not sure how to install packages. Hope is
+	fading fast.
+	2.Ubuntu - Package manager
+	  FreeBSD - Ports?
 	3.Ubuntu - 
 	  FreeBSD -
 	4.Ubuntu - 
@@ -44,9 +45,11 @@ choose it for any particular reason at all, other than the fact that you mention
 	  FreeBSD -
 	7.Ubuntu -
 	  FreeBSD -
-3. 
+3. So the kernel is the base source code that an OS is built upon. Most forms of linux use the same linux kernel, albeit with slight modifications
+from one OS to another. An OS would be Linux or BSD, and distributions of linux would be Ubuntu, Debian, Fedora, etc. 
 
 4. 
 
 Comments
 --------
+Apparently Cntrl Alt Delete restarts a FreeBSD machine?
