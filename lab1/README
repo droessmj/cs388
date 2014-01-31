@@ -39,29 +39,43 @@ choose it for any particular reason at all, other than the fact that you mention
 	else I even could use it for.
 
 2. 
+5-System and service management (init system, boot loader, kernel modules, etc.)
+
 	1.Ubuntu - Comes with a bunch of graphical programs, but not everything under the hood. No git, vim out of the box.
-	  FreeBSD - No GUI, only CLI. No git out of the box. No emacs, vim, nano out of the box. Not sure how to install packages. Hope is
-	fading fast.
+	  FreeBSD - No GUI, only CLI. No git out of the box. No emacs, vim, nano out of the box, but it does have 'vi'. Not sure how to install packages. Hope is
+	fading fast. 'id' instead of 'whoami'
 	
-	2.Ubuntu - Package manager
-	  FreeBSD - Ports?
+	2.Ubuntu - Ubuntu has a built in package manager and software center. For most installations, it's as simple as 'sudo apt-get install'. 
+	The software center allows you to browse available applications, and you can read and write reviews of specific products.
+	  FreeBSD - Ports and applications are how FreeBSD handles software.  There is a repository of over 24,000 applications, and these applications
+    are installed from source. Each one has a makefile that grabs source code, patches, and then compiles. Because of this, the user
+	is able to install a customized program if they desire. 
 	
-	3.Ubuntu - 
-	  FreeBSD -
+	3.Ubuntu - I could not find anything specific about Ubuntu. I know that it is very good with WiFi right out of the box, and 
+	it has both graphical and command line tools for network configuration.
+	  FreeBSD - FreeBSD has CARP, which allows multiple nodes to share a set of IP addresses. This allows other nodes to handle 
+	requests if a single node were to go down.  FreeBSD has a TCP/IP stack that is based on 4.2BSD's implementation. This supposedly
+	contributed to the widespread adoption of these protocols.
 	
-	4.Ubuntu - Releases in April and October. 
-	  FreeBSD -
+	4.Ubuntu - Releases in April and October. Every two years (4 releases) a long-term stable version is released and supported until the next LTS.
+	FreeBSD - Releases every 4-6 months. There is a current branch, which is brand new, not completely tested code, and a stable
+	branch. That is tested hard before release.
 	
 	5.Ubuntu - 
 	  FreeBSD -
 	
-	6.Ubuntu -
-	  FreeBSD -
+	6.Ubuntu - http://www.ubuntu.com/support - Forum, documentation, professional services. Nearly anything you would need to know 
+	is available on these pages.
+	  FreeBSD - www.freebsd.org - FAQ, Handbook, Man pages, newsgroups - comp.unix.bsd.freebsd.announce, 
+	  also - http://www.freebsd.org/doc/en_US.ISO8859-1/articles/new-users/index.html
 	
 	7.Ubuntu - Large and everywhere. You can get support from the askUbuntu wiki, irc channels, and linux forums everywhere. Ubuntu is  a
 	fairly popular distro, so specific help can be found in a wide variety of places.
 	  FreeBSD -So far for FreeBSD, most of the help I've had to find so far has come freebsd.org documentation. I've found much fewer forums
 	and unofficial wikis. I have not tried out IRC yet. 
+	
+	-As always, StackOverflow for both questions 6 and 7, and for both Ubuntu and FreeBSD.
+	
 3. So the kernel is the base source code that an OS is built upon. The kernel is the most basic program that handles I/O and feeds
 that to the CPU. Most forms of Linux use the same Linux kernel, albeit with slight modificationsfrom one OS to another. An OS 
 would be Linux or BSD, and distributions of linux would be Ubuntu, Debian, Fedora, etc. Each distribution has different applications
