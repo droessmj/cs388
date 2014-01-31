@@ -16,12 +16,21 @@ choose it for any particular reason at all, other than the fact that you mention
 	Unix OS's to love or hate any specific features of a given OS.  Personally, I enjoy Ubuntu because it has Unix under the hood, but
 	it still is familar and comfortable.
 	
-	2. Origin of Ubuntu - 
+	2. Origin of Ubuntu - Ubuntu is built on Debian linux. It is a widely used form of linux running on everything from PCs, 
+	phones, TVs, and servers.  Reportedly, it is the most widespread and used desktop variant of linux.  Development of Ubuntu is led by
+	Canonical, however there is still the general open source theory of open development.  
 
-	   Origin of FreeBSD -
+	   Origin of FreeBSD - FreeBSD is a child of AT&T's Unix. Development started in 1993 as a fork of 386BSD. Copyrighted source code
+	was used in the original OS; therefore FreeBSD 2.0 was released in January of 1995 with freely distributable source.Today, FreeBSD
+	is the most used BSD derivative (other than OS X). Development of FreeBSD is maintained by a group of around 300 people with write
+	access to the Subversion repository. Nearly every 4 months there is a new realse from the "-STABLE" branch.
 
-	3. Differences with Ubuntu - 
-	   Differences with FreeBSD -
+	3. Differences with Ubuntu - To increase security, there is a sudo tool which is used to allow the root account to perform 
+	tasks while still remaining locked down. Ubuntu also has a specific software center which replaces many other utilities.
+	   
+	   Differences with FreeBSD - Most software that runs on a Linux can run on FreeBSD due to a compatibility layer built-in to 
+	the OS. This supposedly allows applications to run on FreeBSD within no performance difference from there original Linux distro.
+	FreeBSD also has a handful of unique tools that help to increase reliabilty of storage. These include soft updates and snapshots.
 
 	4. I've tried to use Ubuntu as my everyday OS a few times, but there are always games or features that Windows/OS X have that bring 
 	me back, namely Netflix and League of Legends. While it is possible to get these working on Ubuntu, at the end of the day it is easier
@@ -53,10 +62,20 @@ choose it for any particular reason at all, other than the fact that you mention
 	fairly popular distro, so specific help can be found in a wide variety of places.
 	  FreeBSD -So far for FreeBSD, most of the help I've had to find so far has come freebsd.org documentation. I've found much fewer forums
 	and unofficial wikis. I have not tried out IRC yet. 
-3. So the kernel is the base source code that an OS is built upon. Most forms of linux use the same linux kernel, albeit with slight modifications
-from one OS to another. An OS would be Linux or BSD, and distributions of linux would be Ubuntu, Debian, Fedora, etc. 
+3. So the kernel is the base source code that an OS is built upon. The kernel is the most basic program that handles I/O and feeds
+that to the CPU. Most forms of Linux use the same Linux kernel, albeit with slight modificationsfrom one OS to another. An OS 
+would be Linux or BSD, and distributions of linux would be Ubuntu, Debian, Fedora, etc. Each distribution has different applications
+and programs baked into the operating system. Additionally, not all features, settings, and even abilities are consistent across different
+distributions. Distributions may be classified by their relation and closeness to another distro, but development processes, and a 
+host of other things can be immensely different.
 
-4. 
+4. I think multiple Unix operating systems is good to an extent. This allows features to be developed and put to the test in different
+environments before they are ported or recreated for another OS. However, if there is such a thing as "too many", it would be because
+developers may get spread to thin amongst the different OS's. If OS "A" has one or two killer features, but overall is not as good as "B", do you
+implement these features in "B"? Or, do you try to bring "A" up to the standard of "B". People tend to be fanboys, and that may lead
+to the continued development for quite a few variants of linux and BSD. However, I don't know if there truly is any fundemental downside to
+having a wide variety of Unix-like operating systems to choose from. As a user, it's great. But like I mentioned, I think the problems
+are more on the end of those developing for these systems.
 
 Comments
 --------
