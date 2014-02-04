@@ -61,8 +61,9 @@ choose it for any particular reason at all, other than the fact that you mention
 	FreeBSD - Releases every 4-6 months. There is a current branch, which is brand new, not completely tested code, and a stable
 	branch. That is tested hard before release.
 	
-	5.Ubuntu - 
-	  FreeBSD -
+	5.Ubuntu - Ubuntu used a grub boot loader. Ubuntu uses the upstart init system.
+	  FreeBSD - FreeBSD has a multiple stage boot loader that is part of the distrobution. FreeBSD uses a system controlled by teh rc utility 
+	to start services. 
 	
 	6.Ubuntu - http://www.ubuntu.com/support - Forum, documentation, professional services. Nearly anything you would need to know 
 	is available on these pages.
