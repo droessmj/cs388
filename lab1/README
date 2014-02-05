@@ -49,7 +49,9 @@ choose it for any particular reason at all, other than the fact that you mention
 	The software center allows you to browse available applications, and you can read and write reviews of specific products.
 	  FreeBSD - Ports and applications are how FreeBSD handles software.  There is a repository of over 24,000 applications, and these applications
     are installed from source. Each one has a makefile that grabs source code, patches, and then compiles. Because of this, the user
-	is able to install a customized program if they desire. 
+	is able to install a customized program if they desire. Update -- I found that FreeBSD by default would rather you build your 
+	applications from available source. However, it is possible to download binaries of applications through the use of 'pkg install' instead of 'cd' into a 
+	port directory and using 'make'.
 	
 	3.Ubuntu - I could not find anything specific about Ubuntu. I know that it is very good with WiFi right out of the box, and 
 	it has both graphical and command line tools for network configuration.
