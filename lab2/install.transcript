@@ -1,0 +1,1533 @@
+Script started on Thu 06 Feb 2014 02:20:03 PM CST
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloadsdroessmj@droessmj-ThinkPad-X201:~/Downloads$ ls
+[0m[01;34mcctools-4.0.3-source[0m         Droesser, Michael Resume.docx          install.transcript      [01;31mSublime Text 2.0.2.tar.bz2[0m
+[01;31mcctools-4.0.3-source.tar.gz[0m  [01;31mgoogle-chrome-stable_current_i386.deb[0m  Intro to Blogging.docx
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloadsdroessmj@droessmj-ThinkPad-X201:~/Downloads$ cd cctools-4.0.3-source/
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ ./configure --previ[K[Kfix /usr/local/
+Linux droessmj-ThinkPad-X201 3.5.0-45-generic #68-Ubuntu SMP Mon Dec 2 22:02:00 UTC 2013 i686 i686 i686 GNU/Linux
+checking for package compatibility...
+parrot IS supported on LINUX I386
+resource_monitor IS supported on LINUX
+checking for multiarch environment...
+checking for all the things I know how to build...
+package dttools found
+package work_queue found
+package sand found
+package allpairs found
+package wavefront found
+package makeflow found
+package ftp_lite found
+package s3tools found
+package chirp found
+package parrot found
+package resource_monitor found
+package resource_monitor_visualizer found
+package doc found
+checking for gcc.../usr/bin/gcc
+checking for g++.../usr/bin/g++
+checking for GNU make in several places...
+checking for make.../usr/bin/make
+checking if make is GNU make...yes
+checking if ld supports the --as-needed flag...yes
+*** skipping rfio support
+*** skipping dcap support
+using a globus flavor of 'gcc32' (if this is wrong, use the --globus-flavor argument)
+checking for /usr/include/gcc32/globus_common.h...no
+checking for /usr/include/globus/globus_common.h...no
+*** skipping globus support
+*** skipping irods support
+checking for /usr/lib/libmysqlclient.a...no
+checking for /usr/lib/libmysqlclient.so...no
+*** skipping mysql support
+*** skipping mpi support
+*** skipping xrootd support
+*** skipping cvmfs support
+checking for /usr/lib/libfuse.so...no
+checking for /usr/lib/libfuse.a...no
+checking for /lib/libfuse.so...no
+checking for /lib/libfuse.a...no
+*** skipping fuse support
+*** skipping krb5 support
+checking for /usr/bin/perl...yes
+perl version is 5.14.2
+checking for /usr/bin/python2...yes
+python version is 2.7.3
+checking for /usr/include/python2.7/Python.h...no
+*** skipping python support
+checking for /usr/bin/swig...no
+checking for swig...not found
+*** skipping swig bindings for work queue
+checking for /usr/lib/libssl.so...no
+checking for /usr/lib/libssl.a...no
+checking for /usr/lib/libcrypto.so...no
+checking for /usr/lib/libcrypto.a...no
+checking for /usr/lib/libresolv.so...no
+checking for /usr/lib/libresolv.a...no
+checking for /usr/lib/libsocket.so...no
+checking for /usr/lib/libsocket.a...no
+checking for /usr/lib/libnsl.so...no
+checking for /usr/lib/libnsl.a...no
+checking for strsignal in /usr/include/string.h...yes
+checking for pread in /usr/include/unistd.h...yes
+checking for pwrite in /usr/include/unistd.h...yes
+checking for header sys/statfs.h...yes
+checking for header sys/statvfs.h...yes
+checking for header sys/xattr.h...yes
+checking for header attr/xattr.h...no
+checking for header fts.h...yes
+checking for doxygen...not found
+*** not building API documentation
+checking for m4.../usr/bin/m4
+checking for nroff.../usr/bin/nroff
+testing creation of 64-bit libparrot_helper.so...no
+testing creation of 32-bit libparrot_helper.so...yes
+Creating Makefile.config...
+
+To re-configure, type './configure.rerun'
+To build, type 'make'
+To build and install, type 'make install'
+
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ make
+for p in dttools work_queue sand allpairs wavefront makeflow ftp_lite s3tools chirp parrot resource_monitor resource_monitor_visualizer doc ; do cd $p && make all && cd .. ; done
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/src'
+COMPILE auth.o
+COMPILE auth_all.o
+COMPILE auth_unix.o
+COMPILE auth_globus.o
+COMPILE auth_kerberos.o
+COMPILE auth_hostname.o
+COMPILE auth_address.o
+COMPILE auth_ticket.o
+COMPILE b64_encode.o
+COMPILE bitmap.o
+COMPILE buffer.o
+COMPILE catalog_query.o
+COMPILE cctools.o
+COMPILE change_process_title.o
+COMPILE chunk.o
+COMPILE console_login.o
+COMPILE clean_dir.o
+COMPILE copy_stream.o
+COMPILE create_dir.o
+COMPILE daemon.o
+COMPILE datagram.o
+COMPILE debug.o
+COMPILE delete_dir.o
+COMPILE disk_info.o
+COMPILE domain_name.o
+COMPILE domain_name_cache.o
+COMPILE dpopen.o
+COMPILE envtools.o
+COMPILE fast_popen.o
+COMPILE full_io.o
+COMPILE file_cache.o
+COMPILE get_canonical_path.o
+COMPILE get_line.o
+COMPILE getopt.o
+COMPILE getopt_aux.o
+COMPILE hdfs_library.o
+COMPILE hash_cache.o
+COMPILE hash_table.o
+COMPILE hmac.o
+COMPILE http_query.o
+COMPILE itable.o
+COMPILE link.o
+COMPILE link_auth.o
+COMPILE link_nvpair.o
+COMPILE list.o
+COMPILE load_average.o
+COMPILE memory_info.o
+COMPILE mergesort.o
+COMPILE md5.o
+COMPILE mpi_queue.o
+COMPILE nvpair.o
+COMPILE nvpair_database.o
+COMPILE password_cache.o
+COMPILE preadwrite.o
+COMPILE process.o
+COMPILE random_init.o
+COMPILE rmonitor.o
+COMPILE rmsummary.o
+COMPILE set.o
+COMPILE sha1.o
+COMPILE sleeptools.o
+COMPILE sort_dir.o
+COMPILE stringtools.o
+COMPILE string_array.o
+COMPILE text_array.o
+COMPILE text_list.o
+COMPILE timestamp.o
+COMPILE timer.o
+COMPILE url_encode.o
+COMPILE uptime.o
+COMPILE username.o
+COMPILE xxmalloc.o
+ar rv libdttools.a auth.o auth_all.o auth_unix.o auth_globus.o auth_kerberos.o auth_hostname.o auth_address.o auth_ticket.o b64_encode.o bitmap.o buffer.o catalog_query.o cctools.o change_process_title.o chunk.o console_login.o clean_dir.o copy_stream.o create_dir.o daemon.o datagram.o debug.o delete_dir.o disk_info.o domain_name.o domain_name_cache.o dpopen.o envtools.o fast_popen.o full_io.o file_cache.o get_canonical_path.o get_line.o getopt.o getopt_aux.o hdfs_library.o hash_cache.o hash_table.o hmac.o http_query.o itable.o link.o link_auth.o link_nvpair.o list.o load_average.o memory_info.o mergesort.o md5.o mpi_queue.o nvpair.o nvpair_database.o password_cache.o preadwrite.o process.o random_init.o rmonitor.o rmsummary.o set.o sha1.o sleeptools.o sort_dir.o stringtools.o string_array.o text_array.o text_list.o timestamp.o timer.o url_encode.o uptime.o username.o xxmalloc.o
+ar: creating libdttools.a
+a - auth.o
+a - auth_all.o
+a - auth_unix.o
+a - auth_globus.o
+a - auth_kerberos.o
+a - auth_hostname.o
+a - auth_address.o
+a - auth_ticket.o
+a - b64_encode.o
+a - bitmap.o
+a - buffer.o
+a - catalog_query.o
+a - cctools.o
+a - change_process_title.o
+a - chunk.o
+a - console_login.o
+a - clean_dir.o
+a - copy_stream.o
+a - create_dir.o
+a - daemon.o
+a - datagram.o
+a - debug.o
+a - delete_dir.o
+a - disk_info.o
+a - domain_name.o
+a - domain_name_cache.o
+a - dpopen.o
+a - envtools.o
+a - fast_popen.o
+a - full_io.o
+a - file_cache.o
+a - get_canonical_path.o
+a - get_line.o
+a - getopt.o
+a - getopt_aux.o
+a - hdfs_library.o
+a - hash_cache.o
+a - hash_table.o
+a - hmac.o
+a - http_query.o
+a - itable.o
+a - link.o
+a - link_auth.o
+a - link_nvpair.o
+a - list.o
+a - load_average.o
+a - memory_info.o
+a - mergesort.o
+a - md5.o
+a - mpi_queue.o
+a - nvpair.o
+a - nvpair_database.o
+a - password_cache.o
+a - preadwrite.o
+a - process.o
+a - random_init.o
+a - rmonitor.o
+a - rmsummary.o
+a - set.o
+a - sha1.o
+a - sleeptools.o
+a - sort_dir.o
+a - stringtools.o
+a - string_array.o
+a - text_array.o
+a - text_list.o
+a - timestamp.o
+a - timer.o
+a - url_encode.o
+a - uptime.o
+a - username.o
+a - xxmalloc.o
+ranlib libdttools.a
+COMPILE catalog_update.o
+LINK catalog_update
+COMPILE catalog_server.o
+LINK catalog_server
+COMPILE watchdog.o
+LINK watchdog
+COMPILE microbench.o
+LINK microbench
+COMPILE multirun.o
+LINK multirun
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue/src'
+COMPILE batch_job.o
+COMPILE batch_job_condor.o
+COMPILE batch_job_hadoop.o
+COMPILE batch_job_local.o
+COMPILE batch_job_mpi_queue.o
+COMPILE batch_job_cluster.o
+COMPILE batch_job_work_queue.o
+COMPILE work_queue_catalog.o
+COMPILE work_queue_resources.o
+COMPILE work_queue_status.o
+COMPILE work_queue.o
+ar rv libwork_queue.a batch_job.o batch_job_condor.o batch_job_hadoop.o batch_job_local.o batch_job_mpi_queue.o batch_job_cluster.o batch_job_work_queue.o work_queue_catalog.o work_queue_resources.o work_queue_status.o work_queue.o
+ar: creating libwork_queue.a
+a - batch_job.o
+a - batch_job_condor.o
+a - batch_job_hadoop.o
+a - batch_job_local.o
+a - batch_job_mpi_queue.o
+a - batch_job_cluster.o
+a - batch_job_work_queue.o
+a - work_queue_catalog.o
+a - work_queue_resources.o
+a - work_queue_status.o
+a - work_queue.o
+ranlib libwork_queue.a
+COMPILE work_queue_worker.o
+LINK work_queue_worker
+LINK work_queue_status
+COMPILE work_queue_example.o
+LINK work_queue_example
+COMPILE work_queue_pool.o
+LINK work_queue_pool
+COMPILE work_queue_workload_simulator.o
+LINK work_queue_workload_simulator
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand'
+for p in src test ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/src'
+COMPILE sand_align_master.o
+COMPILE compressed_sequence.o
+COMPILE sequence_filter.o
+COMPILE sequence.o
+COMPILE matrix.o
+COMPILE overlap.o
+COMPILE align.o
+ar rv libsandtools.a compressed_sequence.o sequence_filter.o sequence.o matrix.o overlap.o align.o
+ar: creating libsandtools.a
+a - compressed_sequence.o
+a - sequence_filter.o
+a - sequence.o
+a - matrix.o
+a - overlap.o
+a - align.o
+ranlib libsandtools.a
+LINK sand_align_master
+COMPILE sand_align_kernel.o
+LINK sand_align_kernel
+COMPILE sand_filter_master.o
+LINK sand_filter_master
+COMPILE sand_filter_kernel.o
+LINK sand_filter_kernel
+COMPILE sand_compress_reads.o
+LINK sand_compress_reads
+COMPILE sand_uncompress_reads.o
+LINK sand_uncompress_reads
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/src'
+COMPILE allpairs_multicore.o
+COMPILE allpairs_compare.o
+LINK allpairs_multicore
+COMPILE allpairs_master.o
+LINK allpairs_master
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront'
+for p in src ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront/src'
+COMPILE wavefront.o
+LINK wavefront
+COMPILE wavefront_master.o
+LINK wavefront_master
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/src'
+COMPILE dag.o
+COMPILE visitors.o
+COMPILE makeflow.o
+LINK makeflow
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite'
+for p in src ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite/src'
+COMPILE ftp_lite_test.o
+COMPILE ftp_lite.o
+COMPILE error.o
+COMPILE radix.o
+COMPILE login.o
+COMPILE stream.o
+COMPILE network.o
+ar rv libftp_lite.a ftp_lite.o error.o radix.o login.o stream.o network.o
+ar: creating libftp_lite.a
+a - ftp_lite.o
+a - error.o
+a - radix.o
+a - login.o
+a - stream.o
+a - network.o
+ranlib libftp_lite.a
+LINK ftp_lite_test
+COMPILE ftp_lite_copy.o
+LINK ftp_lite_copy
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools'
+for p in src ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools/src'
+COMPILE s3c_util.o
+COMPILE s3c_file.o
+COMPILE s3c_bucket.o
+COMPILE s3c_acl.o
+ar rv libs3client.a s3c_util.o s3c_file.o s3c_bucket.o s3c_acl.o
+ar: creating libs3client.a
+a - s3c_util.o
+a - s3c_file.o
+a - s3c_bucket.o
+a - s3c_acl.o
+ranlib libs3client.a
+COMPILE s3put.o
+COMPILE s3common.o
+LINK s3put
+COMPILE s3get.o
+LINK s3get
+COMPILE s3stat.o
+LINK s3stat
+COMPILE s3rm.o
+LINK s3rm
+COMPILE s3mkdir.o
+LINK s3mkdir
+COMPILE s3rmdir.o
+LINK s3rmdir
+COMPILE s3ls.o
+LINK s3ls
+COMPILE s3getacl.o
+LINK s3getacl
+COMPILE s3setacl.o
+LINK s3setacl
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/src'
+COMPILE chirp_tool.o
+COMPILE chirp_global.o
+COMPILE chirp_multi.o
+COMPILE chirp_recursive.o
+COMPILE chirp_reli.o
+COMPILE chirp_client.o
+COMPILE chirp_matrix.o
+COMPILE chirp_stream.o
+COMPILE chirp_ticket.o
+ar rv libchirp.a chirp_global.o chirp_multi.o chirp_recursive.o chirp_reli.o chirp_client.o chirp_matrix.o chirp_stream.o chirp_ticket.o
+ar: creating libchirp.a
+a - chirp_global.o
+a - chirp_multi.o
+a - chirp_recursive.o
+a - chirp_reli.o
+a - chirp_client.o
+a - chirp_matrix.o
+a - chirp_stream.o
+a - chirp_ticket.o
+ranlib libchirp.a
+LINK chirp
+COMPILE chirp_get.o
+LINK chirp_get
+COMPILE chirp_put.o
+LINK chirp_put
+COMPILE chirp_server.o
+COMPILE chirp_stats.o
+COMPILE chirp_thirdput.o
+COMPILE chirp_alloc.o
+COMPILE chirp_audit.o
+COMPILE chirp_acl.o
+COMPILE chirp_group.o
+COMPILE chirp_filesystem.o
+COMPILE chirp_fs_hdfs.o
+COMPILE chirp_fs_local.o
+COMPILE chirp_fs_chirp.o
+LINK chirp_server
+COMPILE chirp_status.o
+LINK chirp_status
+COMPILE chirp_benchmark.o
+LINK chirp_benchmark
+COMPILE chirp_stream_files.o
+LINK chirp_stream_files
+COMPILE chirp_fuse.o
+LINK chirp_fuse
+COMPILE chirp_distribute.o
+LINK chirp_distribute
+LINK libchirp_client.so
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot'
+for p in src; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot/src'
+perl tracer.table.process header 32 <tracer.table.in >tracer.table.h
+perl tracer.table.process table 32 <tracer.table.in >tracer.table.c
+perl tracer.table.process header 64 <tracer.table64.in >tracer.table64.h
+perl tracer.table.process table 64 <tracer.table64.in >tracer.table64.c
+COMPILE pfs_main.o
+COMPILE pfs_poll.o
+COMPILE tracer.o
+COMPILE pfs_paranoia.o
+COMPILE pfs_dispatch.o
+COMPILE pfs_dispatch64.o
+COMPILE pfs_process.o
+COMPILE pfs_channel.o
+COMPILE pfs_sys.o
+COMPILE pfs_table.o
+COMPILE pfs_resolve.o
+COMPILE pfs_service.o
+COMPILE pfs_file.o
+COMPILE pfs_file_cache.o
+COMPILE pfs_dir.o
+COMPILE pfs_dircache.o
+COMPILE pfs_pointer.o
+COMPILE pfs_location.o
+COMPILE ibox_acl.o
+COMPILE pfs_service_local.o
+COMPILE pfs_service_http.o
+COMPILE pfs_service_grow.o
+COMPILE pfs_service_chirp.o
+COMPILE pfs_service_multi.o
+COMPILE pfs_service_nest.o
+COMPILE pfs_service_ftp.o
+COMPILE pfs_service_rfio.o
+COMPILE pfs_service_dcap.o
+COMPILE pfs_service_irods.o
+COMPILE irods_reli.o
+COMPILE pfs_service_hdfs.o
+COMPILE pfs_service_bxgrid.o
+COMPILE pfs_service_s3.o
+COMPILE pfs_service_xrootd.o
+COMPILE pfs_service_cvmfs.o
+LINK parrot_run
+COMPILE parrot_lsalloc.o
+COMPILE parrot_client.o
+LINK parrot_lsalloc
+COMPILE parrot_mkalloc.o
+LINK parrot_mkalloc
+COMPILE parrot_getacl.o
+LINK parrot_getacl
+COMPILE parrot_setacl.o
+LINK parrot_setacl
+COMPILE parrot_whoami.o
+LINK parrot_whoami
+COMPILE parrot_locate.o
+LINK parrot_locate
+COMPILE parrot_md5.o
+LINK parrot_md5
+COMPILE parrot_cp.o
+LINK parrot_cp
+COMPILE parrot_timeout.o
+LINK parrot_timeout
+COMPILE parrot_search.o
+LINK parrot_search
+gcc -shared -fPIC parrot_helper.c -o libparrot_helper.so
+ar rv libparrot_client.a parrot_client.o
+ar: creating libparrot_client.a
+a - parrot_client.o
+mkdir -p lib
+gcc -m32 -shared -fPIC parrot_helper.c -o lib/libparrot_helper.so
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/src'
+COMPILE rmonitor_helper_comm.o
+COMPILE rmonitor_helper.o
+COMPILE librmonitor_helper.so
+COMPILE piggybacker.o
+LINK piggybacker
+./piggybacker rmonitor_piggyback.h CCTOOLS_USE_RMONITOR_HELPER_LIB librmonitor_helper.so
+COMPILE resource_monitor.o
+COMPILE rmonitor_poll.o
+ar rv librmonitor_poll.a rmonitor_poll.o
+ar: creating librmonitor_poll.a
+a - rmonitor_poll.o
+ranlib librmonitor_poll.a
+LINK resource_monitorv
+cp resource_monitor.c resource_monitor_pb.c
+COMPILE resource_monitor_pb.o
+LINK resource_monitor
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/test'
+COMPILE hogmem
+COMPILE msqrt
+COMPILE cluster.o
+LINK cluster
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor_visualizer'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor_visualizer'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/doc'
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/allpairs_master.m4 > man/allpairs_master.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/allpairs_multicore.m4 > man/allpairs_multicore.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/catalog_server.m4 > man/catalog_server.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/catalog_update.m4 > man/catalog_update.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_benchmark.m4 > man/chirp_benchmark.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_distribute.m4 > man/chirp_distribute.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_fuse.m4 > man/chirp_fuse.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_get.m4 > man/chirp_get.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp.m4 > man/chirp.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_put.m4 > man/chirp_put.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_server_hdfs.m4 > man/chirp_server_hdfs.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_server.m4 > man/chirp_server.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_status.m4 > man/chirp_status.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_stream_files.m4 > man/chirp_stream_files.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/condor_submit_workers.m4 > man/condor_submit_workers.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/ec2_remove_workers.m4 > man/ec2_remove_workers.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/ec2_submit_workers.m4 > man/ec2_submit_workers.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/makeflow_blast.m4 > man/makeflow_blast.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/makeflow.m4 > man/makeflow.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/makeflow_monitor.m4 > man/makeflow_monitor.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/make_growfs.m4 > man/make_growfs.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/maker_wq.m4 > man/maker_wq.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_cp.m4 > man/parrot_cp.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_getacl.m4 > man/parrot_getacl.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_locate.m4 > man/parrot_locate.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_lsalloc.m4 > man/parrot_lsalloc.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_md5.m4 > man/parrot_md5.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_mkalloc.m4 > man/parrot_mkalloc.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_run_hdfs.m4 > man/parrot_run_hdfs.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_run.m4 > man/parrot_run.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_setacl.m4 > man/parrot_setacl.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_timeout.m4 > man/parrot_timeout.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_whoami.m4 > man/parrot_whoami.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/pbs_submit_workers.m4 > man/pbs_submit_workers.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/replica_exchange.m4 > man/replica_exchange.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/resource_monitor.m4 > man/resource_monitor.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/resource_monitor_visualizer.m4 > man/resource_monitor_visualizer.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sand_align_kernel.m4 > man/sand_align_kernel.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sand_align_master.m4 > man/sand_align_master.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sand_compress_reads.m4 > man/sand_compress_reads.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sand_filter_kernel.m4 > man/sand_filter_kernel.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sand_filter_master.m4 > man/sand_filter_master.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sand_uncompress_reads.m4 > man/sand_uncompress_reads.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sge_submit_workers.m4 > man/sge_submit_workers.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/split_fasta.m4 > man/split_fasta.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/starch.m4 > man/starch.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/torque_submit_workers.m4 > man/torque_submit_workers.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/wavefront_master.m4 > man/wavefront_master.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/work_queue_pool.m4 > man/work_queue_pool.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/work_queue_status.m4 > man/work_queue_status.html
+m4 -DHTML -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/work_queue_worker.m4 > man/work_queue_worker.html
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/allpairs_master.m4 > man/allpairs_master.1
+gzip < man/allpairs_master.1 > man/allpairs_master.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/allpairs_multicore.m4 > man/allpairs_multicore.1
+gzip < man/allpairs_multicore.1 > man/allpairs_multicore.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/catalog_server.m4 > man/catalog_server.1
+gzip < man/catalog_server.1 > man/catalog_server.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/catalog_update.m4 > man/catalog_update.1
+gzip < man/catalog_update.1 > man/catalog_update.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_benchmark.m4 > man/chirp_benchmark.1
+gzip < man/chirp_benchmark.1 > man/chirp_benchmark.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_distribute.m4 > man/chirp_distribute.1
+gzip < man/chirp_distribute.1 > man/chirp_distribute.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_fuse.m4 > man/chirp_fuse.1
+gzip < man/chirp_fuse.1 > man/chirp_fuse.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_get.m4 > man/chirp_get.1
+gzip < man/chirp_get.1 > man/chirp_get.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp.m4 > man/chirp.1
+gzip < man/chirp.1 > man/chirp.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_put.m4 > man/chirp_put.1
+gzip < man/chirp_put.1 > man/chirp_put.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_server_hdfs.m4 > man/chirp_server_hdfs.1
+gzip < man/chirp_server_hdfs.1 > man/chirp_server_hdfs.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_server.m4 > man/chirp_server.1
+gzip < man/chirp_server.1 > man/chirp_server.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_status.m4 > man/chirp_status.1
+gzip < man/chirp_status.1 > man/chirp_status.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/chirp_stream_files.m4 > man/chirp_stream_files.1
+gzip < man/chirp_stream_files.1 > man/chirp_stream_files.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/condor_submit_workers.m4 > man/condor_submit_workers.1
+gzip < man/condor_submit_workers.1 > man/condor_submit_workers.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/ec2_remove_workers.m4 > man/ec2_remove_workers.1
+gzip < man/ec2_remove_workers.1 > man/ec2_remove_workers.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/ec2_submit_workers.m4 > man/ec2_submit_workers.1
+gzip < man/ec2_submit_workers.1 > man/ec2_submit_workers.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/makeflow_blast.m4 > man/makeflow_blast.1
+gzip < man/makeflow_blast.1 > man/makeflow_blast.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/makeflow.m4 > man/makeflow.1
+gzip < man/makeflow.1 > man/makeflow.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/makeflow_monitor.m4 > man/makeflow_monitor.1
+gzip < man/makeflow_monitor.1 > man/makeflow_monitor.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/make_growfs.m4 > man/make_growfs.1
+gzip < man/make_growfs.1 > man/make_growfs.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/maker_wq.m4 > man/maker_wq.1
+gzip < man/maker_wq.1 > man/maker_wq.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_cp.m4 > man/parrot_cp.1
+gzip < man/parrot_cp.1 > man/parrot_cp.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_getacl.m4 > man/parrot_getacl.1
+gzip < man/parrot_getacl.1 > man/parrot_getacl.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_locate.m4 > man/parrot_locate.1
+gzip < man/parrot_locate.1 > man/parrot_locate.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_lsalloc.m4 > man/parrot_lsalloc.1
+gzip < man/parrot_lsalloc.1 > man/parrot_lsalloc.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_md5.m4 > man/parrot_md5.1
+gzip < man/parrot_md5.1 > man/parrot_md5.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_mkalloc.m4 > man/parrot_mkalloc.1
+gzip < man/parrot_mkalloc.1 > man/parrot_mkalloc.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_run_hdfs.m4 > man/parrot_run_hdfs.1
+gzip < man/parrot_run_hdfs.1 > man/parrot_run_hdfs.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_run.m4 > man/parrot_run.1
+gzip < man/parrot_run.1 > man/parrot_run.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_setacl.m4 > man/parrot_setacl.1
+gzip < man/parrot_setacl.1 > man/parrot_setacl.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_timeout.m4 > man/parrot_timeout.1
+gzip < man/parrot_timeout.1 > man/parrot_timeout.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/parrot_whoami.m4 > man/parrot_whoami.1
+gzip < man/parrot_whoami.1 > man/parrot_whoami.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/pbs_submit_workers.m4 > man/pbs_submit_workers.1
+gzip < man/pbs_submit_workers.1 > man/pbs_submit_workers.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/replica_exchange.m4 > man/replica_exchange.1
+gzip < man/replica_exchange.1 > man/replica_exchange.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/resource_monitor.m4 > man/resource_monitor.1
+gzip < man/resource_monitor.1 > man/resource_monitor.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/resource_monitor_visualizer.m4 > man/resource_monitor_visualizer.1
+gzip < man/resource_monitor_visualizer.1 > man/resource_monitor_visualizer.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sand_align_kernel.m4 > man/sand_align_kernel.1
+gzip < man/sand_align_kernel.1 > man/sand_align_kernel.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sand_align_master.m4 > man/sand_align_master.1
+gzip < man/sand_align_master.1 > man/sand_align_master.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sand_compress_reads.m4 > man/sand_compress_reads.1
+gzip < man/sand_compress_reads.1 > man/sand_compress_reads.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sand_filter_kernel.m4 > man/sand_filter_kernel.1
+gzip < man/sand_filter_kernel.1 > man/sand_filter_kernel.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sand_filter_master.m4 > man/sand_filter_master.1
+gzip < man/sand_filter_master.1 > man/sand_filter_master.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sand_uncompress_reads.m4 > man/sand_uncompress_reads.1
+gzip < man/sand_uncompress_reads.1 > man/sand_uncompress_reads.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/sge_submit_workers.m4 > man/sge_submit_workers.1
+gzip < man/sge_submit_workers.1 > man/sge_submit_workers.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/split_fasta.m4 > man/split_fasta.1
+gzip < man/split_fasta.1 > man/split_fasta.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/starch.m4 > man/starch.1
+gzip < man/starch.1 > man/starch.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/torque_submit_workers.m4 > man/torque_submit_workers.1
+gzip < man/torque_submit_workers.1 > man/torque_submit_workers.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/wavefront_master.m4 > man/wavefront_master.1
+gzip < man/wavefront_master.1 > man/wavefront_master.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/work_queue_pool.m4 > man/work_queue_pool.1
+gzip < man/work_queue_pool.1 > man/work_queue_pool.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/work_queue_status.m4 > man/work_queue_status.1
+gzip < man/work_queue_status.1 > man/work_queue_status.1.gz
+m4 -DMAN -DCCTOOLS_VERSION=4.0.3 -DCCTOOLS_RELEASE_DATE=02/06/2014 man/work_queue_worker.m4 > man/work_queue_worker.1
+gzip < man/work_queue_worker.1 > man/work_queue_worker.1.gz
+rm man/parrot_md5.1 man/parrot_cp.1 man/ec2_submit_workers.1 man/sge_submit_workers.1 man/replica_exchange.1 man/parrot_setacl.1 man/sand_filter_master.1 man/work_queue_status.1 man/parrot_lsalloc.1 man/sand_align_kernel.1 man/makeflow_monitor.1 man/parrot_mkalloc.1 man/makeflow_blast.1 man/chirp_server_hdfs.1 man/allpairs_master.1 man/parrot_timeout.1 man/split_fasta.1 man/maker_wq.1 man/chirp_put.1 man/wavefront_master.1 man/catalog_server.1 man/chirp_distribute.1 man/pbs_submit_workers.1 man/allpairs_multicore.1 man/chirp_get.1 man/ec2_remove_workers.1 man/parrot_whoami.1 man/sand_uncompress_reads.1 man/parrot_run_hdfs.1 man/parrot_locate.1 man/sand_filter_kernel.1 man/chirp_benchmark.1 man/sand_compress_reads.1 man/resource_monitor_visualizer.1 man/make_growfs.1 man/catalog_update.1 man/chirp_stream_files.1 man/condor_submit_workers.1 man/makeflow.1 man/starch.1 man/torque_submit_workers.1 man/chirp_status.1 man/parrot_run.1 man/parrot_getacl.1 man/work_queue_worker.1 man/sand_align_master.1 man/chirp_fuse.1 man/resource_monitor.1 man/chirp_server.1 man/work_queue_pool.1 man/chirp.1
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/doc'
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ sudo make install
+[sudo] password for droessmj: 
+for p in dttools work_queue sand allpairs wavefront makeflow ftp_lite s3tools chirp parrot resource_monitor resource_monitor_visualizer doc ; do cd $p && make all && cd .. ; done
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue/src'
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand'
+for p in src test ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront'
+for p in src ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite'
+for p in src ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools'
+for p in src ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot'
+for p in src; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor_visualizer'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor_visualizer'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/doc'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/doc'
+for p in dttools work_queue sand allpairs wavefront makeflow ftp_lite s3tools chirp parrot resource_monitor resource_monitor_visualizer doc ; do cd $p && make install && cd .. ; done
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools'
+for p in src test; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/src'
+mkdir -p /usr/local//bin
+mkdir -p /usr/local//lib
+mkdir -p /usr/local//doc
+mkdir -p /usr/local//include
+mkdir -p /usr/local//include/cctools
+cp libdttools.a /usr/local//lib
+cp catalog_update catalog_server watchdog /usr/local//bin
+for file in auth.h auth_address.h auth_all.h auth_globus.h auth_hostname.h auth_kerberos.h auth_ticket.h auth_unix.h batch_job.h buffer.h debug.h int_sizes.h md5.h rmonitor_hooks.h timestamp.h ; do if [ -f $file ] ; then cp $file /usr/local//include/cctools ; fi ; done
+for file in cygwin1.dll cyggcc_s-1.dll cygintl-8.dll cygreadline7.dll cygncursesw-10.dll cygiconv-2.dll cygattr-1.dll sh.exe ; do if [ -f /bin/$file ] ; then cp /bin/$file /usr/local//bin/$file ; fi ; done
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/test'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue/src'
+mkdir -p /usr/local//bin
+mkdir -p /usr/local//lib
+mkdir -p /usr/local//doc
+mkdir -p /usr/local//include
+mkdir -p /usr/local//include/cctools
+chmod 755 condor_submit_workers sge_submit_workers torque_submit_workers pbs_submit_workers ec2_submit_workers ec2_remove_workers slurm_submit_workers
+cp libwork_queue.a /usr/local//lib
+cp work_queue_worker work_queue_status work_queue_example work_queue_pool /usr/local//bin
+cp condor_submit_workers sge_submit_workers torque_submit_workers pbs_submit_workers ec2_submit_workers ec2_remove_workers slurm_submit_workers /usr/local//bin
+cp work_queue_example.c /usr/local//doc
+for file in batch_job.h work_queue.h ; do if [ -f $file ] ; then cp $file /usr/local//include/cctools ; fi ; done
+for file in  ; do if [ -f /bin/$file ] ; then cp /bin/$file /usr/local//bin/$file ; fi ; done
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand'
+for p in src test ; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/src'
+mkdir -p /usr/local//bin
+chmod 755 sand_align_master sand_align_kernel sand_filter_master sand_filter_kernel sand_compress_reads sand_uncompress_reads sand_runCA_5.4 sand_runCA_6.1 sand_runCA_7.0
+cp sand_align_master sand_align_kernel sand_filter_master sand_filter_kernel sand_compress_reads sand_uncompress_reads sand_runCA_5.4 sand_runCA_6.1 sand_runCA_7.0 /usr/local//bin
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/test'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs'
+for p in src test; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/src'
+mkdir -p /usr/local//bin
+cp allpairs_multicore allpairs_master /usr/local//bin
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/test'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront'
+for p in src ; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront/src'
+mkdir -p /usr/local//bin
+cp wavefront wavefront_master /usr/local//bin
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow'
+for p in src test; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/src'
+mkdir -p /usr/local//bin
+chmod 755 condor_submit_makeflow makeflow_log_parser makeflow_monitor starch
+cp makeflow condor_submit_makeflow makeflow_log_parser makeflow_monitor starch /usr/local//bin
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/test'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite'
+for p in src ; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite/src'
+mkdir -p /usr/local//lib
+mkdir -p /usr/local//include
+cp libftp_lite.a /usr/local//lib
+cp ftp_lite.h /usr/local//include/cctools
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools'
+for p in src ; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools/src'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp'
+for p in src test; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/src'
+mkdir -p /usr/local//bin
+mkdir -p /usr/local//lib
+mkdir -p /usr/local//include/cctools
+if [ -f /usr/local//bin/chirp_server ]; then mv /usr/local//bin/chirp_server /usr/local//bin/chirp_server.old; fi
+chmod 755 chirp_audit_cluster chirp_server_hdfs
+cp chirp chirp_get chirp_put chirp_server chirp_status chirp_benchmark chirp_stream_files chirp_fuse chirp_distribute chirp_audit_cluster chirp_server_hdfs /usr/local//bin
+cp libchirp.a libchirp_client.so /usr/local//lib
+cp chirp_global.h chirp_multi.h chirp_reli.h chirp_client.h chirp_stream.h chirp_protocol.h chirp_matrix.h chirp_types.h chirp_recursive.h /usr/local//include/cctools
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/test'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot'
+for p in src; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot/src'
+mkdir -p /usr/local//bin
+mkdir -p /usr/local//lib
+mkdir -p /usr/local//include/cctools
+chmod 755 make_growfs parrot_identity_box parrot_run_hdfs
+cp parrot_run parrot_lsalloc parrot_mkalloc parrot_getacl parrot_setacl parrot_whoami parrot_locate parrot_md5 parrot_cp parrot_timeout parrot_search /usr/local//bin
+cp make_growfs parrot_identity_box parrot_run_hdfs /usr/local//bin
+cp parrot_client.h /usr/local//include/cctools
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor'
+for p in src test; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/src'
+mkdir -p /usr/local//bin
+cp resource_monitorv resource_monitor /usr/local//bin
+mkdir -p /usr/local//lib
+cp librmonitor_helper.so /usr/local//lib
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/test'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor_visualizer'
+mkdir -p /usr/local//bin
+mkdir -p /usr/local//lib
+chmod 755 bin/resource_monitor_visualizer.py
+cp bin/resource_monitor_visualizer.py /usr/local//bin
+cp -r lib/* /usr/local//lib/
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor_visualizer'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/doc'
+mkdir -p /usr/local//doc
+mkdir -p /usr/local//doc/man
+mkdir -p /usr/local//doc/images
+mkdir -p /usr/local//share/man/man1
+cp *.html /usr/local//doc
+if [ -f man/chirp.html ]; then cp man/*.html /usr/local//doc/man; fi
+if [ -f man/chirp.1.gz ]; then cp man/*.1.gz /usr/local//share/man/man1; fi
+if [ -d api ]; then cp -rp api /usr/local//doc; fi
+if [ -d images ]; then cp images/*.gif /usr/local//doc/images; fi
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/doc'
+mkdir -p /usr/local//etc
+cp Makefile.config /usr/local//etc/Makefile.config
+cp COPYING /usr/local//doc
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ cc [K[K[Kcd ~
+]0;droessmj@droessmj-ThinkPad-X201: ~droessmj@droessmj-ThinkPad-X201:~$ cctools
+cctools: command not found
+]0;droessmj@droessmj-ThinkPad-X201: ~droessmj@droessmj-ThinkPad-X201:~$ cd /[KDownloads/
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloadsdroessmj@droessmj-ThinkPad-X201:~/Downloads$ ls
+[0m[01;34mcctools-4.0.3-source[0m         Droesser, Michael Resume.docx          install.transcript      [01;31mSublime Text 2.0.2.tar.bz2[0m
+[01;31mcctools-4.0.3-source.tar.gz[0m  [01;31mgoogle-chrome-stable_current_i386.deb[0m  Intro to Blogging.docx
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloadsdroessmj@droessmj-ThinkPad-X201:~/Downloads$ cd cctools-4.0.3-source/
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ ls
+[0m[01;34mallpairs[0m        [01;32mconfigure[0m        COPYING  [01;34mftp_lite[0m         Makefile.rules  README.debian                [01;34ms3tools[0m
+[01;34mapps[0m            [01;32mconfigure.afs[0m    CREDITS  [01;34mftsh[0m             [01;34mmakeflow[0m        [01;34mresource_monitor[0m             [01;34msand[0m
+[01;32mcctools.indent[0m  [01;32mconfigure.rerun[0m  [01;34mdoc[0m      Makefile         [01;34mparrot[0m          [01;34mresource_monitor_visualizer[0m  [01;34mwavefront[0m
+[01;34mchirp[0m           configure.tools  [01;34mdttools[0m  Makefile.config  README          [01;32mrun_all_tests.sh[0m             [01;34mwork_queue[0m
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ cd usr/local?[K/[1Psr/local/[1Pr/local/[1P/local/[1Plocal/[1Pocal/[1Pcal/[1Pal/[1Pl/[1P/[K~/us[K[K[K[K[K usr/
+bash: cd: usr/: No such file or directory
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ cd [K[K[Klogin
+login: Cannot possibly work without effective root
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ su
+Password: 
+su: Authentication failure
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ su
+Password: 
+su: Authentication failure
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ sduo [K[K[K[Kudo cd /usr/local/
+sudo: cd: command not found
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ cd /su[K[Kusr/
+]0;droessmj@droessmj-ThinkPad-X201: /usrdroessmj@droessmj-ThinkPad-X201:/usr$ ls
+[0m[01;34mbin[0m  [01;34mgames[0m  [01;34minclude[0m  [01;34mlib[0m  [01;34mlocal[0m  [01;34msbin[0m  [01;34mshare[0m  [01;34msrc[0m
+]0;droessmj@droessmj-ThinkPad-X201: /usrdroessmj@droessmj-ThinkPad-X201:/usr$ cd local/
+]0;droessmj@droessmj-ThinkPad-X201: /usr/localdroessmj@droessmj-ThinkPad-X201:/usr/local$ ls
+[0m[01;34mbin[0m  [01;34mdoc[0m  [01;34metc[0m  [01;34mgames[0m  [01;34minclude[0m  [01;34mlib[0m  [01;36mman[0m  [01;34msbin[0m  [01;34mshare[0m  [01;34msrc[0m
+]0;droessmj@droessmj-ThinkPad-X201: /usr/localdroessmj@droessmj-ThinkPad-X201:/usr/local$ clear
+[H[2J]0;droessmj@droessmj-ThinkPad-X201: /usr/localdroessmj@droessmj-ThinkPad-X201:/usr/local$ ls
+[0m[01;34mbin[0m  [01;34mdoc[0m  [01;34metc[0m  [01;34mgames[0m  [01;34minclude[0m  [01;34mlib[0m  [01;36mman[0m  [01;34msbin[0m  [01;34mshare[0m  [01;34msrc[0m
+]0;droessmj@droessmj-ThinkPad-X201: /usr/localdroessmj@droessmj-ThinkPad-X201:/usr/local$ cd ~/Downloads/
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloadsdroessmj@droessmj-ThinkPad-X201:~/Downloads$ ls
+[0m[01;34mcctools-4.0.3-source[0m         Droesser, Michael Resume.docx          install.transcript      [01;31mSublime Text 2.0.2.tar.bz2[0m
+[01;31mcctools-4.0.3-source.tar.gz[0m  [01;31mgoogle-chrome-stable_current_i386.deb[0m  Intro to Blogging.docx
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloadsdroessmj@droessmj-ThinkPad-X201:~/Downloads$ cd cctools-4.0.3-source/
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ ls
+[0m[01;34mallpairs[0m        [01;32mconfigure[0m        COPYING  [01;34mftp_lite[0m         Makefile.rules  README.debian                [01;34ms3tools[0m
+[01;34mapps[0m            [01;32mconfigure.afs[0m    CREDITS  [01;34mftsh[0m             [01;34mmakeflow[0m        [01;34mresource_monitor[0m             [01;34msand[0m
+[01;32mcctools.indent[0m  [01;32mconfigure.rerun[0m  [01;34mdoc[0m      Makefile         [01;34mparrot[0m          [01;34mresource_monitor_visualizer[0m  [01;34mwavefront[0m
+[01;34mchirp[0m           configure.tools  [01;34mdttools[0m  Makefile.config  README          [01;32mrun_all_tests.sh[0m             [01;34mwork_queue[0m
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ ./configure --prefix /[K~/Don[Kwnloads/
+Linux droessmj-ThinkPad-X201 3.5.0-45-generic #68-Ubuntu SMP Mon Dec 2 22:02:00 UTC 2013 i686 i686 i686 GNU/Linux
+checking for package compatibility...
+parrot IS supported on LINUX I386
+resource_monitor IS supported on LINUX
+checking for multiarch environment...
+checking for all the things I know how to build...
+package dttools found
+package work_queue found
+package sand found
+package allpairs found
+package wavefront found
+package makeflow found
+package ftp_lite found
+package s3tools found
+package chirp found
+package parrot found
+package resource_monitor found
+package resource_monitor_visualizer found
+package doc found
+checking for gcc.../usr/bin/gcc
+checking for g++.../usr/bin/g++
+checking for GNU make in several places...
+checking for make.../usr/bin/make
+checking if make is GNU make...yes
+checking if ld supports the --as-needed flag...yes
+*** skipping rfio support
+*** skipping dcap support
+using a globus flavor of 'gcc32' (if this is wrong, use the --globus-flavor argument)
+checking for /usr/include/gcc32/globus_common.h...no
+checking for /usr/include/globus/globus_common.h...no
+*** skipping globus support
+*** skipping irods support
+checking for /usr/lib/libmysqlclient.a...no
+checking for /usr/lib/libmysqlclient.so...no
+*** skipping mysql support
+*** skipping mpi support
+*** skipping xrootd support
+*** skipping cvmfs support
+checking for /usr/lib/libfuse.so...no
+checking for /usr/lib/libfuse.a...no
+checking for /lib/libfuse.so...no
+checking for /lib/libfuse.a...no
+*** skipping fuse support
+*** skipping krb5 support
+checking for /usr/bin/perl...yes
+perl version is 5.14.2
+checking for /usr/bin/python2...yes
+python version is 2.7.3
+checking for /usr/include/python2.7/Python.h...no
+*** skipping python support
+checking for /usr/bin/swig...no
+checking for swig...not found
+*** skipping swig bindings for work queue
+checking for /usr/lib/libssl.so...no
+checking for /usr/lib/libssl.a...no
+checking for /usr/lib/libcrypto.so...no
+checking for /usr/lib/libcrypto.a...no
+checking for /usr/lib/libresolv.so...no
+checking for /usr/lib/libresolv.a...no
+checking for /usr/lib/libsocket.so...no
+checking for /usr/lib/libsocket.a...no
+checking for /usr/lib/libnsl.so...no
+checking for /usr/lib/libnsl.a...no
+checking for strsignal in /usr/include/string.h...yes
+checking for pread in /usr/include/unistd.h...yes
+checking for pwrite in /usr/include/unistd.h...yes
+checking for header sys/statfs.h...yes
+checking for header sys/statvfs.h...yes
+checking for header sys/xattr.h...yes
+checking for header attr/xattr.h...no
+checking for header fts.h...yes
+checking for doxygen...not found
+*** not building API documentation
+checking for m4.../usr/bin/m4
+checking for nroff.../usr/bin/nroff
+testing creation of 64-bit libparrot_helper.so...no
+testing creation of 32-bit libparrot_helper.so...yes
+Creating Makefile.config...
+
+To re-configure, type './configure.rerun'
+To build, type 'make'
+To build and install, type 'make install'
+
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ a[Kmake
+for p in dttools work_queue sand allpairs wavefront makeflow ftp_lite s3tools chirp parrot resource_monitor resource_monitor_visualizer doc ; do cd $p && make all && cd .. ; done
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue/src'
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand'
+for p in src test ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront'
+for p in src ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite'
+for p in src ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools'
+for p in src ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot'
+for p in src; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor_visualizer'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor_visualizer'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/doc'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/doc'
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ sudo make install
+for p in dttools work_queue sand allpairs wavefront makeflow ftp_lite s3tools chirp parrot resource_monitor resource_monitor_visualizer doc ; do cd $p && make all && cd .. ; done
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue/src'
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand'
+for p in src test ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront'
+for p in src ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite'
+for p in src ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools'
+for p in src ; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot'
+for p in src; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor'
+for p in src test; do cd $p && make all && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/src'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor_visualizer'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor_visualizer'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/doc'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/doc'
+for p in dttools work_queue sand allpairs wavefront makeflow ftp_lite s3tools chirp parrot resource_monitor resource_monitor_visualizer doc ; do cd $p && make install && cd .. ; done
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools'
+for p in src test; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/src'
+mkdir -p /home/droessmj/Downloads//bin
+mkdir -p /home/droessmj/Downloads//lib
+mkdir -p /home/droessmj/Downloads//doc
+mkdir -p /home/droessmj/Downloads//include
+mkdir -p /home/droessmj/Downloads//include/cctools
+cp libdttools.a /home/droessmj/Downloads//lib
+cp catalog_update catalog_server watchdog /home/droessmj/Downloads//bin
+for file in auth.h auth_address.h auth_all.h auth_globus.h auth_hostname.h auth_kerberos.h auth_ticket.h auth_unix.h batch_job.h buffer.h debug.h int_sizes.h md5.h rmonitor_hooks.h timestamp.h ; do if [ -f $file ] ; then cp $file /home/droessmj/Downloads//include/cctools ; fi ; done
+for file in cygwin1.dll cyggcc_s-1.dll cygintl-8.dll cygreadline7.dll cygncursesw-10.dll cygiconv-2.dll cygattr-1.dll sh.exe ; do if [ -f /bin/$file ] ; then cp /bin/$file /home/droessmj/Downloads//bin/$file ; fi ; done
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/test'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/dttools'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue/src'
+mkdir -p /home/droessmj/Downloads//bin
+mkdir -p /home/droessmj/Downloads//lib
+mkdir -p /home/droessmj/Downloads//doc
+mkdir -p /home/droessmj/Downloads//include
+mkdir -p /home/droessmj/Downloads//include/cctools
+chmod 755 condor_submit_workers sge_submit_workers torque_submit_workers pbs_submit_workers ec2_submit_workers ec2_remove_workers slurm_submit_workers
+cp libwork_queue.a /home/droessmj/Downloads//lib
+cp work_queue_worker work_queue_status work_queue_example work_queue_pool /home/droessmj/Downloads//bin
+cp condor_submit_workers sge_submit_workers torque_submit_workers pbs_submit_workers ec2_submit_workers ec2_remove_workers slurm_submit_workers /home/droessmj/Downloads//bin
+cp work_queue_example.c /home/droessmj/Downloads//doc
+for file in batch_job.h work_queue.h ; do if [ -f $file ] ; then cp $file /home/droessmj/Downloads//include/cctools ; fi ; done
+for file in  ; do if [ -f /bin/$file ] ; then cp /bin/$file /home/droessmj/Downloads//bin/$file ; fi ; done
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/work_queue'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand'
+for p in src test ; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/src'
+mkdir -p /home/droessmj/Downloads//bin
+chmod 755 sand_align_master sand_align_kernel sand_filter_master sand_filter_kernel sand_compress_reads sand_uncompress_reads sand_runCA_5.4 sand_runCA_6.1 sand_runCA_7.0
+cp sand_align_master sand_align_kernel sand_filter_master sand_filter_kernel sand_compress_reads sand_uncompress_reads sand_runCA_5.4 sand_runCA_6.1 sand_runCA_7.0 /home/droessmj/Downloads//bin
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/test'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/sand'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs'
+for p in src test; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/src'
+mkdir -p /home/droessmj/Downloads//bin
+cp allpairs_multicore allpairs_master /home/droessmj/Downloads//bin
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/test'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/allpairs'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront'
+for p in src ; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront/src'
+mkdir -p /home/droessmj/Downloads//bin
+cp wavefront wavefront_master /home/droessmj/Downloads//bin
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/wavefront'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow'
+for p in src test; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/src'
+mkdir -p /home/droessmj/Downloads//bin
+chmod 755 condor_submit_makeflow makeflow_log_parser makeflow_monitor starch
+cp makeflow condor_submit_makeflow makeflow_log_parser makeflow_monitor starch /home/droessmj/Downloads//bin
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/test'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/makeflow'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite'
+for p in src ; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite/src'
+mkdir -p /home/droessmj/Downloads//lib
+mkdir -p /home/droessmj/Downloads//include
+cp libftp_lite.a /home/droessmj/Downloads//lib
+cp ftp_lite.h /home/droessmj/Downloads//include/cctools
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/ftp_lite'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools'
+for p in src ; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools/src'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/s3tools'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp'
+for p in src test; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/src'
+mkdir -p /home/droessmj/Downloads//bin
+mkdir -p /home/droessmj/Downloads//lib
+mkdir -p /home/droessmj/Downloads//include/cctools
+if [ -f /home/droessmj/Downloads//bin/chirp_server ]; then mv /home/droessmj/Downloads//bin/chirp_server /home/droessmj/Downloads//bin/chirp_server.old; fi
+chmod 755 chirp_audit_cluster chirp_server_hdfs
+cp chirp chirp_get chirp_put chirp_server chirp_status chirp_benchmark chirp_stream_files chirp_fuse chirp_distribute chirp_audit_cluster chirp_server_hdfs /home/droessmj/Downloads//bin
+cp libchirp.a libchirp_client.so /home/droessmj/Downloads//lib
+cp chirp_global.h chirp_multi.h chirp_reli.h chirp_client.h chirp_stream.h chirp_protocol.h chirp_matrix.h chirp_types.h chirp_recursive.h /home/droessmj/Downloads//include/cctools
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/test'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/chirp'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot'
+for p in src; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot/src'
+mkdir -p /home/droessmj/Downloads//bin
+mkdir -p /home/droessmj/Downloads//lib
+mkdir -p /home/droessmj/Downloads//include/cctools
+chmod 755 make_growfs parrot_identity_box parrot_run_hdfs
+cp parrot_run parrot_lsalloc parrot_mkalloc parrot_getacl parrot_setacl parrot_whoami parrot_locate parrot_md5 parrot_cp parrot_timeout parrot_search /home/droessmj/Downloads//bin
+cp make_growfs parrot_identity_box parrot_run_hdfs /home/droessmj/Downloads//bin
+cp parrot_client.h /home/droessmj/Downloads//include/cctools
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot/src'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/parrot'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor'
+for p in src test; do cd $p && make install && cd .. ; done
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/src'
+mkdir -p /home/droessmj/Downloads//bin
+cp resource_monitorv resource_monitor /home/droessmj/Downloads//bin
+mkdir -p /home/droessmj/Downloads//lib
+cp librmonitor_helper.so /home/droessmj/Downloads//lib
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/src'
+make[2]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/test'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor/test'
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor_visualizer'
+mkdir -p /home/droessmj/Downloads//bin
+mkdir -p /home/droessmj/Downloads//lib
+chmod 755 bin/resource_monitor_visualizer.py
+cp bin/resource_monitor_visualizer.py /home/droessmj/Downloads//bin
+cp -r lib/* /home/droessmj/Downloads//lib/
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/resource_monitor_visualizer'
+make[1]: Entering directory `/home/droessmj/Downloads/cctools-4.0.3-source/doc'
+mkdir -p /home/droessmj/Downloads//doc
+mkdir -p /home/droessmj/Downloads//doc/man
+mkdir -p /home/droessmj/Downloads//doc/images
+mkdir -p /home/droessmj/Downloads//share/man/man1
+cp *.html /home/droessmj/Downloads//doc
+if [ -f man/chirp.html ]; then cp man/*.html /home/droessmj/Downloads//doc/man; fi
+if [ -f man/chirp.1.gz ]; then cp man/*.1.gz /home/droessmj/Downloads//share/man/man1; fi
+if [ -d api ]; then cp -rp api /home/droessmj/Downloads//doc; fi
+if [ -d images ]; then cp images/*.gif /home/droessmj/Downloads//doc/images; fi
+make[1]: Leaving directory `/home/droessmj/Downloads/cctools-4.0.3-source/doc'
+mkdir -p /home/droessmj/Downloads//etc
+cp Makefile.config /home/droessmj/Downloads//etc/Makefile.config
+cp COPYING /home/droessmj/Downloads//doc
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/cctools-4.0.3-sourcedroessmj@droessmj-ThinkPad-X201:~/Downloads/cctools-4.0.3-source$ cd ~/Downloads/
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloadsdroessmj@droessmj-ThinkPad-X201:~/Downloads$ ls
+[0m[01;34mbin[0m                          Droesser, Michael Resume.docx          install.transcript      [01;31mSublime Text 2.0.2.tar.bz2[0m
+[01;34mcctools-4.0.3-source[0m         [01;34metc[0m                                    Intro to Blogging.docx
+[01;31mcctools-4.0.3-source.tar.gz[0m  [01;31mgoogle-chrome-stable_current_i386.deb[0m  [01;34mlib[0m
+[01;34mdoc[0m                          [01;34minclude[0m                                [01;34mshare[0m
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloadsdroessmj@droessmj-ThinkPad-X201:~/Downloads$ cd[Kc[Kd bin/
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/bindroessmj@droessmj-ThinkPad-X201:~/Downloads/bin$ ls
+[0m[01;32mallpairs_master[0m      [01;32mchirp_server_hdfs[0m       [01;32mparrot_getacl[0m        [01;32mpbs_submit_workers[0m              [01;32msand_uncompress_reads[0m
+[01;32mallpairs_multicore[0m   [01;32mchirp_status[0m            [01;32mparrot_identity_box[0m  [01;32mresource_monitor[0m                [01;32msge_submit_workers[0m
+[01;32mcatalog_server[0m       [01;32mchirp_stream_files[0m      [01;32mparrot_locate[0m        [01;32mresource_monitorv[0m               [01;32mslurm_submit_workers[0m
+[01;32mcatalog_update[0m       [01;32mcondor_submit_makeflow[0m  [01;32mparrot_lsalloc[0m       [01;32mresource_monitor_visualizer.py[0m  [01;32mstarch[0m
+[01;32mchirp[0m                [01;32mcondor_submit_workers[0m   [01;32mparrot_md5[0m           [01;32msand_align_kernel[0m               [01;32mtorque_submit_workers[0m
+[01;32mchirp_audit_cluster[0m  [01;32mec2_remove_workers[0m      [01;32mparrot_mkalloc[0m       [01;32msand_align_master[0m               [01;32mwatchdog[0m
+[01;32mchirp_benchmark[0m      [01;32mec2_submit_workers[0m      [01;32mparrot_run[0m           [01;32msand_compress_reads[0m             [01;32mwavefront[0m
+[01;32mchirp_distribute[0m     [01;32mmakeflow[0m                [01;32mparrot_run_hdfs[0m      [01;32msand_filter_kernel[0m              [01;32mwavefront_master[0m
+[01;32mchirp_fuse[0m           [01;32mmakeflow_log_parser[0m     [01;32mparrot_search[0m        [01;32msand_filter_master[0m              [01;32mwork_queue_example[0m
+[01;32mchirp_get[0m            [01;32mmakeflow_monitor[0m        [01;32mparrot_setacl[0m        [01;32msand_runCA_5.4[0m                  [01;32mwork_queue_pool[0m
+[01;32mchirp_put[0m            [01;32mmake_growfs[0m             [01;32mparrot_timeout[0m       [01;32msand_runCA_6.1[0m                  [01;32mwork_queue_status[0m
+[01;32mchirp_server[0m         [01;32mparrot_cp[0m               [01;32mparrot_whoami[0m        [01;32msand_runCA_7.0[0m                  [01;32mwork_queue_worker[0m
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/bindroessmj@droessmj-ThinkPad-X201:~/Downloads/bin$ ./allpairs_m
+bash: ./allpairs_m: No such file or directory
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/bindroessmj@droessmj-ThinkPad-X201:~/Downloads/bin$ ./allpairs_master 
+Usage: allpairs_master [options] <set A> <set B> <compare function>
+The most common options are:
+ -p,--port=<port>               The port that the master will be listening on.
+ -e,--extra-args=<args>         Extra arguments to pass to the comparison function.
+ -f,--input-file=<file>         Extra input file needed by the comparison function. (may be given multiple times)
+ -o,--debug-file=<file>         Write debugging output to this file (default to standard output)
+ -t,--estimated-time=<seconds>  Estimated time to run one comparison. (default chosen at runtime)
+ -x,--width=<items>             Width of one work unit, in items to compare. (default chosen at runtime)
+ -y,--height=<items>            Height of one work unit, in items to compare. (default chosen at runtime)
+ -N,--project-name=<project>    Set the project name to <project>
+ -P,--priority=<integer>        Priority. Higher the value, higher the priority.
+ -d,--debug=<flag>              Enable debugging for this subsystem.  (Try -d all to start.)
+ -v,--version                   Show program version.
+ -h,--help                      Display this message.
+ -Z,--random-port=<file>        Select port at random and write it to this file.
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/bindroessmj@droessmj-ThinkPad-X201:~/Downloads/bin$ ./chirp
+ chirp::> test
+unknown command: test  (try 'help')
+ chirp::> help
+Commands:
+audit        [-r]
+cat          <file> [file2] [file3] ...
+cd           <remotedir>
+chmod        <mode> <path>
+close        
+debug        [subsystem]
+df           [-k|-m|-g|-t]
+exit         
+get          <remotefile> [localfile]
+getacl       [remotepath]
+help         
+lcd          <localdir>
+listacl      [remotepath]
+localpath    [remotepath]
+lpwd         
+ls           [-la] [remotepath]
+lsalloc      [path]
+matrix_create <path> <width> <height> <nhosts>
+matrix_delete <path>
+matrix_list  <path>
+md5          <path>
+mkalloc      <path> <size>
+mkdir        [-p] <dir>
+mv           <oldname> <newname>
+open         <host>
+put          <localfile> [remotefile]
+pwd          
+quit         
+remote_debug [subsystem]
+resetacl     <remotepath> <rwldax>
+rm           <file>
+rmdir        <dir>
+search       [-ims] <directory> <pattern>
+setacl       <remotepath> <user> <rwldax>
+setrep       <path> <nreps>
+stat         <file>
+thirdput     <file> <3rdhost> <3rdfile>
+ticket_create [-o[utput] <ticket filename>] [-s[ubject] <subject/user>] [-d[uration] <duration>] [-b[its] <bits>] [[<directory> <acl>] ...]
+ticket_delete <name>
+ticket_get   <name>
+ticket_list  <name>
+ticket_modify <name> <directory> <aclmask>
+ticket_register <name> [<subject>] <duration>
+timeout      <seconds>
+whoami       
+whoareyou    <hostname>
+xattr_get    <file> <attribute>
+xattr_list   <file>
+xattr_set    <file> <attribute> [value]
+
+Debugging subsystems are:
+syscall notice channel process resolve libcall tcp dns auth local http ftp nest chirp cvmfs multi dcap rfio glite lfc gfal grow pstree alloc cache poll hdfs bxgrid debug login irods wq mpi user xrootd remote batch rmonitor all time pid 
+ chirp::> exit
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/bindroessmj@droessmj-ThinkPad-X201:~/Downloads/bin$ exit
+exit
+
+Script done on Thu 06 Feb 2014 02:26:43 PM CST
