@@ -3,10 +3,19 @@ Lab 2: There's an App For That
 
 Group Members
 -------------
-
+Michael Droessler <droessmj@uwec.edu>
 
 Answers
 -------
+1. A package contains binaries that your specific system can run. Generally the binaries for each system would be slightly different from each other. For examply, my FreeBSD binary of git would not be the same as my Ubuntu version. However, the source code contains all the necessary items for your machine to compile the software into binaries itself. Downloading source allows you to look at and even modify the application before it is run as an executable on your machine.  Packages and source code are hosted in repositories for users to access and download. Both my FreeBSD and Ubuntu systems allow me to download binary packages, and FreeBSD has an easy way to build from source with ports.
+
+2. Installing software on Unix allows you to modify anything you build yourself. If you download prepackaged binaries, you will not be able to modify anything -- similar to how software works for most applications on Windows or OSX. The advantages of this are that you can customize most software you will use, if you desire. However, the disadvantages are generally the lack of consistent performance and may not work without some kind of modifications to the source. Also, if you do not have the correct dependencies you will need install those just to build your application.
+
+3. You can install a package without root access by building from source within your own directory. However, you would have to make sure that the application had access to all its dependencies. Installing in this fashion would be extremely time consuming, and the software would (obviously) only be accessible by the user and the root user. There are tools for Python (easy_install and pip) that allow you to define your installation location. Additionally, you can attempt to user dpkg on downloaded packages. However, dpkg generally requires root access (according to the internet). 
+
+If you were to manage your own repository within your home directory, you would likely want to make certain that your root has already install Developer Tools on the system. Otherwise, you will not be able to correctly compile from source.
+
+4. 
 
 
 Comments
