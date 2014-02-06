@@ -15,7 +15,7 @@ Answers
 
 If you were to manage your own repository within your home directory, you would likely want to make certain that your root has already install Developer Tools on the system. Otherwise, you will not be able to correctly compile from source.
 
-4. 
+4. If I were to write software that was going to be deployed to multiple systems...first of all can I assume they are all the same OS? If they are not the same OS, I would host the source code with a makefile on local intranet. If they are all the same OS, I would distribute the applications as a package so that the compiled executable can be downloaded quickly rather than being compiled from source each time. 
 
 
 Comments
