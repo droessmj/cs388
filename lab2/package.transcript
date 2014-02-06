@@ -1,0 +1,67 @@
+Script started on Thu Feb  6 06:32:15 2014
+$ sudo k[Kpkg install git
+Password:
+Updating repository catalogue
+The following 1 packages will be installed:
+
+        Installing git: 1.8.5.2
+
+The installation will require 175 MB more space
+
+0 B to be downloaded
+
+Proceed with installing packages [y/N]: y
+Checking integrity... done
+[1/1] Installing git-1.8.5.2...===> Creating users and/or groups.
+Using existing group 'git_daemon'.
+Using existing user 'git_daemon'.
+Updating /etc/shells
+ done
+------------------------------------------------------------------------
+*************************** GITWEB *************************************
+If you installed the GITWEB option please follow these instructions:
+
+In the directory /usr/local/share/examples/git/gitweb you can find all files to
+make gitweb work as a public repository on the web.
+
+All you have to do to make gitweb work is:
+1) Copy the files /usr/local/share/examples/git/gitweb/* to a directory on
+   your web server (e.g. Apache2) in which you are able to execute
+   CGI-scripts.
+2) In gitweb.cgi, adjust the variable $projectroot to point to
+   your git repository (that is where you have your *.git project
+   directories).
+*************************** GITWEB *************************************
+
+*************************** CONTRIB ************************************
+If you installed the CONTRIB option please note that the scripts are
+installed in /usr/local/share/git-core/contrib. Some of them require
+other ports to be installed (perl, python, etc), which you may need to
+install manually. 
+*************************** CONTRIB ************************************
+------------------------------------------------------------------------
+$ git clong[Ke https://droessmj@bitbucket.com[K[K[Korg/droessmj/cs.~[54Dsudo pkg install git[K[20Dgit clone https://droessmj@bitbucket.org/droessmj/cs.~[K388.s14.labs.git
+Cloning into 'cs.388.s14.labs'...
+Password for 'https://droessmj@bitbucket.org': 
+remote: Counting objects: 106, done.[K
+remote: Compressing objects:   1% (1/82)   [Kremote: Compressing objects:   2% (2/82)   [Kremote: Compressing objects:   3% (3/82)   [Kremote: Compressing objects:   4% (4/82)   [Kremote: Compressing objects:   6% (5/82)   [Kremote: Compressing objects:   7% (6/82)   [Kremote: Compressing objects:   8% (7/82)   [Kremote: Compressing objects:   9% (8/82)   [Kremote: Compressing objects:  10% (9/82)   [Kremote: Compressing objects:  12% (10/82)   [Kremote: Compressing objects:  13% (11/82)   [Kremote: Compressing objects:  14% (12/82)   [Kremote: Compressing objects:  15% (13/82)   [Kremote: Compressing objects:  17% (14/82)   [Kremote: Compressing objects:  18% (15/82)   [Kremote: Compressing objects:  19% (16/82)   [Kremote: Compressing objects:  20% (17/82)   [Kremote: Compressing objects:  21% (18/82)   [Kremote: Compressing objects:  23% (19/82)   [Kremote: Compressing objects:  24% (20/82)   [Kremote: Compressing objects:  25% (21/82)   [Kremote: Compressing objects:  26% (22/82)   [Kremote: Compressing objects:  28% (23/82)   [Kremote: Compressing objects:  29% (24/82)   [Kremote: Compressing objects:  30% (25/82)   [Kremote: Compressing objects:  31% (26/82)   [Kremote: Compressing objects:  32% (27/82)   [Kremote: Compressing objects:  34% (28/82)   [Kremote: Compressing objects:  35% (29/82)   [Kremote: Compressing objects:  36% (30/82)   [Kremote: Compressing objects:  37% (31/82)   [Kremote: Compressing objects:  39% (32/82)   [Kremote: Compressing objects:  40% (33/82)   [Kremote: Compressing objects:  41% (34/82)   [Kremote: Compressing objects:  42% (35/82)   [Kremote: Compressing objects:  43% (36/82)   [Kremote: Compressing objects:  45% (37/82)   [Kremote: Compressing objects:  46% (38/82)   [Kremote: Compressing objects:  47% (39/82)   [Kremote: Compressing objects:  48% (40/82)   [Kremote: Compressing objects:  50% (41/82)   [Kremote: Compressing objects:  51% (42/82)   [Kremote: Compressing objects:  52% (43/82)   [Kremote: Compressing objects:  53% (44/82)   [Kremote: Compressing objects:  54% (45/82)   [Kremote: Compressing objects:  56% (46/82)   [Kremote: Compressing objects:  57% (47/82)   [Kremote: Compressing objects:  58% (48/82)   [Kremote: Compressing objects:  59% (49/82)   [Kremote: Compressing objects:  60% (50/82)   [Kremote: Compressing objects:  62% (51/82)   [Kremote: Compressing objects:  63% (52/82)   [Kremote: Compressing objects:  64% (53/82)   [Kremote: Compressing objects:  65% (54/82)   [Kremote: Compressing objects:  67% (55/82)   [Kremote: Compressing objects:  68% (56/82)   [Kremote: Compressing objects:  69% (57/82)   [Kremote: Compressing objects:  70% (58/82)   [Kremote: Compressing objects:  71% (59/82)   [Kremote: Compressing objects:  73% (60/82)   [Kremote: Compressing objects:  74% (61/82)   [Kremote: Compressing objects:  75% (62/82)   [Kremote: Compressing objects:  76% (63/82)   [Kremote: Compressing objects:  78% (64/82)   [Kremote: Compressing objects:  79% (65/82)   [Kremote: Compressing objects:  80% (66/82)   [Kremote: Compressing objects:  81% (67/82)   [Kremote: Compressing objects:  82% (68/82)   [Kremote: Compressing objects:  84% (69/82)   [Kremote: Compressing objects:  85% (70/82)   [Kremote: Compressing objects:  86% (71/82)   [Kremote: Compressing objects:  87% (72/82)   [Kremote: Compressing objects:  89% (73/82)   [Kremote: Compressing objects:  90% (74/82)   [Kremote: Compressing objects:  91% (75/82)   [Kremote: Compressing objects:  92% (76/82)   [Kremote: Compressing objects:  93% (77/82)   [Kremote: Compressing objects:  95% (78/82)   [Kremote: Compressing objects:  96% (79/82)   [Kremote: Compressing objects:  97% (80/82)   [Kremote: Compressing objects:  98% (81/82)   [Kremote: Compressing objects: 100% (82/82)   [Kremote: Compressing objects: 100% (82/82), done.[K
+Receiving objects:   0% (1/106)   Receiving objects:   1% (2/106)   Receiving objects:   2% (3/106)   Receiving objects:   3% (4/106)   Receiving objects:   4% (5/106)   Receiving objects:   5% (6/106)   Receiving objects:   6% (7/106)   Receiving objects:   7% (8/106)   Receiving objects:   8% (9/106)   Receiving objects:   9% (10/106)   Receiving objects:  10% (11/106)   Receiving objects:  11% (12/106)   Receiving objects:  12% (13/106)   Receiving objects:  13% (14/106)   Receiving objects:  14% (15/106)   Receiving objects:  15% (16/106)   Receiving objects:  16% (17/106)   Receiving objects:  17% (19/106)   Receiving objects:  18% (20/106)   Receiving objects:  19% (21/106)   Receiving objects:  20% (22/106)   Receiving objects:  21% (23/106)   Receiving objects:  22% (24/106)   Receiving objects:  23% (25/106)   Receiving objects:  24% (26/106)   Receiving objects:  25% (27/106)   Receiving objects:  26% (28/106)   Receiving objects:  27% (29/106)   remote: Total 106 (delta 44), reused 0 (delta 0)[K
+Receiving objects:  28% (30/106)   Receiving objects:  29% (31/106)   Receiving objects:  30% (32/106)   Receiving objects:  31% (33/106)   Receiving objects:  32% (34/106)   Receiving objects:  33% (35/106)   Receiving objects:  34% (37/106)   Receiving objects:  35% (38/106)   Receiving objects:  36% (39/106)   Receiving objects:  37% (40/106)   Receiving objects:  38% (41/106)   Receiving objects:  39% (42/106)   Receiving objects:  40% (43/106)   Receiving objects:  41% (44/106)   Receiving objects:  42% (45/106)   Receiving objects:  43% (46/106)   Receiving objects:  44% (47/106)   Receiving objects:  45% (48/106)   Receiving objects:  46% (49/106)   Receiving objects:  47% (50/106)   Receiving objects:  48% (51/106)   Receiving objects:  49% (52/106)   Receiving objects:  50% (53/106)   Receiving objects:  51% (55/106)   Receiving objects:  52% (56/106)   Receiving objects:  53% (57/106)   Receiving objects:  54% (58/106)   Receiving objects:  55% (59/106)   Receiving objects:  56% (60/106)   Receiving objects:  57% (61/106)   Receiving objects:  58% (62/106)   Receiving objects:  59% (63/106)   Receiving objects:  60% (64/106)   Receiving objects:  61% (65/106)   Receiving objects:  62% (66/106)   Receiving objects:  63% (67/106)   Receiving objects:  64% (68/106)   Receiving objects:  65% (69/106)   Receiving objects:  66% (70/106)   Receiving objects:  67% (72/106)   Receiving objects:  68% (73/106)   Receiving objects:  69% (74/106)   Receiving objects:  70% (75/106)   Receiving objects:  71% (76/106)   Receiving objects:  72% (77/106)   Receiving objects:  73% (78/106)   Receiving objects:  74% (79/106)   Receiving objects:  75% (80/106)   Receiving objects:  76% (81/106)   Receiving objects:  77% (82/106)   Receiving objects:  78% (83/106)   Receiving objects:  79% (84/106)   Receiving objects:  80% (85/106)   Receiving objects:  81% (86/106)   Receiving objects:  82% (87/106)   Receiving objects:  83% (88/106)   Receiving objects:  84% (90/106)   Receiving objects:  85% (91/106)   Receiving objects:  86% (92/106)   Receiving objects:  87% (93/106)   Receiving objects:  88% (94/106)   Receiving objects:  89% (95/106)   Receiving objects:  90% (96/106)   Receiving objects:  91% (97/106)   Receiving objects:  92% (98/106)   Receiving objects:  93% (99/106)   Receiving objects:  94% (100/106)   Receiving objects:  95% (101/106)   Receiving objects:  96% (102/106)   Receiving objects:  97% (103/106)   Receiving objects:  98% (104/106)   Receiving objects:  99% (105/106)   Receiving objects: 100% (106/106)   Receiving objects: 100% (106/106), 109.51 KiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/44)   Resolving deltas:  38% (17/44)   Resolving deltas:  63% (28/44)   Resolving deltas:  75% (33/44)   Resolving deltas:  93% (41/44)   Resolving deltas: 100% (44/44)   Resolving deltas: 100% (44/44), done.
+Checking connectivity... done.
+$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+$ ls
+cs.388.s14.labs         package.transcript
+$ cd cs.388.s14.labs/
+$ ls
+lab0    lab1    lab2    lab3    lab4    lab5    lab6    lab7    lab8    lab9
+$ cd lab2
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working directory clean
+$ p[Kexit
+
+Script done on Thu Feb  6 06:34:13 2014
