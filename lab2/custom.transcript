@@ -1,0 +1,1151 @@
+Script started on Sun 09 Feb 2014 06:08:33 PM CST
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/hello/debiandroessmj@droessmj-ThinkPad-X201:~/Downloads/hello/debian$ nano changelog 
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.2.6                                   File: changelog                                                                            [3;1H(B[mhello (2.7-1) unstable; urgency=low[5;3H* Initial release (Closes: #nnnn)  <2.7 something>[7d -- droessmj <droessmj@unknown>  Sun, 09 Feb 2014 17:57:14 -0600[41;64H(B[0;7m[ Read 5 lines ][42d^G(B[m Get Help[42;24H(B[0;7m^O(B[m WriteOut[42;47H(B[0;7m^R(B[m Read File[42;70H(B[0;7m^Y(B[m Prev Page[42;93H(B[0;7m^K(B[m Cut Text[42;116H(B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[43;24H(B[0;7m^J(B[m Justify[43;47H(B[0;7m^W(B[m Where Is[43;70H(B[0;7m^V(B[m Next Page[43;93H(B[0;7m^U(B[m UnCut Text[43;116H(B[0;7m^T(B[m To Spell[3d[4d[5d  * Initial release (Cl[41d[K[5;25Hses: #nnnn)  <2.7 s[1;133H(B[0;7mModified[5;41H(B[m[1P7 something>[5;42H. something>[5;43H1 something>[5;44H[41d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                  [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [43;17H(B[0;7m^C(B[m Cancel[K[41;62H(B[0;7mFile Name to Write: changelog                               [42d^G(B[m Get Help[42;36H(B[0;7mM-D(B[m DOS Format[42;71H(B[0;7mM-A(B[m Append[42;106H(B[0;7mM-B(B[m Backup File[43d(B[0;7m^C(B[m Cancel[17G         [43;36H(B[0;7mM-M(B[m Mac Format[43;71H(B[0;7mM-P(B[m Prepend[41;30H[42d[39;49m(B[m[J[1;133H(B[0;7m        [41;62H(B[m[1K (B[0;7m[ Wrote 5 lines ](B[m[K[43;142H[43;1H[?1049l[?1l>]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/hello/debiandroessmj@droessmj-ThinkPad-X201:~/Downloads/hello/debian$ bzr commit -m "changes made to source"
+| Collecting changes [0] - Stage 1/5                                                                                                                                                                                                                                                      Committing to: /home/droessmj/Downloads/hello/
+modified debian/changelog
+Committed revision 4.
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/hello/debiandroessmj@droessmj-ThinkPad-X201:~/Downloads/hello/debian$ BZ[K[Kbx[Kzr builddeb -- -us -uck[K
+Building using working tree
+Building package in normal mode
+Looking for a way to retrieve the upstream tarball
+Upstream tarball already exists in build directory, using that
+Building the package in /home/droessmj/Downloads/build-area/hello-2.7, using debuild -us -uc
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package hello
+dpkg-buildpackage: source version 2.7-1
+dpkg-buildpackage: source changed by droessmj <droessmj@unknown>
+ dpkg-source --before-build hello-2.7
+dpkg-buildpackage: host architecture i386
+ fakeroot debian/rules clean
+dh clean  --with autotools-dev
+   dh_testdir
+   dh_auto_clean
+   dh_autotools-dev_restoreconfig
+   dh_clean
+ dpkg-source -b hello-2.7
+dpkg-source: warning: no source format specified in debian/source/format, see dpkg-source(1)
+dpkg-source: info: using source format `1.0'
+dpkg-source: info: building hello using existing hello_2.7.orig.tar.gz
+dpkg-source: info: building hello in hello_2.7-1.diff.gz
+dpkg-source: info: building hello in hello_2.7-1.dsc
+ debian/rules build
+dh build  --with autotools-dev
+   dh_testdir
+   dh_autotools-dev_updateconfig
+   dh_auto_configure
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of gcc... none
+checking for ranlib... ranlib
+checking build system type... i686-pc-linux-gnu
+checking host system type... i686-pc-linux-gnu
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether the preprocessor supports include_next... yes
+checking whether system header files limit the line length... no
+checking for complete errno.h... yes
+checking whether strerror_r is declared... yes
+checking for strerror_r... yes
+checking whether strerror_r returns char *... yes
+checking for inline... inline
+checking for stdio_ext.h... yes
+checking for getopt.h... yes
+checking for sys/socket.h... yes
+checking for unistd.h... (cached) yes
+checking for wchar.h... yes
+checking for features.h... yes
+checking for wctype.h... yes
+checking for __fpending... yes
+checking for mbsinit... yes
+checking for mbrtowc... yes
+checking for iswcntrl... yes
+checking for getopt.h... (cached) yes
+checking for getopt_long_only... yes
+checking whether getopt is POSIX compatible... yes
+checking for working GNU getopt function... yes
+checking whether getenv is declared... yes
+checking for nl_langinfo and CODESET... yes
+checking for working fcntl.h... yes
+checking whether getc_unlocked is declared... yes
+checking whether we are using the GNU C Library >= 2.1 or uClibc... yes
+checking for mbstate_t... yes
+checking for a traditional japanese locale... none
+checking for a transitional chinese locale... none
+checking for a french Unicode locale... none
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for wchar_t... yes
+checking for working strerror function... yes
+checking for C/C++ restrict keyword... __restrict
+checking whether memmem is declared without a macro... yes
+checking whether mempcpy is declared without a macro... yes
+checking whether memrchr is declared without a macro... yes
+checking whether rawmemchr is declared without a macro... yes
+checking whether stpcpy is declared without a macro... yes
+checking whether stpncpy is declared without a macro... yes
+checking whether strchrnul is declared without a macro... yes
+checking whether strdup is declared without a macro... yes
+checking whether strncat is declared without a macro... yes
+checking whether strndup is declared without a macro... yes
+checking whether strnlen is declared without a macro... yes
+checking whether strpbrk is declared without a macro... yes
+checking whether strsep is declared without a macro... yes
+checking whether strcasestr is declared without a macro... yes
+checking whether strtok_r is declared without a macro... yes
+checking whether strerror_r is declared without a macro... yes
+checking whether strsignal is declared without a macro... yes
+checking whether strverscmp is declared without a macro... yes
+checking whether <wchar.h> uses 'inline' correctly... yes
+checking for wint_t... yes
+checking for error_at_line... yes
+checking whether __fpending is declared... yes
+checking whether the compiler generally respects inline... yes
+checking whether mbrtowc handles incomplete characters... guessing yes
+checking whether mbrtowc works as well as mbtowc... guessing yes
+checking whether mbrtowc handles a NULL pwc argument... guessing yes
+checking whether mbrtowc handles a NULL string argument... guessing yes
+checking whether mbrtowc has a correct return value... guessing yes
+checking whether mbrtowc returns 0 when parsing a NUL character... guessing yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether NULL can be used in arbitrary expressions... yes
+checking whether chown is declared without a macro... yes
+checking whether dup2 is declared without a macro... yes
+checking whether dup3 is declared without a macro... yes
+checking whether environ is declared without a macro... yes
+checking whether euidaccess is declared without a macro... yes
+checking whether faccessat is declared without a macro... yes
+checking whether fchdir is declared without a macro... yes
+checking whether fchownat is declared without a macro... yes
+checking whether fsync is declared without a macro... yes
+checking whether ftruncate is declared without a macro... yes
+checking whether getcwd is declared without a macro... yes
+checking whether getdomainname is declared without a macro... yes
+checking whether getdtablesize is declared without a macro... yes
+checking whether getgroups is declared without a macro... yes
+checking whether gethostname is declared without a macro... yes
+checking whether getlogin is declared without a macro... yes
+checking whether getlogin_r is declared without a macro... yes
+checking whether getpagesize is declared without a macro... yes
+checking whether getusershell is declared without a macro... yes
+checking whether setusershell is declared without a macro... yes
+checking whether endusershell is declared without a macro... yes
+checking whether lchown is declared without a macro... yes
+checking whether link is declared without a macro... yes
+checking whether linkat is declared without a macro... yes
+checking whether lseek is declared without a macro... yes
+checking whether pipe is declared without a macro... yes
+checking whether pipe2 is declared without a macro... yes
+checking whether pread is declared without a macro... yes
+checking whether pwrite is declared without a macro... yes
+checking whether readlink is declared without a macro... yes
+checking whether readlinkat is declared without a macro... yes
+checking whether rmdir is declared without a macro... yes
+checking whether sleep is declared without a macro... yes
+checking whether symlink is declared without a macro... yes
+checking whether symlinkat is declared without a macro... yes
+checking whether ttyname_r is declared without a macro... yes
+checking whether unlink is declared without a macro... yes
+checking whether unlinkat is declared without a macro... yes
+checking whether usleep is declared without a macro... yes
+checking whether btowc is declared without a macro... yes
+checking whether wctob is declared without a macro... yes
+checking whether mbsinit is declared without a macro... yes
+checking whether mbrtowc is declared without a macro... yes
+checking whether mbrlen is declared without a macro... yes
+checking whether mbsrtowcs is declared without a macro... yes
+checking whether mbsnrtowcs is declared without a macro... yes
+checking whether wcrtomb is declared without a macro... yes
+checking whether wcsrtombs is declared without a macro... yes
+checking whether wcsnrtombs is declared without a macro... yes
+checking whether wcwidth is declared without a macro... yes
+checking whether wmemchr is declared without a macro... yes
+checking whether wmemcmp is declared without a macro... yes
+checking whether wmemcpy is declared without a macro... yes
+checking whether wmemmove is declared without a macro... yes
+checking whether wmemset is declared without a macro... yes
+checking whether wcslen is declared without a macro... yes
+checking whether wcsnlen is declared without a macro... yes
+checking whether wcscpy is declared without a macro... yes
+checking whether wcpcpy is declared without a macro... yes
+checking whether wcsncpy is declared without a macro... yes
+checking whether wcpncpy is declared without a macro... yes
+checking whether wcscat is declared without a macro... yes
+checking whether wcsncat is declared without a macro... yes
+checking whether wcscmp is declared without a macro... yes
+checking whether wcsncmp is declared without a macro... yes
+checking whether wcscasecmp is declared without a macro... yes
+checking whether wcsncasecmp is declared without a macro... yes
+checking whether wcscoll is declared without a macro... yes
+checking whether wcsxfrm is declared without a macro... yes
+checking whether wcsdup is declared without a macro... yes
+checking whether wcschr is declared without a macro... yes
+checking whether wcsrchr is declared without a macro... yes
+checking whether wcscspn is declared without a macro... yes
+checking whether wcsspn is declared without a macro... yes
+checking whether wcspbrk is declared without a macro... yes
+checking whether wcsstr is declared without a macro... yes
+checking whether wcstok is declared without a macro... yes
+checking whether wcswidth is declared without a macro... yes
+checking whether iswcntrl works... yes
+checking for wctype_t... yes
+checking for wctrans_t... yes
+checking whether wctype is declared without a macro... yes
+checking whether iswctype is declared without a macro... yes
+checking whether wctrans is declared without a macro... yes
+checking whether towctrans is declared without a macro... yes
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by GCC... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating contrib/Makefile
+config.status: creating doc/Makefile
+config.status: creating gnulib/lib/Makefile
+config.status: creating man/Makefile
+config.status: creating po/Makefile.in
+config.status: creating src/Makefile
+config.status: creating tests/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+   dh_auto_build
+make[1]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7'
+make  all-recursive
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7'
+Making all in contrib
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/contrib'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/contrib'
+Making all in gnulib/lib
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+rm -f arg-nonnull.h-t arg-nonnull.h && \
+	sed -n -e '/GL_ARG_NONNULL/,$p' \
+	  < ../../build-aux/arg-nonnull.h \
+	  > arg-nonnull.h-t && \
+	mv arg-nonnull.h-t arg-nonnull.h
+rm -f c++defs.h-t c++defs.h && \
+	sed -n -e '/_GL_CXXDEFS/,$p' \
+	  < ../../build-aux/c++defs.h \
+	  > c++defs.h-t && \
+	mv c++defs.h-t c++defs.h
+rm -f configmake.h-t && \
+	{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  echo '#define PREFIX "/usr"'; \
+	  echo '#define EXEC_PREFIX "/usr"'; \
+	  echo '#define BINDIR "/usr/bin"'; \
+	  echo '#define SBINDIR "/usr/sbin"'; \
+	  echo '#define LIBEXECDIR "/usr/lib/hello"'; \
+	  echo '#define DATAROOTDIR "/usr/share"'; \
+	  echo '#define DATADIR "/usr/share"'; \
+	  echo '#define SYSCONFDIR "/etc"'; \
+	  echo '#define SHAREDSTATEDIR "/usr/com"'; \
+	  echo '#define LOCALSTATEDIR "/var"'; \
+	  echo '#define INCLUDEDIR "/usr/include"'; \
+	  echo '#define OLDINCLUDEDIR "/usr/include"'; \
+	  echo '#define DOCDIR "/usr/share/doc/hello"'; \
+	  echo '#define INFODIR "/usr/share/info"'; \
+	  echo '#define HTMLDIR "/usr/share/doc/hello"'; \
+	  echo '#define DVIDIR "/usr/share/doc/hello"'; \
+	  echo '#define PDFDIR "/usr/share/doc/hello"'; \
+	  echo '#define PSDIR "/usr/share/doc/hello"'; \
+	  echo '#define LIBDIR "/usr/lib"'; \
+	  echo '#define LISPDIR "/usr/share/emacs/site-lisp"'; \
+	  echo '#define LOCALEDIR "/usr/share/locale"'; \
+	  echo '#define MANDIR "/usr/share/man"'; \
+	  echo '#define MANEXT ""'; \
+	  echo '#define PKGDATADIR "/usr/share/hello"'; \
+	  echo '#define PKGINCLUDEDIR "/usr/include/hello"'; \
+	  echo '#define PKGLIBDIR "/usr/lib/hello"'; \
+	  echo '#define PKGLIBEXECDIR "/usr/lib/hello/hello"'; \
+	} | sed '/""/d' > configmake.h-t && \
+	if test -f configmake.h && cmp configmake.h-t configmake.h > /dev/null; then \
+	  rm -f configmake.h-t; \
+	else \
+	  rm -f configmake.h; mv configmake.h-t configmake.h; \
+	fi
+rm -f warn-on-use.h-t warn-on-use.h && \
+	sed -n -e '/^.ifndef/,$p' \
+	  < ../../build-aux/warn-on-use.h \
+	  > warn-on-use.h-t && \
+	mv warn-on-use.h-t warn-on-use.h
+rm -f string.h-t string.h && \
+	{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+	  sed -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+	      -e 's|@''PRAGMA_COLUMNS''@||g' \
+	      -e 's|@''NEXT_STRING_H''@|<string.h>|g' \
+	      -e 's|@''GNULIB_MBSLEN''@|0|g' \
+	      -e 's|@''GNULIB_MBSNLEN''@|0|g' \
+	      -e 's|@''GNULIB_MBSCHR''@|0|g' \
+	      -e 's|@''GNULIB_MBSRCHR''@|0|g' \
+	      -e 's|@''GNULIB_MBSSTR''@|0|g' \
+	      -e 's|@''GNULIB_MBSCASECMP''@|0|g' \
+	      -e 's|@''GNULIB_MBSNCASECMP''@|0|g' \
+	      -e 's|@''GNULIB_MBSPCASECMP''@|0|g' \
+	      -e 's|@''GNULIB_MBSCASESTR''@|0|g' \
+	      -e 's|@''GNULIB_MBSCSPN''@|0|g' \
+	      -e 's|@''GNULIB_MBSPBRK''@|0|g' \
+	      -e 's|@''GNULIB_MBSSPN''@|0|g' \
+	      -e 's|@''GNULIB_MBSSEP''@|0|g' \
+	      -e 's|@''GNULIB_MBSTOK_R''@|0|g' \
+	      -e 's|@''GNULIB_MEMCHR''@|0|g' \
+	      -e 's|@''GNULIB_MEMMEM''@|0|g' \
+	      -e 's|@''GNULIB_MEMPCPY''@|0|g' \
+	      -e 's|@''GNULIB_MEMRCHR''@|0|g' \
+	      -e 's|@''GNULIB_RAWMEMCHR''@|0|g' \
+	      -e 's|@''GNULIB_STPCPY''@|0|g' \
+	      -e 's|@''GNULIB_STPNCPY''@|0|g' \
+	      -e 's|@''GNULIB_STRCHRNUL''@|0|g' \
+	      -e 's|@''GNULIB_STRDUP''@|0|g' \
+	      -e 's|@''GNULIB_STRNCAT''@|0|g' \
+	      -e 's|@''GNULIB_STRNDUP''@|0|g' \
+	      -e 's|@''GNULIB_STRNLEN''@|0|g' \
+	      -e 's|@''GNULIB_STRPBRK''@|0|g' \
+	      -e 's|@''GNULIB_STRSEP''@|0|g' \
+	      -e 's|@''GNULIB_STRSTR''@|0|g' \
+	      -e 's|@''GNULIB_STRCASESTR''@|0|g' \
+	      -e 's|@''GNULIB_STRTOK_R''@|0|g' \
+	      -e 's|@''GNULIB_STRERROR''@|1|g' \
+	      -e 's|@''GNULIB_STRERROR_R''@|0|g' \
+	      -e 's|@''GNULIB_STRSIGNAL''@|0|g' \
+	      -e 's|@''GNULIB_STRVERSCMP''@|0|g' \
+	      < ./string.in.h | \
+	  sed -e 's|@''HAVE_MBSLEN''@|0|g' \
+	      -e 's|@''HAVE_MEMCHR''@|1|g' \
+	      -e 's|@''HAVE_DECL_MEMMEM''@|1|g' \
+	      -e 's|@''HAVE_MEMPCPY''@|1|g' \
+	      -e 's|@''HAVE_DECL_MEMRCHR''@|1|g' \
+	      -e 's|@''HAVE_RAWMEMCHR''@|1|g' \
+	      -e 's|@''HAVE_STPCPY''@|1|g' \
+	      -e 's|@''HAVE_STPNCPY''@|1|g' \
+	      -e 's|@''HAVE_STRCHRNUL''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRDUP''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRNDUP''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRNLEN''@|1|g' \
+	      -e 's|@''HAVE_STRPBRK''@|1|g' \
+	      -e 's|@''HAVE_STRSEP''@|1|g' \
+	      -e 's|@''HAVE_STRCASESTR''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRTOK_R''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRERROR_R''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRSIGNAL''@|1|g' \
+	      -e 's|@''HAVE_STRVERSCMP''@|1|g' \
+	      -e 's|@''REPLACE_STPNCPY''@|0|g' \
+	      -e 's|@''REPLACE_MEMCHR''@|0|g' \
+	      -e 's|@''REPLACE_MEMMEM''@|0|g' \
+	      -e 's|@''REPLACE_STRCASESTR''@|0|g' \
+	      -e 's|@''REPLACE_STRDUP''@|0|g' \
+	      -e 's|@''REPLACE_STRSTR''@|0|g' \
+	      -e 's|@''REPLACE_STRERROR''@|0|g' \
+	      -e 's|@''REPLACE_STRERROR_R''@|0|g' \
+	      -e 's|@''REPLACE_STRNCAT''@|0|g' \
+	      -e 's|@''REPLACE_STRNDUP''@|0|g' \
+	      -e 's|@''REPLACE_STRNLEN''@|0|g' \
+	      -e 's|@''REPLACE_STRSIGNAL''@|0|g' \
+	      -e 's|@''REPLACE_STRTOK_R''@|0|g' \
+	      -e 's|@''UNDEFINE_STRTOK_R''@|0|g' \
+	      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+	      -e '/definition of _GL_ARG_NONNULL/r arg-nonnull.h' \
+	      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h'; \
+	      < ./string.in.h; \
+	} > string.h-t && \
+	mv string.h-t string.h
+rm -f unistd.h-t unistd.h && \
+	{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  sed -e 's|@''HAVE_UNISTD_H''@|1|g' \
+	      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+	      -e 's|@''PRAGMA_COLUMNS''@||g' \
+	      -e 's|@''NEXT_UNISTD_H''@|<unistd.h>|g' \
+	      -e 's|@''GNULIB_CHOWN''@|0|g' \
+	      -e 's|@''GNULIB_CLOSE''@|0|g' \
+	      -e 's|@''GNULIB_DUP2''@|0|g' \
+	      -e 's|@''GNULIB_DUP3''@|0|g' \
+	      -e 's|@''GNULIB_ENVIRON''@|0|g' \
+	      -e 's|@''GNULIB_EUIDACCESS''@|0|g' \
+	      -e 's|@''GNULIB_FACCESSAT''@|0|g' \
+	      -e 's|@''GNULIB_FCHDIR''@|0|g' \
+	      -e 's|@''GNULIB_FCHOWNAT''@|0|g' \
+	      -e 's|@''GNULIB_FSYNC''@|0|g' \
+	      -e 's|@''GNULIB_FTRUNCATE''@|0|g' \
+	      -e 's|@''GNULIB_GETCWD''@|0|g' \
+	      -e 's|@''GNULIB_GETDOMAINNAME''@|0|g' \
+	      -e 's|@''GNULIB_GETDTABLESIZE''@|0|g' \
+	      -e 's|@''GNULIB_GETGROUPS''@|0|g' \
+	      -e 's|@''GNULIB_GETHOSTNAME''@|0|g' \
+	      -e 's|@''GNULIB_GETLOGIN''@|0|g' \
+	      -e 's|@''GNULIB_GETLOGIN_R''@|0|g' \
+	      -e 's|@''GNULIB_GETPAGESIZE''@|0|g' \
+	      -e 's|@''GNULIB_GETUSERSHELL''@|0|g' \
+	      -e 's|@''GNULIB_LCHOWN''@|0|g' \
+	      -e 's|@''GNULIB_LINK''@|0|g' \
+	      -e 's|@''GNULIB_LINKAT''@|0|g' \
+	      -e 's|@''GNULIB_LSEEK''@|0|g' \
+	      -e 's|@''GNULIB_PIPE''@|0|g' \
+	      -e 's|@''GNULIB_PIPE2''@|0|g' \
+	      -e 's|@''GNULIB_PREAD''@|0|g' \
+	      -e 's|@''GNULIB_PWRITE''@|0|g' \
+	      -e 's|@''GNULIB_READLINK''@|0|g' \
+	      -e 's|@''GNULIB_READLINKAT''@|0|g' \
+	      -e 's|@''GNULIB_RMDIR''@|0|g' \
+	      -e 's|@''GNULIB_SLEEP''@|0|g' \
+	      -e 's|@''GNULIB_SYMLINK''@|0|g' \
+	      -e 's|@''GNULIB_SYMLINKAT''@|0|g' \
+	      -e 's|@''GNULIB_TTYNAME_R''@|0|g' \
+	      -e 's|@''GNULIB_UNISTD_H_GETOPT''@|0|g' \
+	      -e 's|@''GNULIB_UNISTD_H_SIGPIPE''@|0|g' \
+	      -e 's|@''GNULIB_UNLINK''@|0|g' \
+	      -e 's|@''GNULIB_UNLINKAT''@|0|g' \
+	      -e 's|@''GNULIB_USLEEP''@|0|g' \
+	      -e 's|@''GNULIB_WRITE''@|0|g' \
+	      < ./unistd.in.h | \
+	  sed -e 's|@''HAVE_CHOWN''@|1|g' \
+	      -e 's|@''HAVE_DUP2''@|1|g' \
+	      -e 's|@''HAVE_DUP3''@|1|g' \
+	      -e 's|@''HAVE_EUIDACCESS''@|1|g' \
+	      -e 's|@''HAVE_FACCESSAT''@|1|g' \
+	      -e 's|@''HAVE_FCHDIR''@|1|g' \
+	      -e 's|@''HAVE_FCHOWNAT''@|1|g' \
+	      -e 's|@''HAVE_FSYNC''@|1|g' \
+	      -e 's|@''HAVE_FTRUNCATE''@|1|g' \
+	      -e 's|@''HAVE_GETDTABLESIZE''@|1|g' \
+	      -e 's|@''HAVE_GETGROUPS''@|1|g' \
+	      -e 's|@''HAVE_GETHOSTNAME''@|1|g' \
+	      -e 's|@''HAVE_GETLOGIN''@|1|g' \
+	      -e 's|@''HAVE_GETPAGESIZE''@|1|g' \
+	      -e 's|@''HAVE_LCHOWN''@|1|g' \
+	      -e 's|@''HAVE_LINK''@|1|g' \
+	      -e 's|@''HAVE_LINKAT''@|1|g' \
+	      -e 's|@''HAVE_PIPE''@|1|g' \
+	      -e 's|@''HAVE_PIPE2''@|1|g' \
+	      -e 's|@''HAVE_PREAD''@|1|g' \
+	      -e 's|@''HAVE_PWRITE''@|1|g' \
+	      -e 's|@''HAVE_READLINK''@|1|g' \
+	      -e 's|@''HAVE_READLINKAT''@|1|g' \
+	      -e 's|@''HAVE_SLEEP''@|1|g' \
+	      -e 's|@''HAVE_SYMLINK''@|1|g' \
+	      -e 's|@''HAVE_SYMLINKAT''@|1|g' \
+	      -e 's|@''HAVE_UNLINKAT''@|1|g' \
+	      -e 's|@''HAVE_USLEEP''@|1|g' \
+	      -e 's|@''HAVE_DECL_ENVIRON''@|1|g' \
+	      -e 's|@''HAVE_DECL_FCHDIR''@|1|g' \
+	      -e 's|@''HAVE_DECL_GETDOMAINNAME''@|1|g' \
+	      -e 's|@''HAVE_DECL_GETLOGIN_R''@|1|g' \
+	      -e 's|@''HAVE_DECL_GETPAGESIZE''@|1|g' \
+	      -e 's|@''HAVE_DECL_GETUSERSHELL''@|1|g' \
+	      -e 's|@''HAVE_DECL_TTYNAME_R''@|1|g' \
+	      -e 's|@''HAVE_OS_H''@|0|g' \
+	      -e 's|@''HAVE_SYS_PARAM_H''@|0|g' \
+	  | \
+	  sed -e 's|@''REPLACE_CHOWN''@|0|g' \
+	      -e 's|@''REPLACE_CLOSE''@|0|g' \
+	      -e 's|@''REPLACE_DUP''@|0|g' \
+	      -e 's|@''REPLACE_DUP2''@|0|g' \
+	      -e 's|@''REPLACE_FCHOWNAT''@|0|g' \
+	      -e 's|@''REPLACE_GETCWD''@|0|g' \
+	      -e 's|@''REPLACE_GETDOMAINNAME''@|0|g' \
+	      -e 's|@''REPLACE_GETLOGIN_R''@|0|g' \
+	      -e 's|@''REPLACE_GETGROUPS''@|0|g' \
+	      -e 's|@''REPLACE_GETPAGESIZE''@|0|g' \
+	      -e 's|@''REPLACE_LCHOWN''@|0|g' \
+	      -e 's|@''REPLACE_LINK''@|0|g' \
+	      -e 's|@''REPLACE_LINKAT''@|0|g' \
+	      -e 's|@''REPLACE_LSEEK''@|0|g' \
+	      -e 's|@''REPLACE_PREAD''@|0|g' \
+	      -e 's|@''REPLACE_PWRITE''@|0|g' \
+	      -e 's|@''REPLACE_READLINK''@|0|g' \
+	      -e 's|@''REPLACE_RMDIR''@|0|g' \
+	      -e 's|@''REPLACE_SLEEP''@|0|g' \
+	      -e 's|@''REPLACE_SYMLINK''@|0|g' \
+	      -e 's|@''REPLACE_TTYNAME_R''@|0|g' \
+	      -e 's|@''REPLACE_UNLINK''@|0|g' \
+	      -e 's|@''REPLACE_UNLINKAT''@|0|g' \
+	      -e 's|@''REPLACE_USLEEP''@|0|g' \
+	      -e 's|@''REPLACE_WRITE''@|0|g' \
+	      -e 's|@''UNISTD_H_HAVE_WINSOCK2_H''@|0|g' \
+	      -e 's|@''UNISTD_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS''@|0|g' \
+	      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+	      -e '/definition of _GL_ARG_NONNULL/r arg-nonnull.h' \
+	      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h'; \
+	} > unistd.h-t && \
+	mv unistd.h-t unistd.h
+rm -f wchar.h-t wchar.h && \
+	{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  sed -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+	      -e 's|@''PRAGMA_COLUMNS''@||g' \
+	      -e 's|@''HAVE_FEATURES_H''@|1|g' \
+	      -e 's|@''NEXT_WCHAR_H''@|<wchar.h>|g' \
+	      -e 's|@''HAVE_WCHAR_H''@|1|g' \
+	      -e 's|@''GNULIB_BTOWC''@|0|g' \
+	      -e 's|@''GNULIB_WCTOB''@|0|g' \
+	      -e 's|@''GNULIB_MBSINIT''@|1|g' \
+	      -e 's|@''GNULIB_MBRTOWC''@|1|g' \
+	      -e 's|@''GNULIB_MBRLEN''@|0|g' \
+	      -e 's|@''GNULIB_MBSRTOWCS''@|0|g' \
+	      -e 's|@''GNULIB_MBSNRTOWCS''@|0|g' \
+	      -e 's|@''GNULIB_WCRTOMB''@|0|g' \
+	      -e 's|@''GNULIB_WCSRTOMBS''@|0|g' \
+	      -e 's|@''GNULIB_WCSNRTOMBS''@|0|g' \
+	      -e 's|@''GNULIB_WCWIDTH''@|0|g' \
+	      -e 's|@''GNULIB_WMEMCHR''@|0|g' \
+	      -e 's|@''GNULIB_WMEMCMP''@|0|g' \
+	      -e 's|@''GNULIB_WMEMCPY''@|0|g' \
+	      -e 's|@''GNULIB_WMEMMOVE''@|0|g' \
+	      -e 's|@''GNULIB_WMEMSET''@|0|g' \
+	      -e 's|@''GNULIB_WCSLEN''@|0|g' \
+	      -e 's|@''GNULIB_WCSNLEN''@|0|g' \
+	      -e 's|@''GNULIB_WCSCPY''@|0|g' \
+	      -e 's|@''GNULIB_WCPCPY''@|0|g' \
+	      -e 's|@''GNULIB_WCSNCPY''@|0|g' \
+	      -e 's|@''GNULIB_WCPNCPY''@|0|g' \
+	      -e 's|@''GNULIB_WCSCAT''@|0|g' \
+	      -e 's|@''GNULIB_WCSNCAT''@|0|g' \
+	      -e 's|@''GNULIB_WCSCMP''@|0|g' \
+	      -e 's|@''GNULIB_WCSNCMP''@|0|g' \
+	      -e 's|@''GNULIB_WCSCASECMP''@|0|g' \
+	      -e 's|@''GNULIB_WCSNCASECMP''@|0|g' \
+	      -e 's|@''GNULIB_WCSCOLL''@|0|g' \
+	      -e 's|@''GNULIB_WCSXFRM''@|0|g' \
+	      -e 's|@''GNULIB_WCSDUP''@|0|g' \
+	      -e 's|@''GNULIB_WCSCHR''@|0|g' \
+	      -e 's|@''GNULIB_WCSRCHR''@|0|g' \
+	      -e 's|@''GNULIB_WCSCSPN''@|0|g' \
+	      -e 's|@''GNULIB_WCSSPN''@|0|g' \
+	      -e 's|@''GNULIB_WCSPBRK''@|0|g' \
+	      -e 's|@''GNULIB_WCSSTR''@|0|g' \
+	      -e 's|@''GNULIB_WCSTOK''@|0|g' \
+	      -e 's|@''GNULIB_WCSWIDTH''@|0|g' \
+	      < ./wchar.in.h | \
+	  sed -e 's|@''HAVE_WINT_T''@|1|g' \
+	      -e 's|@''HAVE_BTOWC''@|1|g' \
+	      -e 's|@''HAVE_MBSINIT''@|1|g' \
+	      -e 's|@''HAVE_MBRTOWC''@|1|g' \
+	      -e 's|@''HAVE_MBRLEN''@|1|g' \
+	      -e 's|@''HAVE_MBSRTOWCS''@|1|g' \
+	      -e 's|@''HAVE_MBSNRTOWCS''@|1|g' \
+	      -e 's|@''HAVE_WCRTOMB''@|1|g' \
+	      -e 's|@''HAVE_WCSRTOMBS''@|1|g' \
+	      -e 's|@''HAVE_WCSNRTOMBS''@|1|g' \
+	      -e 's|@''HAVE_WMEMCHR''@|1|g' \
+	      -e 's|@''HAVE_WMEMCMP''@|1|g' \
+	      -e 's|@''HAVE_WMEMCPY''@|1|g' \
+	      -e 's|@''HAVE_WMEMMOVE''@|1|g' \
+	      -e 's|@''HAVE_WMEMSET''@|1|g' \
+	      -e 's|@''HAVE_WCSLEN''@|1|g' \
+	      -e 's|@''HAVE_WCSNLEN''@|1|g' \
+	      -e 's|@''HAVE_WCSCPY''@|1|g' \
+	      -e 's|@''HAVE_WCPCPY''@|1|g' \
+	      -e 's|@''HAVE_WCSNCPY''@|1|g' \
+	      -e 's|@''HAVE_WCPNCPY''@|1|g' \
+	      -e 's|@''HAVE_WCSCAT''@|1|g' \
+	      -e 's|@''HAVE_WCSNCAT''@|1|g' \
+	      -e 's|@''HAVE_WCSCMP''@|1|g' \
+	      -e 's|@''HAVE_WCSNCMP''@|1|g' \
+	      -e 's|@''HAVE_WCSCASECMP''@|1|g' \
+	      -e 's|@''HAVE_WCSNCASECMP''@|1|g' \
+	      -e 's|@''HAVE_WCSCOLL''@|1|g' \
+	      -e 's|@''HAVE_WCSXFRM''@|1|g' \
+	      -e 's|@''HAVE_WCSDUP''@|1|g' \
+	      -e 's|@''HAVE_WCSCHR''@|1|g' \
+	      -e 's|@''HAVE_WCSRCHR''@|1|g' \
+	      -e 's|@''HAVE_WCSCSPN''@|1|g' \
+	      -e 's|@''HAVE_WCSSPN''@|1|g' \
+	      -e 's|@''HAVE_WCSPBRK''@|1|g' \
+	      -e 's|@''HAVE_WCSSTR''@|1|g' \
+	      -e 's|@''HAVE_WCSTOK''@|1|g' \
+	      -e 's|@''HAVE_WCSWIDTH''@|1|g' \
+	      -e 's|@''HAVE_DECL_WCTOB''@|1|g' \
+	      -e 's|@''HAVE_DECL_WCWIDTH''@|1|g' \
+	  | \
+	  sed -e 's|@''REPLACE_MBSTATE_T''@|0|g' \
+	      -e 's|@''REPLACE_BTOWC''@|0|g' \
+	      -e 's|@''REPLACE_WCTOB''@|0|g' \
+	      -e 's|@''REPLACE_MBSINIT''@|0|g' \
+	      -e 's|@''REPLACE_MBRTOWC''@|0|g' \
+	      -e 's|@''REPLACE_MBRLEN''@|0|g' \
+	      -e 's|@''REPLACE_MBSRTOWCS''@|0|g' \
+	      -e 's|@''REPLACE_MBSNRTOWCS''@|0|g' \
+	      -e 's|@''REPLACE_WCRTOMB''@|0|g' \
+	      -e 's|@''REPLACE_WCSRTOMBS''@|0|g' \
+	      -e 's|@''REPLACE_WCSNRTOMBS''@|0|g' \
+	      -e 's|@''REPLACE_WCWIDTH''@|0|g' \
+	      -e 's|@''REPLACE_WCSWIDTH''@|0|g' \
+	      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+	      -e '/definition of _GL_ARG_NONNULL/r arg-nonnull.h' \
+	      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h'; \
+	} > wchar.h-t && \
+	mv wchar.h-t wchar.h
+rm -f wctype.h-t wctype.h && \
+	{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  sed -e 's/@''HAVE_WCTYPE_H''@/1/g' \
+	      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+	      -e 's|@''PRAGMA_COLUMNS''@||g' \
+	      -e 's|@''NEXT_WCTYPE_H''@|<wctype.h>|g' \
+	      -e 's/@''GNULIB_ISWBLANK''@/0/g' \
+	      -e 's/@''GNULIB_WCTYPE''@/0/g' \
+	      -e 's/@''GNULIB_ISWCTYPE''@/0/g' \
+	      -e 's/@''GNULIB_WCTRANS''@/0/g' \
+	      -e 's/@''GNULIB_TOWCTRANS''@/0/g' \
+	      -e 's/@''HAVE_ISWBLANK''@/1/g' \
+	      -e 's/@''HAVE_ISWCNTRL''@/1/g' \
+	      -e 's/@''HAVE_WCTYPE_T''@/1/g' \
+	      -e 's/@''HAVE_WCTRANS_T''@/1/g' \
+	      -e 's/@''HAVE_WINT_T''@/1/g' \
+	      -e 's/@''REPLACE_ISWBLANK''@/0/g' \
+	      -e 's/@''REPLACE_ISWCNTRL''@/0/g' \
+	      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+	      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h' \
+	      < ./wctype.in.h; \
+	} > wctype.h-t && \
+	mv wctype.h-t wctype.h
+make  all-recursive
+make[4]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make[5]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../intl   -g -O2 -c exitfail.c
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../intl   -g -O2 -c localcharset.c
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../intl   -g -O2 -c xalloc-die.c
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../intl   -g -O2 -c close-stream.c
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../intl   -g -O2 -c closeout.c
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../intl   -g -O2 -c quotearg.c
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../intl   -g -O2 -c xmalloc.c
+rm -f libgnu.a
+ar cru libgnu.a exitfail.o localcharset.o xalloc-die.o close-stream.o closeout.o quotearg.o xmalloc.o
+ranlib libgnu.a
+rm -f t-charset.alias charset.alias && \
+	/bin/bash ./config.charset 'i686-pc-linux-gnu' > t-charset.alias && \
+	mv t-charset.alias charset.alias
+rm -f t-ref-add.sed ref-add.sed && \
+	sed -e '/^#/d' -e 's/@''PACKAGE''@/hello/g' ref-add.sin > t-ref-add.sed && \
+	mv t-ref-add.sed ref-add.sed
+rm -f t-ref-del.sed ref-del.sed && \
+	sed -e '/^#/d' -e 's/@''PACKAGE''@/hello/g' ref-del.sin > t-ref-del.sed && \
+	mv t-ref-del.sed ref-del.sed
+make[5]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make[4]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+Making all in po
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/po'
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/po'
+Making all in src
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/src'
+gcc -DLOCALEDIR=\"/usr/share/locale\" -DHAVE_CONFIG_H -I. -I..  -I../gnulib/lib -I../gnulib/lib   -g -O2 -c hello.c
+gcc  -g -O2   -o hello hello.o ../gnulib/lib/libgnu.a 
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/src'
+Making all in doc
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/doc'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/doc'
+Making all in man
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/man'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/man'
+Making all in tests
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/tests'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/tests'
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7'
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7'
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7'
+make[1]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7'
+   dh_auto_test
+make[1]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7'
+Making check in contrib
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/contrib'
+make[2]: Nothing to be done for `check'.
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/contrib'
+Making check in gnulib/lib
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make  check-recursive
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make[4]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make[4]: Nothing to be done for `check-am'.
+make[4]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+Making check in po
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/po'
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/po'
+Making check in src
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/src'
+make[2]: Nothing to be done for `check'.
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/src'
+Making check in doc
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/doc'
+make[2]: Nothing to be done for `check'.
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/doc'
+Making check in man
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/man'
+make[2]: Nothing to be done for `check'.
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/man'
+Making check in tests
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/tests'
+make  check-TESTS
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/tests'
+PASS: greeting-1
+./greeting-2: Skipping test: not a full moon night
+SKIP: greeting-2
+PASS: hello-1
+PASS: last-1
+PASS: traditional-1
+====================
+All 4 tests passed
+(1 test was not run)
+====================
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/tests'
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/tests'
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7'
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7'
+make[1]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7'
+ fakeroot debian/rules binary
+dh binary  --with autotools-dev
+   dh_testroot
+   dh_prep
+   dh_installdirs
+   dh_auto_install
+make[1]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7'
+Making install in contrib
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/contrib'
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/contrib'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/contrib'
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/contrib'
+Making install in gnulib/lib
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make  install-recursive
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make[4]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make[5]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+if test yes = no; then \
+	  case 'linux-gnu' in \
+	    darwin[56]*) \
+	      need_charset_alias=true ;; \
+	    darwin* | cygwin* | mingw* | pw32* | cegcc*) \
+	      need_charset_alias=false ;; \
+	    *) \
+	      need_charset_alias=true ;; \
+	  esac ; \
+	else \
+	  need_charset_alias=false ; \
+	fi ; \
+	if $need_charset_alias; then \
+	  /bin/bash ../../build-aux/mkinstalldirs /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/lib ; \
+	fi ; \
+	if test -f /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/lib/charset.alias; then \
+	  sed -f ref-add.sed /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/lib/charset.alias > /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/lib/charset.tmp ; \
+	  /usr/bin/install -c -m 644 /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/lib/charset.tmp /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/lib/charset.alias ; \
+	  rm -f /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/lib/charset.tmp ; \
+	else \
+	  if $need_charset_alias; then \
+	    sed -f ref-add.sed charset.alias > /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/lib/charset.tmp ; \
+	    /usr/bin/install -c -m 644 /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/lib/charset.tmp /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/lib/charset.alias ; \
+	    rm -f /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/lib/charset.tmp ; \
+	  fi ; \
+	fi
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make[4]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/gnulib/lib'
+Making install in po
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/po'
+installing bg.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/bg/LC_MESSAGES/hello.mo
+installing ca.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/ca/LC_MESSAGES/hello.mo
+installing da.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/da/LC_MESSAGES/hello.mo
+installing de.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/de/LC_MESSAGES/hello.mo
+installing el.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/el/LC_MESSAGES/hello.mo
+installing en@boldquot.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/en@boldquot/LC_MESSAGES/hello.mo
+installing en@quot.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/en@quot/LC_MESSAGES/hello.mo
+installing eo.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/eo/LC_MESSAGES/hello.mo
+installing es.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/es/LC_MESSAGES/hello.mo
+installing et.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/et/LC_MESSAGES/hello.mo
+installing eu.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/eu/LC_MESSAGES/hello.mo
+installing fa.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/fa/LC_MESSAGES/hello.mo
+installing fi.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/fi/LC_MESSAGES/hello.mo
+installing fr.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/fr/LC_MESSAGES/hello.mo
+installing ga.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/ga/LC_MESSAGES/hello.mo
+installing gl.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/gl/LC_MESSAGES/hello.mo
+installing he.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/he/LC_MESSAGES/hello.mo
+installing hr.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/hr/LC_MESSAGES/hello.mo
+installing hu.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/hu/LC_MESSAGES/hello.mo
+installing id.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/id/LC_MESSAGES/hello.mo
+installing it.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/it/LC_MESSAGES/hello.mo
+installing ja.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/ja/LC_MESSAGES/hello.mo
+installing ka.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/ka/LC_MESSAGES/hello.mo
+installing ko.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/ko/LC_MESSAGES/hello.mo
+installing lv.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/lv/LC_MESSAGES/hello.mo
+installing ms.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/ms/LC_MESSAGES/hello.mo
+installing nb.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/nb/LC_MESSAGES/hello.mo
+installing nl.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/nl/LC_MESSAGES/hello.mo
+installing nn.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/nn/LC_MESSAGES/hello.mo
+installing pl.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/pl/LC_MESSAGES/hello.mo
+installing pt.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/pt/LC_MESSAGES/hello.mo
+installing pt_BR.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/pt_BR/LC_MESSAGES/hello.mo
+installing rm.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/rm/LC_MESSAGES/hello.mo
+installing ro.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/ro/LC_MESSAGES/hello.mo
+installing ru.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/ru/LC_MESSAGES/hello.mo
+installing sk.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/sk/LC_MESSAGES/hello.mo
+installing sl.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/sl/LC_MESSAGES/hello.mo
+installing sr.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/sr/LC_MESSAGES/hello.mo
+installing sv.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/sv/LC_MESSAGES/hello.mo
+installing th.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/th/LC_MESSAGES/hello.mo
+installing tr.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/tr/LC_MESSAGES/hello.mo
+installing uk.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/uk/LC_MESSAGES/hello.mo
+installing vi.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/vi/LC_MESSAGES/hello.mo
+installing zh_CN.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/zh_CN/LC_MESSAGES/hello.mo
+installing zh_TW.gmo as /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/locale/zh_TW/LC_MESSAGES/hello.mo
+if test "hello" = "gettext-tools"; then \
+	  /bin/mkdir -p /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/gettext/po; \
+	  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+	    /usr/bin/install -c -m 644 ./$file \
+			    /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/gettext/po/$file; \
+	  done; \
+	  for file in Makevars; do \
+	    rm -f /home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/gettext/po/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/po'
+Making install in src
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/src'
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/src'
+test -z "/usr/bin" || /bin/mkdir -p "/home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/bin"
+  /usr/bin/install -c hello '/home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/bin'
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/src'
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/src'
+Making install in doc
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/doc'
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/doc'
+make[3]: Nothing to be done for `install-exec-am'.
+test -z "/usr/share/info" || /bin/mkdir -p "/home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/info"
+ /usr/bin/install -c -m 644 ./hello.info '/home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/info'
+ install-info --info-dir='/home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/info' '/home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/info/hello.info'
+This is not dpkg install-info anymore, but GNU install-info
+See the man page for ginstall-info for command line arguments
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/doc'
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/doc'
+Making install in man
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/man'
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/man'
+make[3]: Nothing to be done for `install-exec-am'.
+test -z "/usr/share/man/man1" || /bin/mkdir -p "/home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/man/man1"
+ /usr/bin/install -c -m 644 hello.1 '/home/droessmj/Downloads/build-area/hello-2.7/debian/hello/usr/share/man/man1'
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/man'
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/man'
+Making install in tests
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/tests'
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7/tests'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/tests'
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7/tests'
+make[2]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7'
+make[3]: Entering directory `/home/droessmj/Downloads/build-area/hello-2.7'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7'
+make[2]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7'
+make[1]: Leaving directory `/home/droessmj/Downloads/build-area/hello-2.7'
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_installexamples
+   dh_installman
+   dh_installcatalogs
+   dh_installcron
+   dh_installdebconf
+   dh_installemacsen
+   dh_installifupdown
+   dh_installinfo
+   dh_pysupport
+dh_pysupport: This program is deprecated, you should use dh_python2 instead. Migration guide: http://deb.li/dhs2p
+   dh_installinit
+   dh_installmenu
+   dh_installmime
+   dh_installmodules
+   dh_installlogcheck
+   dh_installlogrotate
+   dh_installpam
+   dh_installppp
+   dh_installudev
+   dh_installwm
+   dh_installxfonts
+   dh_installgsettings
+   dh_bugfiles
+   dh_ucf
+   dh_lintian
+   dh_gconf
+   dh_icons
+   dh_perl
+   dh_usrlocal
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package `hello' in `../hello_2.7-1_i386.deb'.
+ dpkg-genchanges  >../hello_2.7-1_i386.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build hello-2.7
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+E: hello changes: bad-distribution-in-changes-file unstable
+E: hello changes: changed-by-address-malformed droessmj <droessmj@unknown>
+E: hello source: maintainer-address-malformed droessmj <droessmj@unknown>
+W: hello source: superfluous-clutter-in-homepage <insert the upstream URL, if relevant>
+W: hello source: bad-homepage <insert the upstream URL, if relevant>
+W: hello: wrong-name-for-upstream-changelog usr/share/doc/hello/ChangeLog.O.gz
+W: hello: wrong-bug-number-in-closes l3:#nnnn
+E: hello: debian-changelog-file-contains-invalid-email-address droessmj@unknown
+W: hello: new-package-should-close-itp-bug
+E: hello: helper-templates-in-copyright
+W: hello: copyright-has-url-from-dh_make-boilerplate
+E: hello: copyright-contains-dh_make-todo-boilerplate
+E: hello: description-is-dh_make-template
+E: hello: maintainer-address-malformed droessmj <droessmj@unknown>
+E: hello: section-is-dh_make-template
+W: hello: superfluous-clutter-in-homepage <insert the upstream URL, if relevant>
+W: hello: bad-homepage <insert the upstream URL, if relevant>
+E: hello: package-contains-info-dir-file usr/share/info/dir.gz
+Finished running lintian.
+Cleaning build dir: /home/droessmj/Downloads/build-area/hello-2.7
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloads/hello/debiandroessmj@droessmj-ThinkPad-X201:~/Downloads/hello/debian$ cd ../..
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloadsdroessmj@droessmj-ThinkPad-X201:~/Downloads$ lesspipe hello_2.7.[K-1_i386.deb 
+hello_2.7-1_i386.deb:
+ new debian package, version 2.0.
+ size 57728 bytes: control archive=1890 bytes.
+     337 bytes,    11 lines      control              
+    4018 bytes,    55 lines      md5sums              
+ Package: hello
+ Version: 2.7-1
+ Architecture: i386
+ Maintainer: droessmj <droessmj@unknown>
+ Installed-Size: 554
+ Depends: libc6 (>= 2.4), dpkg (>= 1.15.4) | install-info
+ Section: unknown
+ Priority: extra
+ Homepage: <insert the upstream URL, if relevant>
+ Description: testing building a package
+  <insert long description, indented with spaces>
+
+*** Contents:
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/bin/
+-rwxr-xr-x root/root     17884 2014-02-09 18:09 ./usr/bin/hello
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/info/
+-rw-r--r-- root/root       389 2014-02-09 18:09 ./usr/share/info/dir.gz
+-rw-r--r-- root/root     11724 2014-02-09 18:09 ./usr/share/info/hello.info.gz
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/man/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/man/man1/
+-rw-r--r-- root/root       727 2014-02-09 18:09 ./usr/share/man/man1/hello.1.gz
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/pl/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/pl/LC_MESSAGES/
+-rw-r--r-- root/root      4034 2014-02-09 18:09 ./usr/share/locale/pl/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/tr/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/tr/LC_MESSAGES/
+-rw-r--r-- root/root      2695 2014-02-09 18:09 ./usr/share/locale/tr/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/gl/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/gl/LC_MESSAGES/
+-rw-r--r-- root/root      1009 2014-02-09 18:09 ./usr/share/locale/gl/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/hu/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/hu/LC_MESSAGES/
+-rw-r--r-- root/root      3955 2014-02-09 18:09 ./usr/share/locale/hu/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/et/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/et/LC_MESSAGES/
+-rw-r--r-- root/root      3787 2014-02-09 18:09 ./usr/share/locale/et/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/id/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/id/LC_MESSAGES/
+-rw-r--r-- root/root      3827 2014-02-09 18:09 ./usr/share/locale/id/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/zh_CN/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/zh_CN/LC_MESSAGES/
+-rw-r--r-- root/root      3618 2014-02-09 18:09 ./usr/share/locale/zh_CN/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/fa/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/fa/LC_MESSAGES/
+-rw-r--r-- root/root      1242 2014-02-09 18:09 ./usr/share/locale/fa/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/en@quot/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/en@quot/LC_MESSAGES/
+-rw-r--r-- root/root      3909 2014-02-09 18:09 ./usr/share/locale/en@quot/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/zh_TW/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/zh_TW/LC_MESSAGES/
+-rw-r--r-- root/root      2429 2014-02-09 18:09 ./usr/share/locale/zh_TW/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/eu/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/eu/LC_MESSAGES/
+-rw-r--r-- root/root      1053 2014-02-09 18:09 ./usr/share/locale/eu/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/fr/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/fr/LC_MESSAGES/
+-rw-r--r-- root/root      1042 2014-02-09 18:09 ./usr/share/locale/fr/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/bg/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/bg/LC_MESSAGES/
+-rw-r--r-- root/root      3179 2014-02-09 18:09 ./usr/share/locale/bg/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/vi/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/vi/LC_MESSAGES/
+-rw-r--r-- root/root      4228 2014-02-09 18:09 ./usr/share/locale/vi/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/pt/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/pt/LC_MESSAGES/
+-rw-r--r-- root/root       502 2014-02-09 18:09 ./usr/share/locale/pt/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/th/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/th/LC_MESSAGES/
+-rw-r--r-- root/root      6019 2014-02-09 18:09 ./usr/share/locale/th/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/nn/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/nn/LC_MESSAGES/
+-rw-r--r-- root/root      1018 2014-02-09 18:09 ./usr/share/locale/nn/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/da/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/da/LC_MESSAGES/
+-rw-r--r-- root/root      3871 2014-02-09 18:09 ./usr/share/locale/da/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/he/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/he/LC_MESSAGES/
+-rw-r--r-- root/root      1011 2014-02-09 18:09 ./usr/share/locale/he/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/sl/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/sl/LC_MESSAGES/
+-rw-r--r-- root/root      2384 2014-02-09 18:09 ./usr/share/locale/sl/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ga/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ga/LC_MESSAGES/
+-rw-r--r-- root/root      2496 2014-02-09 18:09 ./usr/share/locale/ga/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/en@boldquot/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/en@boldquot/LC_MESSAGES/
+-rw-r--r-- root/root      4009 2014-02-09 18:09 ./usr/share/locale/en@boldquot/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/eo/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/eo/LC_MESSAGES/
+-rw-r--r-- root/root      3674 2014-02-09 18:09 ./usr/share/locale/eo/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ro/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ro/LC_MESSAGES/
+-rw-r--r-- root/root      1035 2014-02-09 18:09 ./usr/share/locale/ro/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/nb/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/nb/LC_MESSAGES/
+-rw-r--r-- root/root      1018 2014-02-09 18:09 ./usr/share/locale/nb/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ru/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ru/LC_MESSAGES/
+-rw-r--r-- root/root      1910 2014-02-09 18:09 ./usr/share/locale/ru/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/nl/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/nl/LC_MESSAGES/
+-rw-r--r-- root/root      3969 2014-02-09 18:09 ./usr/share/locale/nl/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/sr/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/sr/LC_MESSAGES/
+-rw-r--r-- root/root      2168 2014-02-09 18:09 ./usr/share/locale/sr/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/it/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/it/LC_MESSAGES/
+-rw-r--r-- root/root       996 2014-02-09 18:09 ./usr/share/locale/it/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ko/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ko/LC_MESSAGES/
+-rw-r--r-- root/root      2616 2014-02-09 18:09 ./usr/share/locale/ko/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/es/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/es/LC_MESSAGES/
+-rw-r--r-- root/root      3858 2014-02-09 18:09 ./usr/share/locale/es/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/de/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/de/LC_MESSAGES/
+-rw-r--r-- root/root      2484 2014-02-09 18:09 ./usr/share/locale/de/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/hr/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/hr/LC_MESSAGES/
+-rw-r--r-- root/root      1055 2014-02-09 18:09 ./usr/share/locale/hr/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/rm/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/rm/LC_MESSAGES/
+-rw-r--r-- root/root       855 2014-02-09 18:09 ./usr/share/locale/rm/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ca/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ca/LC_MESSAGES/
+-rw-r--r-- root/root      3991 2014-02-09 18:09 ./usr/share/locale/ca/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/lv/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/lv/LC_MESSAGES/
+-rw-r--r-- root/root      3989 2014-02-09 18:09 ./usr/share/locale/lv/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/pt_BR/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/pt_BR/LC_MESSAGES/
+-rw-r--r-- root/root      1048 2014-02-09 18:09 ./usr/share/locale/pt_BR/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ja/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ja/LC_MESSAGES/
+-rw-r--r-- root/root      1035 2014-02-09 18:09 ./usr/share/locale/ja/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/uk/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/uk/LC_MESSAGES/
+-rw-r--r-- root/root      1004 2014-02-09 18:09 ./usr/share/locale/uk/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/el/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/el/LC_MESSAGES/
+-rw-r--r-- root/root       533 2014-02-09 18:09 ./usr/share/locale/el/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/sk/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/sk/LC_MESSAGES/
+-rw-r--r-- root/root      4040 2014-02-09 18:09 ./usr/share/locale/sk/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ms/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ms/LC_MESSAGES/
+-rw-r--r-- root/root      2431 2014-02-09 18:09 ./usr/share/locale/ms/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/sv/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/sv/LC_MESSAGES/
+-rw-r--r-- root/root      2717 2014-02-09 18:09 ./usr/share/locale/sv/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/fi/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/fi/LC_MESSAGES/
+-rw-r--r-- root/root      4109 2014-02-09 18:09 ./usr/share/locale/fi/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ka/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/locale/ka/LC_MESSAGES/
+-rw-r--r-- root/root      1329 2014-02-09 18:09 ./usr/share/locale/ka/LC_MESSAGES/hello.mo
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/doc/
+drwxr-xr-x root/root         0 2014-02-09 18:09 ./usr/share/doc/hello/
+-rw-r--r-- root/root      1257 2014-02-09 17:57 ./usr/share/doc/hello/TODO
+-rw-r--r-- root/root      1665 2014-02-09 17:57 ./usr/share/doc/hello/copyright
+-rw-r--r-- root/root      2248 2014-02-09 17:57 ./usr/share/doc/hello/ChangeLog.O.gz
+-rw-r--r-- root/root      2524 2014-02-09 17:57 ./usr/share/doc/hello/README
+-rw-r--r-- root/root       154 2014-02-09 18:08 ./usr/share/doc/hello/changelog.Debian.gz
+-rw-r--r-- root/root      1571 2014-02-09 17:57 ./usr/share/doc/hello/NEWS.gz
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloadsdroessmj@droessmj-ThinkPad-X201:~/Downloads$ sudo dpkg --intsall[K[K[K[K[Kstall hello_2.7-1_i386.deb 
+[sudo] password for droessmj: 
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 198361 files and directories currently installed.)
+Preparing to replace hello 2.7-1 (using hello_2.7-1_i386.deb) ...
+Unpacking replacement hello ...
+Setting up hello (2.7-1) ...
+Processing triggers for install-info ...
+Processing triggers for man-db ...
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloadsdroessmj@droessmj-ThinkPad-X201:~/Downloads$ hello
+Hello, world!
+]0;droessmj@droessmj-ThinkPad-X201: ~/Downloadsdroessmj@droessmj-ThinkPad-X201:~/Downloads$ exit
+exit
+
+Script done on Sun 09 Feb 2014 06:10:32 PM CST
