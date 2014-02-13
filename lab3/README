@@ -3,11 +3,50 @@ Lab 3: Service with a Smile
 
 Group Members
 -------------
-
+Michael Droessler <droessmj@uwec.edu>
 
 Answers
 -------
+1.
 
+
+2. systemd is a system managment deamon. That means that during startup, it is the first process to be
+executed. According to Wikipedia, the name comes from the Unix convention of making deamons easier to 
+recognize by appending 'd' to the name of the file. systemd is the first process to be started during startup, 
+and it is the last process to be killed during shutdown.  This is because systemd is a parent deamon to 
+manage other deamons. 
+
+systemd is supposed to be better than init due to improvements in parallel processessing and reduction
+of overhead for the shell. Additionally, systemd tracks its processes using 'cgroups' rather than PIDs. This allows
+systemd to track EVERY child, whether it has forked or double forked. In theory, this results in a smaller
+amount of orphaned processes making their way back to PID 1 with their tail between their legs.
+
+In the article 'Why systemd is winning hte init wars and other things aren't', the author claims that systemd is becoming the go to ideal due to
+both its compliation of features and the efforts of its developers to push it to the public.  The author continues
+to go on with claims that systemd is not novel at all. Rather, it implemented other ideas in an effective
+manner that solves real world problems.  In this manner, systemd is winning the war against SysV init.
+
+Appearantly, systemd is broken by design.  systemd is more complex than any other init system, which makes it 
+a risk for running as PID 1. If PID 1 crashes, the whole system goes down. That alone makes users wary of a 
+complex init system. Also, the complexity of systemd makes it necessary to reboot to push upgrades. Again, it is 
+mentioned that none of the things systemd does right are new. However, systemd is the first init system to
+put it all together in an attractive implemenation.
+
+systemd does not do things the Unix way. If everything is handled in one process, PID 1, then it is handling
+more than one thing with one program. Simplifying systemd so that absolute core runs on PID 1 would open up 
+the system to upgrades without restarts, and it would greatly reduce the possibility of the system crashing. As of now,
+systemd does not have a clearly defined scope.
+
+The traditional SysV init has a serious drawback in that it starts tasks serially. This can lead to a much longer
+boot than the new systemd. However, in the Unix philosphy, SysV init is a much more simple and directed 
+program than is systemd.
+
+
+One of my biggest takeaways here is the systemd is much better suited for desktop users than server users.
+If a reboot is required to upgrade, no administrator is going to be happy. Additionally, one of the biggest
+advantages of init is the ability to boot faster. However, like I just mentioned, servers don't want to reboot.
+However, systemd does increase inter-process communication with the use of 'Unix domain sockets and D-bus' (Wikipedia - systemd). So, like every problem, there are pros and cons to both solutions. However,
+with the evolution of computing in mind, parallelization and systemd seem to be the future.
 
 Comments
 --------
