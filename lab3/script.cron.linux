@@ -1,0 +1,26 @@
+##using crontab -e I have entered the following
+00 06 * * * /usr/bin/cron
+
+
+#####this following script is /usr/bin/cron and is executable
+
+echo 'Cron started'
+cp ~ remoteDirectory
+
+sudo apt-get update
+sudo apt-get upgrade
+
+cat <<EOF | curl -X POST -d @- http://dpl.cs.uwec.edu/operations/catalog/service/.json
+{"services": [
+    {"type": "unix",
+     "name": "$(hostname)",
+     "opsy": "$(uname)",
+     "opsysversion": "$(uname -r)",
+     "cpu": "$(uname -m)",
+     "owner": "5902319",
+    }
+    ]
+}
+EOF
+
+echo 'Cron finished'
