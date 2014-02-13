@@ -1,0 +1,36 @@
+#! /bin/sh
+#/etc/init.d/pyhttpd
+### BEGIN INIT INFO
+# Provides:          sudo
+# Required-Start:    $local_fs $remote_fs
+# Required-Stop:
+# X-Start-Before:    rmnologin
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Start a python http web server
+### END INIT INFO
+
+N=/etc/init.d/pyhttpd
+
+case "$1" in
+   start)
+	python -m SimpleHTTPServer 8080 &
+	echo "Server started"
+	;;
+   stop)
+	pkill python
+	echo "Server killed"
+	;;	
+esac
+
+exit 0
+
+
+########################
+the above code is my python http server
+
+I ran the command 'update-rc.d pyhttpd defaults' as well as copied the executable
+script to the /etc/init.d/ directory. 
+
+Upon open, localhost:8080 serves up files. Running the script with 'stop' as an
+argument kills the server. Graceful? Not even close. Effective? Currently.
