@@ -24,8 +24,8 @@ cat <<EOF | curl -X POST -d @- http://dpl.cs.uwec.edu/operations/catalog/service
 
 EOF
 
-cat $(uname -a) >> /etc/modt
-cat $(figlet $(hostname)) >> /etc/modt
+cat "$(uname -a)" >> /etc/motd
+cat $(figlet "$(hostname)") >> /etc/motd
 
 find /var/tmp/ -type f -mtime +30 -exec rm{} \;
 
