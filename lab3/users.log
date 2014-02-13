@@ -1,0 +1,4 @@
+ 10:04:53 up 59 min,  2 users,  load average: 0.35, 0.43, 0.40
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+droessmj tty7     :0               09:06   59:47   1:14   0.31s gnome-session -
+droessmj pts/2    :0               09:08    5.00s  0.67s  0.00s /bin/bash ./who
