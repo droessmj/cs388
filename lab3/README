@@ -7,7 +7,11 @@ Michael Droessler <droessmj@uwec.edu>
 
 Answers
 -------
-1.
+1. One issue I ran into that caused me a big headache was modifying my 
+rc.local file to not have an exit 0 in the last line. This resulted in 
+me being unable to login with my user account. I actually had to login 
+as a guest, gain terminal access, login as my user, and then sudo an 
+edit to the file.
 
 
 2. systemd is a system managment deamon. That means that during startup, it is the first process to be
