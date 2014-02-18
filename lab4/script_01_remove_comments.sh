@@ -1,15 +1,19 @@
 #!/bin/bash 
 
-input=/dev/stdin
+cat > input
+
 while getopts ":cW" opt; do
 	case $opt in
 	  c)
-		sed '/regexSpecified/' input > tmp
+		if [ -f tmp.file ]
+			then sed '/regexSpecified/' tmp.file >  tmp.txt 
+			else sed '/regexSpecified/' > tmp.txt
+	   	fi
 	   ;;
 	  W)
-		if [-f tmp]
-			then tmp > tmp.file
-			else input > tmp.file
+		if [ -f tmp.txt ]
+			then cat tmp > tmp.file
+			else cat input > tmp.file
 	   	fi
 	   ;;
 	  \?)
@@ -18,17 +22,22 @@ while getopts ":cW" opt; do
 	esac
 done
 
-if ! -c
-	then sed '/^#/d' input > tmp
+
+
+if ! grep -e "-c" $* 
+	then sed '/^#/d' input > tmp.txt
+	else echo "-c option entered"
 fi
 
-if ! -W
-	if  [-f tmp]
-		then  sed '/^\s*$/d' tmp > tmp.file
+if ! grep -e "-W" $*
+   then
+	if  [ -f tmp.txt ]
+		then  sed '/^\s*$/d' tmp.txt > tmp.file
 		else  sed '/^\s*$/d' input > tmp.file
 	fi
+   else echo "-W option entered"
 fi
 
 cat tmp.file
 rm tmp.file
-rm tmp
+rm tmp.txt
