@@ -1,0 +1,28 @@
+#!/bin/sh
+
+#PROVIDE: pyhttpd
+
+. /etc/rc.subr
+name="pyhttpd"
+start_cmd="${name} start"
+stop_cmd="${name} stop"
+
+pyhttpd_start()
+{
+  case "$1" in 
+	start)
+		python -m SimpleHTTPServer 8080 &
+		echo "Server started"
+		;;
+	stop)
+		pkill python
+		echo "Server killed"
+		;;
+  esac
+}
+load_rc_config $name
+run_rc_command "$1"
+
+
+#the above script went into /etc/rc.d/pyhttpd to be run 
+#at startup 

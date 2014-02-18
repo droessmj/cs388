@@ -1,0 +1,28 @@
+#!/bin/bash
+
+hostname="droessmj Virtual"
+ifconfig_em0="DHCP"
+ifconfig_em0_ipv6="inet6 accept_rtadv"
+sshd_enable="YES"
+# Set dumpdev to "AUTO" to enable crash dumps, "NO" to disable
+dumpdev="AUTO"
+
+cat <<EOF | curl -X POST -d @- 
+http://dpl.cs.uwec.edu/operations/catalog/service/.json
+{"services": [
+		{"type": "unix",
+		 "name": "$(hostname)",
+		 "opsy": "$(uname)",
+		 "opsysversion": "$(uname -r)",
+		 "cpu": "$(uname -m)",
+		 "owner": "5902319"}
+	]
+}
+EOF
+
+cat "$(uname -a)" >> etc/motd
+cat $(figlet "$(hostname)") >> etc/motd
+
+find /var/tmp/ -type f -mtime +30 -exec rm{} \;
+
+exit 0

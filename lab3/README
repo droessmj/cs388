@@ -7,7 +7,22 @@ Michael Droessler <droessmj@uwec.edu>
 
 Answers
 -------
-1.
+1. Adding a program to rc.d in FreeBSD does not invlove the same level 
+of hand holding that Ubuntu provides. It was much more of a headache, 
+and there were multiple things that I had to keep an eye on.  
+Personally, Ubuntu seems to easier to extend, but I'm willing to admit 
+that seems to be the case because there are already written programs to 
+facilitate this task. FreeBSD should be as easily extensible, but I am 
+not as comfortable and therefore familar with the OS.  Personally, 
+Ubuntu fulfills all my requirements at this point in time.  If I were to 
+host my own application server, I would possibly look further into 
+FreeBSD. 
+
+One issue I ran into that caused me a big headache was modifying my 
+rc.local file to not have an exit 0 in the last line. This resulted in 
+me being unable to login with my user account. I actually had to login 
+as a guest, gain terminal access, login as my user, and then sudo an 
+edit to the file.
 
 
 2. systemd is a system managment deamon. That means that during startup, it is the first process to be
@@ -50,3 +65,9 @@ with the evolution of computing in mind, parallelization and systemd seem to be 
 
 Comments
 --------
+I've really learned a lot up to this point in class. Some of the stuff 
+I've learned has really helped me in an application I've been writing 
+for some Macs on campus. My only request would be to have a better idea 
+of what my standing is in the class.  I need this class to graduate. I'd 
+really like to know where I sit so that I don't have to worry about 
+failing the class and coming back to school next fall.
