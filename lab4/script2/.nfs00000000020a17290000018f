@@ -1,0 +1,2 @@
+cat > input
+sed 's/[[:space:]]\+*$//' input > /dev/stdout
