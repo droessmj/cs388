@@ -1,16 +1,31 @@
 #!/bin/bash
 
-while getopts ":f:" opt; do
+while getopts "f:" opt; do
 	case $opt in
 		f)
 			fields=$OPTARG
-			echo $fields
+			#if there is an f flag, airport codes are all the args after
+			args=$3
+			nextArg=$3
+			$num=3
+			while [ "$nextArg" != "" ]
+				do
+				   if [ "$nextArg" != "$3" ]
+					then $args=$args$nextArg
+				   fi
+				   $num+=1
+				   nextArg="$"$num""
+			done
 		  ;;
 		\?)
 			echo "Invalid option: -$opt"
 		  ;;
 	esac
 done
+
+if ! grep -e "-f" 
+	then
+fi
 
 #for location in $locations
 #   do
