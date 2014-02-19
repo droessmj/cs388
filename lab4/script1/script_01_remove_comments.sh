@@ -6,8 +6,8 @@ while getopts ":cW" opt; do
 	case $opt in
 	  c)
 		if [ -f tmp.file ]
-			then sed '/regexSpecified/' tmp.file >  tmp.txt 
-			else sed '/regexSpecified/' > tmp.txt
+			then sed "/$OPTARG/" tmp.file >  tmp.txt 
+			else sed "/$OPTARG/"input > tmp.txt
 	   	fi
 	   ;;
 	  W)
