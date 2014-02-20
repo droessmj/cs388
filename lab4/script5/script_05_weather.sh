@@ -21,10 +21,11 @@ for location in $*
 	IFS=',' read -a fieldArray <<< "$fields"
 	for field in "${fieldArray[@]}"
 	  do
-		grep -F "<$field>" weatherOutput >> output
+		grep -F "<$field>" weatherOutput | sed -e "s,.*<$field>\([^<]*\)</$field>.*,\1,g" >> output
 	done
 	cat output
 	rm weatherOutput
 	rm output
+	echo
 done
 
