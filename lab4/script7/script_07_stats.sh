@@ -19,7 +19,7 @@ for arg in $*
 
 	if [ "$arg" = "mode" ]
 		then
-			sort -k2 -n 
+			sort -n | uniq -c | sort -r | sed -n '1p' | sed 's/^.......//' 
 	fi
 
 	if [ "$arg" = "min" ]
