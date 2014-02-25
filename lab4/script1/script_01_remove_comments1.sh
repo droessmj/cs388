@@ -3,9 +3,8 @@
 while getopts ":cW" opt; do
 	case $opt in
 	  c)
-		echo special strip selected
-		stripSpecial = true
-		sed -e "/$OPTARG//*$"  
+		stripSpecial=true
+		sed -e "/^\$OPTARG/d" > modText  
 	   ;;
 	  W)
 		stripEmpty=false
@@ -16,17 +15,17 @@ while getopts ":cW" opt; do
 	esac
 done
 
-if [ "$stripSpecial" = false ]
+if [ "$stripSpecial" = true ]
 	then echo
-	else sed -e 's/#.*$//'
+	else sed -e '/^#/d' > modText
 fi
 
 
 if [ "$stripEmpty" = false ]
-	then echo 
-	else sed -e '/^\s*$/d'
+	then cat modText > output
+	else sed -e '/^\s*$/d' modText > output
 fi
 
-cat > output
 cat output
+rm modText
 rm output
