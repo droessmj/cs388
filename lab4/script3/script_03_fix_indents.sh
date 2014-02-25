@@ -24,18 +24,16 @@ while getopts ":i:w:" opt; do
 	esac
 done
 
-hash="#"
-pounds=""
+space=" "
+spaces=""
 for i in `seq 1 $number`
 	do 
-	  pounds=$pounds$hash
+	  spaces=$spaces$space
 done
 
-echo $pounds
-
 if [ "$conversion" == "spaces" ]
-	then sed "s/\t/$pounds/g" input > output
-	else sed "s/\$pounds/t/g" input > output
+	then sed "s/\t/$spaces/g" input > output
+	else sed "s/$spaces/\t/g" input > output
 fi
 
 cat output
