@@ -38,3 +38,4 @@ fi
 
 cat output
 rm output
+rm input
