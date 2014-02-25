@@ -4,7 +4,7 @@ while getopts ":cW" opt; do
 	case $opt in
 	  c)
 		stripSpecial=true
-		sed -e "/^\$OPTARG/d" > modText  
+		sed -e "s/\$2/#/" > modText  
 	   ;;
 	  W)
 		stripEmpty=false
