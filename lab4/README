@@ -7,7 +7,9 @@ Michael Droessler <droessmj@uwec.edu>
 
 Answers
 -------
-
+Could not get script 1 to handle random symbols for removal. It came down to an inability to escape the //
+characters without overly escaping the regex...if that makes sense. Otherwise, everything else should
+work as intended and handle incorrect arguments.
 
 Comments
 --------
