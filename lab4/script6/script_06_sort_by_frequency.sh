@@ -21,18 +21,20 @@ done
 
 if [ "$sortReverse" = true ] && [ "$frequency" = true ]
 	then 
-	  sort -r input | uniq -c | awk '{print $2"\t"$1}' > sorted
+	  #sort both on reverse and display frequency
+	  sort -r input | uniq -c | sort  | awk '{print $2"\t"$1}'
 	else 
 		if [ "$sortReverse" = true ]
-			then sort -u -r input > sorted
+			#sort on reverse but do not display frequency
+			then sort  input | uniq -c | sort | awk '{print $2}'
 			else
 				if [ "$frequency" = true ]
-					then sort input | uniq -c | awk '{print $2"\t"$1}' > sorted
-					else sort -u input > sorted
+				        #show frequency but not reverse order
+					then sort input | uniq -c | sort -r | awk '{print $2"\t"$1}'
+					#do not show frequency and do not reverse
+					else sort input | uniq -c | sort -r | awk '{print $2}'
 				fi
 		fi
 fi
 
-cat sorted 
-rm sorted
 rm input
