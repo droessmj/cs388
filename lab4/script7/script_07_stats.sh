@@ -19,5 +19,8 @@ case "$1" in
 	max)
 	  sort -g -r | sed -n '1p'
 	;;
+	*)
+	  echo Invalid option entered
+	;;
 esac
 
