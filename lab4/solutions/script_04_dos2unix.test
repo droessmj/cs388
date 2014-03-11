@@ -1,0 +1,12 @@
+#!/bin/bash
+
+make_test_input() {
+    printf "asdf\r\nfdsa\r\n"
+}
+
+make_test_output() {
+    printf "asdf\nfdsa\n"
+}
+
+diff -u <(make_test_input | ./script_04_dos2unix.sh) \
+	<(make_test_output)
