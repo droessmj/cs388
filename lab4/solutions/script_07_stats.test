@@ -1,0 +1,27 @@
+#!/bin/bash
+
+make_test_input_0() {
+    cat <<EOF
+1
+2
+3
+4
+5
+EOF
+}
+
+make_test_input_1() {
+    cat <<EOF
+1
+2
+2
+3
+EOF
+}
+
+[ $(make_test_input_0 | ./script_07_stats.sh sum) -ne 15 ]    && echo sum fail
+[ $(make_test_input_0 | ./script_07_stats.sh average) -ne 3 ] && echo average fail
+[ $(make_test_input_0 | ./script_07_stats.sh median) -ne 3 ]  && echo median fail
+[ $(make_test_input_1 | ./script_07_stats.sh mode) -ne 2 ]    && echo mode fail
+[ $(make_test_input_1 | ./script_07_stats.sh min) -ne 1 ]     && echo min fail
+[ $(make_test_input_1 | ./script_07_stats.sh max) -ne 3 ]     && echo max fail
