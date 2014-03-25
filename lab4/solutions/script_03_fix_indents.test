@@ -1,0 +1,26 @@
+#!/bin/bash
+
+make_test_input() {
+    printf "    asdf\n\tfdsa\n        asdf\n"
+}
+
+make_test_output_0() {
+    printf "    asdf\n        fdsa\n        asdf\n"
+}
+
+make_test_output_1() {
+    printf "    asdf\n    fdsa\n        asdf\n"
+}
+
+make_test_output_2() {
+    printf "\tasdf\n\tfdsa\n\t\tasdf\n"
+}
+
+diff -u <(make_test_input | ./script_03_fix_indents.sh -i spaces -w 8) \
+	<(make_test_output_0)
+
+diff -u <(make_test_input | ./script_03_fix_indents.sh -i spaces -w 4) \
+	<(make_test_output_1)
+
+diff -u <(make_test_input | ./script_03_fix_indents.sh -i tabs -w 4) \
+	<(make_test_output_2)

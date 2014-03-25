@@ -1,0 +1,18 @@
+#!/bin/bash
+
+make_test_input () {
+    delimiter=$1
+    cat <<EOF
+${delimiter} Super useful comment describing a tricky configuration option
+NUKE_ALL_DATA="no"  ${delimiter} Destray all the data
+
+${delimiter} Another super userful comment
+BASE_OWNERSHIP="us" ${delimiter} All your base are belong to...
+EOF
+}
+
+diff -u <(make_test_input '#'  | ./script_01_remove_comments.sh) \
+	<(make_test_input '//' | ./script_01_remove_comments.sh -c '//')
+
+diff -u <(make_test_input '#'  | ./script_01_remove_comments.sh -W ) \
+	<(make_test_input '//' | ./script_01_remove_comments.sh -c '//' -W)

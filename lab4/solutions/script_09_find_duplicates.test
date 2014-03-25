@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cleanup() {
+    rm -f *.duplicate
+}
+
+trap "cleanup" EXIT KILL INT TERM
+
+cp script_05_weather.sh script_05_weather.sh.duplicate
+cp script_07_stats.sh	script_07_stats.sh.duplicate
+
+./script_09_find_duplicates.sh .

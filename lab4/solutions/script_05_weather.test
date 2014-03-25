@@ -1,0 +1,15 @@
+#!/bin/bash
+
+make_test_output() {
+    cat <<EOF
+KEAU
+44.88
+-91.48
+KSNA
+33.68
+-117.88
+EOF
+}
+
+diff -u <(./script_05_weather.sh -f latitude,longitude KEAU KSNA) \
+	<(make_test_output)

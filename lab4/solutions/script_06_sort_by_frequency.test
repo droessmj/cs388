@@ -1,0 +1,45 @@
+#!/bin/bash
+
+make_test_input() {
+    cat <<EOF
+madeline
+abigail
+caleb
+abigail
+caleb
+caleb
+EOF
+}
+
+make_test_output_0() {
+    cat <<EOF
+caleb
+abigail
+madeline
+EOF
+}
+
+make_test_output_1() {
+    cat <<EOF
+3 caleb
+2 abigail
+1 madeline
+EOF
+}
+
+make_test_output_2() {
+    cat <<EOF
+1 madeline
+2 abigail
+3 caleb
+EOF
+}
+
+diff -u <(make_test_input | ./script_06_sort_by_frequency.sh) \
+	<(make_test_output_0)
+
+diff -u <(make_test_input | ./script_06_sort_by_frequency.sh -v) \
+	<(make_test_output_1)
+
+diff -u <(make_test_input | ./script_06_sort_by_frequency.sh -r -v) \
+	<(make_test_output_2)

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+make_test_input() {
+    cat <<EOF
+asdf    
+fdsa   
+asdf
+EOF
+}
+
+make_test_output() {
+    cat <<EOF
+asdf
+fdsa
+asdf
+EOF
+}
+
+diff -u <(make_test_input | ./script_02_trim_trailing_whitespace.sh) \
+	<(make_test_output)
