@@ -7,11 +7,10 @@
 #include <string.h>
 #include <signal.h>
 
-const char *PSCommand = "ps ux";
+const char *PS_COMMAND    = "ps ux";
+const char *PS_DELIMITERS = " \t";
 
-#define chomp(s)		(s)[strlen(s) - 1] = '\0'
-#define skip_whitespace(s)	while (*(s) != '\0' && isspace(*(s))) { (s)++; }
-#define parse_one_value(v, b)	(v) = strsep(&(b), " \t"); skip_whitespace(b);
+#define chomp(s)    (s)[strlen(s) - 1] = '\0'
 
 FILE *
 safe_popen(const char *command, const char *type)
@@ -30,20 +29,20 @@ safe_popen(const char *command, const char *type)
 void
 parse_ps_entry(char *buffer, int *pid, char *command)
 {
-    char *value;
+    char *token;
 
-    parse_one_value(value, buffer); /* Parse USER	*/
-    parse_one_value(value, buffer); /* Parse PID	*/
-    *pid = strtol(value, NULL, 10);
-    parse_one_value(value, buffer); /* Parse %CPU	*/
-    parse_one_value(value, buffer); /* Parse %MEM	*/
-    parse_one_value(value, buffer); /* Parse VSZ	*/
-    parse_one_value(value, buffer); /* Parse RSS	*/
-    parse_one_value(value, buffer); /* Parse TT		*/
-    parse_one_value(value, buffer); /* Parse STAT	*/
-    parse_one_value(value, buffer); /* Parse STARTED	*/
-    parse_one_value(value, buffer); /* Parse TIME	*/
-    strncpy(command, buffer, BUFSIZ); 
+    token = strtok(buffer, PS_DELIMITERS);  /* Parse USER	*/
+    token = strtok(NULL, PS_DELIMITERS);    /* Parse PID	*/
+    *pid  = strtol(token, NULL, 10);
+    token = strtok(NULL, PS_DELIMITERS);    /* Parse %CPU	*/
+    token = strtok(NULL, PS_DELIMITERS);    /* Parse %MEM	*/
+    token = strtok(NULL, PS_DELIMITERS);    /* Parse VSZ	*/
+    token = strtok(NULL, PS_DELIMITERS);    /* Parse RSS	*/
+    token = strtok(NULL, PS_DELIMITERS);    /* Parse TT		*/
+    token = strtok(NULL, PS_DELIMITERS);    /* Parse STAT	*/
+    token = strtok(NULL, PS_DELIMITERS);    /* Parse STARTED	*/
+    token = strtok(NULL, PS_DELIMITERS);    /* Parse TIME	*/
+    strncpy(command, token + strlen(token) + 1, BUFSIZ); 
 }
 
 void
@@ -52,7 +51,7 @@ list_processes()
     FILE *pfs;
     char buffer[BUFSIZ];
 
-    pfs = safe_popen(PSCommand, "r");
+    pfs = safe_popen(PS_COMMAND, "r");
 
     while (fgets(buffer, BUFSIZ, pfs) != NULL) {
 	int  pid;
