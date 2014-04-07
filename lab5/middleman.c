@@ -60,7 +60,7 @@ safe_popen(const char *command, const char *type)
 	FILE *pfs;
 	pfs = popen(command, type);
 	if(pfs == NULL){
-		fprintf(stderr, "unable to popen the command ");
+		fprintf(stderr, "unable to popen the command\n");
 		exit(EXIT_FAILURE);
 	}
 	return pfs;
@@ -74,13 +74,17 @@ read_from_pipe()
 	char *str = malloc(strlen(buffer) + 1);
 
 	stream = fopen(fifo_path, "r");
-	
+	if (stream == NULL){
+		fprintf(stderr, "error opening fifo stream\n");
+		exit(EXIT_FAILURE);
+	}
+
 	while ((fgets(buffer, BUFSIZ, stream)) != NULL){
 		strcpy(str,buffer);
 	}
 
 	fclose(stream);
-	printf("str= %s \n", str);
+
 	return str;
 }
 
@@ -98,10 +102,9 @@ pipeInput(){
 		result = strncmp(input, "\0", 1);	
 	}	
 	
-
 	if (echo  == 1){
 		/*echo FIFO to STDOUT*/	
-		printf("%s  string printed\n", input);
+		printf("%s \n", input);
 	}
 
 	//open the command, then send input to command
@@ -115,7 +118,6 @@ pipeInput(){
 
 	//run at end
 	pclose(pfs);	
-
 }
 
 void sigproc()
