@@ -8,6 +8,19 @@ Michael Droessler <droessmj@uwec.edu>
 Answers
 -------
 
+Middleman takes in a command and named pipe. Any input to the named piped is then read into the command in middleman.
+
+Usage:
+mkfifo fifo
+./middleman -c bash -f fifo
+echo * > fifo
+
+imv takes in a list of files. Matching file names are then modified in a text editor.
+
+Usage:
+./imv *.txt
 
 Comments
 --------
+
+None
