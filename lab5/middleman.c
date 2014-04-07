@@ -66,6 +66,20 @@ safe_popen(const char *command, const char *type)
 	return pfs;
 }
 
+FILE *
+safe_fopen(const char *path, const char *type)
+{
+	FILE *stream;
+	stream = fopen(path, type);
+	if (stream == NULL){
+		fprintf(stderr, "error opening fifo stream\n");
+		exit(EXIT_FAILURE);
+	}
+	return stream;
+}
+
+
+
 char *
 read_from_pipe()
 {
@@ -73,11 +87,7 @@ read_from_pipe()
 	char buffer[BUFSIZ];
 	char *str = malloc(strlen(buffer) + 1);
 
-	stream = fopen(fifo_path, "r");
-	if (stream == NULL){
-		fprintf(stderr, "error opening fifo stream\n");
-		exit(EXIT_FAILURE);
-	}
+	stream = safe_fopen(fifo_path, "r");
 
 	while ((fgets(buffer, BUFSIZ, stream)) != NULL){
 		strcpy(str,buffer);
