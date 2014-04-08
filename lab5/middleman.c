@@ -90,7 +90,12 @@ read_from_pipe()
 	stream = safe_fopen(fifo_path, "r");
 
 	while ((fgets(buffer, BUFSIZ, stream)) != NULL){
-		strcpy(str,buffer);
+		if(strlen(str) < /*insert variable to compare to*/){
+			strcpy(str,buffer);
+		} else {
+			str = realloc(strlen(str) + BUFSIZ);
+			strcpy(str,buffer);
+		}
 	}
 
 	fclose(stream);
