@@ -37,7 +37,7 @@ main(int argc, char *argv[])
 
     /* Open destination file for writing (create if it doesn't exist) */
     dst = argv[2];
-    wfd = open(dst, O_WRONLY|O_CREAT, S_IRUSR|S_IWUSR);
+    wfd = open(dst, O_WRONLY|O_CREAT|O_TRUNC, S_IRUSR|S_IWUSR);
     if (wfd < 0) {
     	fprintf(stderr, "cannot open %s: %s\n", dst, strerror(errno));
     	exit(EXIT_FAILURE);
