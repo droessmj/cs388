@@ -88,14 +88,21 @@ read_from_pipe()
 	char *str = malloc(strlen(buffer) + 1);
 
 	stream = safe_fopen(fifo_path, "r");
+	int buffPass = 1;
 
 	while ((fgets(buffer, BUFSIZ, stream)) != NULL){
-		if(strlen(str) < /*insert variable to compare to*/){
+		if(strlen(str) < (buffPass * BUFSIZ)+2){
 			strcpy(str,buffer);
 		} else {
-			str = realloc(strlen(str) + BUFSIZ);
+			str = realloc(str, (buffPass *  BUFSIZ)+1);
+			
+			if(str == NULL){
+				fprintf(stderr,"error reallocating buffer to string");
+				exit(EXIT_FAILURE);
+			}
 			strcpy(str,buffer);
 		}
+		buffPass++;
 	}
 
 	fclose(stream);

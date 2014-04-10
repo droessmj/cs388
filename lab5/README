@@ -15,10 +15,11 @@ mkfifo fifo
 ./middleman -c bash -f fifo
 echo * > fifo
 
-imv takes in a list of files. Matching file names are then modified in a text editor.
+imv takes in a list of files. File names are then editable in $EDITOR. File names are then changed
+to match any modifications made within the program.
 
 Usage:
-./imv *.txt
+./imv *
 
 Comments
 --------
