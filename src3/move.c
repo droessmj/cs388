@@ -55,7 +55,8 @@ cleanup:
 }
 
 int
-main(int argc, char *argv[]) {
+main(int argc, char *argv[])
+{
     const char *src;
     const char *dst;
     int result;
