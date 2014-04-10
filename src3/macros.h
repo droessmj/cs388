@@ -10,5 +10,6 @@
 #endif
 
 #define chomp(s)	(s)[strlen(s) - 1] = '\0';
+#define streq(a, b)	(strcmp((a), (b)) == 0)
 
 #endif
