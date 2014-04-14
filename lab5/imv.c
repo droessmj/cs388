@@ -64,8 +64,8 @@ parse_to_temp(int argc, char *argv[])
 		fputs(argv[count], temp_edit_stream);
 		fputs("\n", temp_edit_stream);		
 	}
-	printf("%s\n", TemporaryOrigPath);
-	printf("%s\n", TemporaryEditPath);
+	//printf("%s\n", TemporaryOrigPath);
+	//printf("%s\n", TemporaryEditPath);
 	//close temp file
 	fclose(temp_stream);
 	fclose(temp_edit_stream);
@@ -115,30 +115,41 @@ edit_temp(void)
 void
 compare_temps_write_changes(void)
 {
-	char *command1;
-	char *command2;
-	char *cat = "cat";
-	command1 = malloc(strlen(TemporaryEditPath) + 5);
-	command2 = malloc(strlen(TemporaryOrigPath) + 5);
+	FILE *fp1, *fp2;
+    	char buff_orig[BUFSIZ], buff_edit[BUFSIZ];;
+    	char fname1[40], fname2[40];
+	int ret;
 
-	strcpy(command1, cat);
-	strcpy(command2, cat);
+    	fp1 = fopen( TemporaryEditPath,  "r" );
+    	fp2 = fopen( TemporaryOrigPath,  "r" ) ;
 
-	strcat(command1, " ");
-	strcat(command2, " ");
+    	if ( fp1 == NULL ){
+       		printf("Cannot open %s for reading ", fname1 );
+		exit(EXIT_FAILURE);	
+       	}
+    	else if (fp2 == NULL){
+       		printf("Cannot open %s for reading ", fname2 );
+		exit(EXIT_FAILURE);
+       	}
+    	else{
+		while ((fgets(buff_edit, BUFSIZ, fp1)) != NULL && fgets(buff_orig, BUFSIZ, fp2) != NULL){
+			if (strcmp(buff_edit, buff_orig) != 0){
+				buff_orig[strlen(buff_orig)-1] = '\0';
+				buff_edit[strlen(buff_edit)-1] = '\0';
+				ret = rename(buff_orig, buff_edit);
+				if (ret == -1){
+					printf("%s\n", strerror(errno));
+					exit(EXIT_FAILURE);
+				}
+			}	
 
-	strcat(command1, TemporaryOrigPath);
-	strcat(command2, TemporaryEditPath);
-
-	system(command1);
-	system(command2);
-	//open tempOrig and tempEdit
+			//printf("Edit: %s \nOrig: %s \n", buff1, buff2);
+		}	
 	
-	//compare the two
+        	fclose ( fp1 );
+        	fclose ( fp2 );
+       }
 	
-	//track changes
-	
-	//write changes
 }
 
 
@@ -147,9 +158,7 @@ cleanup(void)
 {
 	if(unlink(TemporaryEditPath) != 0 && unlink(TemporaryOrigPath) != 0){
 		fprintf(stderr, "unable to unlink %s or %s: %s \n", TemporaryEditPath, TemporaryOrigPath, strerror(errno));
-	}else{
-		fprintf(stdout, "temp file unlinked\n");
-	}
+	}	
 }
 
 
