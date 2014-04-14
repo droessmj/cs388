@@ -116,7 +116,7 @@ void
 compare_temps_write_changes(void)
 {
 	FILE *fp1, *fp2;
-    	char buff1[BUFSIZ], buff2[BUFSIZ];;
+    	char buff_orig[BUFSIZ], buff_edit[BUFSIZ];;
     	char fname1[40], fname2[40];
 	int ret;
 
@@ -132,12 +132,11 @@ compare_temps_write_changes(void)
 		exit(EXIT_FAILURE);
        	}
     	else{
-		while ((fgets(buff1, BUFSIZ, fp1)) != NULL && fgets(buff2, BUFSIZ, fp2) != NULL){
-			if (strlen(buff1) != strlen(buff2)){
-				//fclose(fp1);
-				//fclose(fp2);
-				ret = rename(buff2, buff1);
-				printf("%s\n%s\n%d\n", buff2, buff1, ret);
+		while ((fgets(buff_edit, BUFSIZ, fp1)) != NULL && fgets(buff_orig, BUFSIZ, fp2) != NULL){
+			if (strcmp(buff_edit, buff_orig) != 0){
+				buff_orig[strlen(buff_orig)-1] = '\0';
+				buff_edit[strlen(buff_edit)-1] = '\0';
+				ret = rename(buff_orig, buff_edit);
 				if (ret == -1){
 					printf("%s\n", strerror(errno));
 					exit(EXIT_FAILURE);
