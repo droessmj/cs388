@@ -77,7 +77,8 @@ main(int argc, char *argv[])
     	    goto error;
 	}
 
-	/* Next, try to copy instead */
+	/* Next, try to copy instead
+	 * FIXME: handle if dst is directory */
 	result = copy_file(src, dst);
 	if (result != 0) {
 	    debug("Copy failed: %s", strerror(errno));
@@ -85,7 +86,8 @@ main(int argc, char *argv[])
 	}
     }
 
-    /* Finally, remove old link */
+    /* Finally, remove old link 
+     * FIXME: unlink dst file if unlinking src fails */
     result = unlink(src);
     if (result != 0) {
 	debug("Unlink failed: %s", strerror(errno));
