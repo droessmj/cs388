@@ -17,11 +17,15 @@
 void
 add_hook(struct hooks_t *hooks, const event_t event, const char *pattern, const char *action)
 {
-    struct hook_t *hook;
-
-    /* TODO: Allocate hook and set fields */
+    struct hook_t *hook = malloc(sizeof(hook_t));
+    /* TODO: Allocate hook and set fields */    
+    hook->event = event;
+    hook->pattern = pattern;
+    hook->action = action;
 
     /* TODO: Insert hook into hooks list */
+    n1 = malloc(sizeof(hook));
+    TAILQ_INSERT_HEAD(&hooks, n1, hook);
 
     debug("ADD HOOK: event=%s, pattern=%s, action=%s", event_string(event), pattern, action);
 }
@@ -93,7 +97,22 @@ load_hooks(struct hooks_t *hooks, const char *path)
      *  for buffer in open(path):
      *      event, pattern, action = buffer.rstrip().split()
      */
+    fs = fopen(path, "r");
+    if(fs == NULL){
+        fprintf(stderr,"Error opening \'rules\' file");
+        exit(EXIT_FAILURE);
+    } 
     
+    while((fgets(buffer, BUFSIZ, stream)) != NULL){
+        rule = buffer;
+        event = parse_next_token(event, rule);
+        pattern = parse_next_token(pattern, rule);
+        action = parse_next_token(action, rule);
+        if(event != NULL && pattern != NULL && action != NULL){
+            add_hook(hooks, event, pattern, action);
+        }
+    }
+   
     fclose(fs);
     return (EXIT_SUCCESS);
 
@@ -113,7 +132,9 @@ fail:
 void
 print_hooks(struct hooks_t *hooks)
 {
-    /* TODO */
+    for(np = hooks.tqh_first; np != NULL; np = np->hooks.tqe_next){
+        printf("%s \t %s \t %s"), event_string(event), pattern, action);
+    }
 }
 
 /**

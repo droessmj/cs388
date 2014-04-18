@@ -1,0 +1,3 @@
+CREATE 	*.c 	echo 
+MODIFY 	*.c 	echo
+DELETE 	*	echo 
