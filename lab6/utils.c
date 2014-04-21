@@ -20,8 +20,10 @@ timestamp_string()
 {
     char timestamp[TIMESTAMP_MAX];
     struct timeval tv;
+	
+    gettimeofday(&tv, NULL);
 
-    /* TODO */
+    timestamp = tv->tv_sec;
 
     return (strdup(timestamp));
 }
@@ -35,7 +37,7 @@ basepath_string(const char *path)
     char buffer[BUFSIZ];
     char *ext;
 
-    /* TODO */
+    buffer = basename(path);
 
     return (strdup(buffer));
 }
