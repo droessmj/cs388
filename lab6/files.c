@@ -12,14 +12,15 @@
 void
 add_file(struct files_t *files, const char *path, const time_t mtime, const time_t timestamp)
 {
-    struct file_t *file = malloc(sizeof(file_t));
+    struct file_t *file;
+    file = malloc(sizeof(file_t));
     /* TODO: Allocate file and set fields */
     file->path = path;
     file->mtime = mtime;
     file->timestamp = timestamp;
 
     /* TODO: Insert file into files list */
-    n1 = malloc(sizeof(file));
+    struct entry n1 = malloc(sizeof(file));
     TAILQ_INSERT_HEAD(&files, n1, file);
 
     debug("ADD FILE: path=%s, mtime=%lu, timestamp=%lu", path, mtime, timestamp);

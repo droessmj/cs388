@@ -24,7 +24,7 @@ add_hook(struct hooks_t *hooks, const event_t event, const char *pattern, const 
     hook->action = action;
 
     /* TODO: Insert hook into hooks list */
-    n1 = malloc(sizeof(hook));
+    struct entry n1 = malloc(sizeof(hook));
     TAILQ_INSERT_HEAD(&hooks, n1, hook);
 
     debug("ADD HOOK: event=%s, pattern=%s, action=%s", event_string(event), pattern, action);
