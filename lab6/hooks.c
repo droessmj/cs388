@@ -17,15 +17,14 @@
 void
 add_hook(struct hooks_t *hooks, const event_t event, const char *pattern, const char *action)
 {
-    struct hook_t *hook = malloc(sizeof(hook_t));
+    struct hook_t *hook = malloc(sizeof(struct hook_t));
     /* TODO: Allocate hook and set fields */    
     hook->event = event;
-    hook->pattern = pattern;
-    hook->action = action;
+    hook->pattern = strdup(pattern);
+    hook->action = strdup(action);
 
     /* TODO: Insert hook into hooks list */
-    struct entry n1 = malloc(sizeof(hook));
-    TAILQ_INSERT_HEAD(&hooks, n1, hook);
+    TAILQ_INSERT_HEAD(hooks, hook, rules);
 
     debug("ADD HOOK: event=%s, pattern=%s, action=%s", event_string(event), pattern, action);
 }
@@ -132,7 +131,8 @@ fail:
 void
 print_hooks(struct hooks_t *hooks)
 {
-    for(np = hooks.tqh_first; np != NULL; np = np->hooks.tqe_next){
+    struct hook_t *np;
+    for(np = hooks->tqh_first; np != NULL; np = np->hooks->tqe_next){
         printf("%s \t %s \t %s"), event_string(event), pattern, action);
     }
 }

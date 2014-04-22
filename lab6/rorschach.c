@@ -140,7 +140,9 @@ set_hooks(struct hooks_t *hooks)
     //read through rules and set hooks 
     
     // for each hook in the rules  
-
+    
+    //run hook with execv -- don't need to wait on the the child 
+    //as linux will reap zombies automatically
 }
 
 

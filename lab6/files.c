@@ -12,16 +12,14 @@
 void
 add_file(struct files_t *files, const char *path, const time_t mtime, const time_t timestamp)
 {
-    struct file_t *file;
-    file = malloc(sizeof(file_t));
+    struct file_t *file = malloc(sizeof(struct file_t));
     /* TODO: Allocate file and set fields */
-    file->path = path;
+    file->path = strdup(path);
     file->mtime = mtime;
     file->timestamp = timestamp;
 
     /* TODO: Insert file into files list */
-    struct entry n1 = malloc(sizeof(file));
-    TAILQ_INSERT_HEAD(&files, n1, file);
+    TAILQ_INSERT_HEAD(files, file, files);
 
     debug("ADD FILE: path=%s, mtime=%lu, timestamp=%lu", path, mtime, timestamp);
 }
@@ -34,7 +32,8 @@ add_file(struct files_t *files, const char *path, const time_t mtime, const time
 struct file_t *
 search_files(struct files_t *files, const char *path)
 {
-    np = files.tqh_first;
+    struct file_t *np;
+    np = files->tqh_first;
     while ( strcmp(np->path,path) != 0 && np != NULL){
         np = np->files.tqe_next;
     }
