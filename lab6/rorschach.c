@@ -24,11 +24,9 @@ parse_commandline(int argc, char *argv[])
         switch(c){
             case 'h':
                 help = true;
-                argc--;
                 break;
             case 'r':
                 recursive = true;
-                argc--;
                 break;
             default:
                 fprintf(stderr, "unknown option: %c\n", c);
@@ -43,9 +41,8 @@ parse_commandline(int argc, char *argv[])
         exit(EXIT_FAILURE);
     } else{
         //set the rules and the directory
-        rules = argv[argc-1];
-        argc--;
-        directory = argv[argc-1];    
+        rules = argv[optind];
+        directory = argv[optind+1];    
     }
 }
 
@@ -62,9 +59,13 @@ check_file(const char *path, const time_t mtime, struct hooks_t *hooks, struct f
 {
     struct file_t *file;
     file = search_files(files, path);
-           
-
-    /* TODO */
+    
+    if(file == NULL){
+        //CREATE EVENT 
+        //add file
+    }else if(mtime != file->mtime){
+        //MODIFY EVENT
+    }        
 }
 
 /** Check the directory for new file events.
@@ -77,12 +78,29 @@ void
 check_directory(const char *path, struct hooks_t *hooks, struct files_t *files, bool recursive, const time_t timestamp)
 {
     struct dirent **entries;
+    struct dirent *entry;
+    DIR *dp;
     char fullpath[PATH_MAX];
-    int n;
-
-    if(recursive == true){
-
+    //int n;
+    dp=opendir(path);
+    while((entry= readdir(dp))){
+        printf("%s\n", entry->d_name);
     }
+    /*
+    for dirent
+        if(recursive == true){
+            recursively call check_directory on new directory
+        }
+    if files does not contain dirent
+        add_file (dirent .path, .mtime, timestamp)
+
+    else
+        compare mtime
+        check timestamp
+    
+    look at hooks and files
+    use n as count of files?
+    */
 }
 
 /**
@@ -94,10 +112,14 @@ check_directory(const char *path, struct hooks_t *hooks, struct files_t *files, 
 void
 check_timestamps(struct hooks_t *hooks, struct files_t *files, const time_t timestamp)
 {
-    struct file_t *file;
-    struct file_t *next;
-
-    /* TODO */
+    struct file_t *np;
+    for(np = files->tqh_first; np != NULL; np = np->files.tqe_next){
+        time_t entry_timestamp = np->timestamp;
+        if(entry_timestamp != timestamp){
+            //RUN HOOK FOR DELETE EVENT
+            //FREE structure!
+        }
+    }
 }
 
 /**
@@ -115,34 +137,11 @@ usage()
     fprintf(stderr, "    directory Directory to monitor\n");
 }
 
-struct hooks_t
-init_hooks()
-{
-    struct hooks_t *head;
-    //initialize the queue as per documentation
-    TAILQ_INIT(&head);    
-
-    return head;
-}
-
-struct files_t
-init_files()
-{
-    struct files_t *head;
-    TAILQ_INIT(&head);
-    
-    return head;
-}
-
 void
 set_hooks(struct hooks_t *hooks)
 {
-    //read through rules and set hooks 
-    
-    // for each hook in the rules  
-    
-    //run hook with execv -- don't need to wait on the the child 
-    //as linux will reap zombies automatically
+    //need to pass rules as a filepath
+    load_hooks(hooks, rules);
 }
 
 
@@ -151,21 +150,25 @@ main(int argc, char *argv[])
 {
     struct hooks_t hooks;
     struct files_t files;
-    int c;
+    //int c;
 
     /* TODO: Parse command line arguments */
-    parse_commandline();
+    parse_commandline(argc, argv);
     
     /* TODO: Initialize hooks and files lists */
-    hooks = init_hooks();
-    files = init_files();
-    
+    TAILQ_INIT(&hooks);
+    TAILQ_INIT(&files);
+        
     /* TODO: Load hooks */
-    set_hooks(hooks);
+    set_hooks(&hooks);
     
-    // TODO: Continuously check directory and timestamps
+   
+    printf("rules: %s\tdirectory: %s\n", rules, directory);
+
+     // TODO: Continuously check directory and timestamps
     while(true){
-        check_directory(directory, hooks, files, recursive, timestamp);
+        char *timestamp = timestamp_string();
+        check_directory(directory, &hooks, &files, recursive,(time_t) timestamp);
         sleep(1);
     }
     

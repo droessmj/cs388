@@ -43,7 +43,7 @@ run_hook(struct hook_t *hook, const char *path)
     char       *timestamp = timestamp_string();
     char       *basepath  = basepath_string(path);
     pid_t pid;
-
+    
     /* TODO: Export environment variables */
 
     /* TODO: Ignore SIGCHLD */
@@ -52,7 +52,18 @@ run_hook(struct hook_t *hook, const char *path)
             event, timestamp, basepath, path, hook->action);
     
     /* TODO: Fork and execute hook action */
-
+    pid = fork();
+    switch (pid) {
+    case -1:
+        perror("fork");
+        exit(EXIT_FAILURE);
+        break;
+    case 0: /* CHILD */
+        execlp("/bin/sh -c", hook->action);
+    default: /* PARENT */
+        break;    
+    }    
+    
     free(timestamp);
     free(basepath);
 }
@@ -63,7 +74,9 @@ run_hook(struct hook_t *hook, const char *path)
 void
 load_default_hooks(struct hooks_t *hooks)
 {
-    /* TODO */
+   add_hook(hooks, event_type("CREATE"), "*", "[${TIMESTAMP}] ${EVENT}: ${FULLPATH}"); 
+   add_hook(hooks, event_type("MODIFY"), "*", "[${TIMESTAMP}] ${EVENT}: ${FULLPATH}"); 
+   add_hook(hooks, event_type("DELETE"), "*", "[${TIMESTAMP}] ${EVENT}: ${FULLPATH}");  
 }
 
 #define parse_next_token(t, s)          \
@@ -80,6 +93,8 @@ load_default_hooks(struct hooks_t *hooks)
 int
 load_hooks(struct hooks_t *hooks, const char *path)
 {
+    load_default_hooks(hooks);   
+
     FILE *fs;
     char buffer[BUFSIZ];
     char rule[BUFSIZ];
@@ -87,29 +102,23 @@ load_hooks(struct hooks_t *hooks, const char *path)
     char *pattern;
     char *action;
 
-    /* TODO: Load default hooks */
-
-    /* TODO: Read rules from specified path 
-     *
-     * Pseudo-Code:
-     *
-     *  for buffer in open(path):
-     *      event, pattern, action = buffer.rstrip().split()
-     */
+    // printf("path:%s\n", path);
     fs = fopen(path, "r");
     if(fs == NULL){
         fprintf(stderr,"Error opening \'rules\' file");
         exit(EXIT_FAILURE);
     } 
-    
-    while((fgets(buffer, BUFSIZ, stream)) != NULL){
-        rule = buffer;
+
+    while((fgets(buffer, BUFSIZ, fs)) != NULL){
+        printf("%s\n",buffer);
+        /*
         event = parse_next_token(event, rule);
         pattern = parse_next_token(pattern, rule);
         action = parse_next_token(action, rule);
         if(event != NULL && pattern != NULL && action != NULL){
-            add_hook(hooks, event, pattern, action);
+            add_hook(hooks, event_type(event), pattern, action);
         }
+        */
     }
    
     fclose(fs);
@@ -132,8 +141,8 @@ void
 print_hooks(struct hooks_t *hooks)
 {
     struct hook_t *np;
-    for(np = hooks->tqh_first; np != NULL; np = np->hooks->tqe_next){
-        printf("%s \t %s \t %s"), event_string(event), pattern, action);
+    for(np = hooks->tqh_first; np != NULL; np = np->rules.tqe_next){
+        printf("%s \t %s \t %s\n", event_string(np->event), np->pattern, np->action);
     }
 }
 
