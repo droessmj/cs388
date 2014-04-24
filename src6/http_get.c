@@ -18,11 +18,11 @@
 #define debug(M, ...)	fprintf(stderr, "DEBUG %s:%d: " M "\n", __FILE__, __LINE__, ##__VA_ARGS__)
 #endif
 
-#define HTTP_PORT   80
+#define HTTP_PORT   "80"
 
 int    http_get(char *url);
-void   parse_url(char *url, char *host, int *port, char *path);
-FILE * socket_dial(const char *host, const int port);
+void   parse_url(char *url, char *host, char *port, char *path);
+FILE * socket_dial(const char *host, const char *port);
 
 int
 main(int argc, char *argv[])
@@ -45,20 +45,20 @@ int
 http_get(char *url) {
     char  host[BUFSIZ];
     char  path[BUFSIZ];
+    char  port[BUFSIZ];
     char  buffer[BUFSIZ];
-    int   port;
     FILE *socket_file;
 
     /* Extract host, port, and path from url */
-    parse_url(url, host, &port, path);
-    debug("Parsed url=%-35s, host=%10s, port=%5d, path=%s", url, host, port, path);
+    parse_url(url, host, port, path);
+    debug("Parsed url=%-35s, host=%10s, port=%5s, path=%s", url, host, port, path);
 
     /* Connect to host and port */
     if ((socket_file = socket_dial(host, port)) == NULL) {
-    	debug("Could not dial %s:%d = %s", host, port, strerror(errno));
+    	debug("Could not dial %s:%s = %s", host, port, strerror(errno));
     	return (EXIT_FAILURE);
     }
-    debug("Connected to %s:%d", host, port);
+    debug("Connected to %s:%s", host, port);
 
     /* Send HTTP 1.0 GET Request */
     fprintf(socket_file, "GET %s HTTP/1.0\r\n", path);
@@ -75,7 +75,7 @@ http_get(char *url) {
 }
 
 void
-parse_url(char *url, char *host, int *port, char *path)
+parse_url(char *url, char *host, char *port, char *path)
 {
     char *hp;
     char *pp;
@@ -103,45 +103,47 @@ parse_url(char *url, char *host, int *port, char *path)
     pp = strchr(host, ':');
     if (pp) {
     	*pp++ = '\0';
-    	*port = strtol(pp, NULL, 10);
+    	strcpy(port, pp);
     } else {
-    	*port = HTTP_PORT;
+    	strcpy(port, HTTP_PORT);
     }
 }
 
 FILE *
-socket_dial(const char *host, const int port)
+socket_dial(const char *host, const char *port)
 {
-    struct sockaddr_in addr;
-    struct hostent    *hentry;
-    int socketfd = -1;
+    struct addrinfo   *serv_info;
+    struct addrinfo    hints;
+    int    socket_fd = -1;
 
-    /* Lookup host */
-    if ((hentry = gethostbyname(host)) == NULL) {
-    	goto fail;
+    /* Lookup server address information */
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_family   = AF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+
+    if (getaddrinfo(host, port, &hints, &serv_info) < 0) {
+	return (NULL);
     }
 
-    /* Setup socket address */
-    addr.sin_family = AF_INET;
-    addr.sin_port   = htons(port);
-    memcpy(&addr.sin_addr.s_addr, hentry->h_addr_list[0], hentry->h_length);
+    /* For each server entry, allocate socket and try to connect */
+    for (struct addrinfo *p = serv_info; p != NULL; p = p->ai_next) {
+	/* Allocate socket */
+	if ((socket_fd = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) < 0) {
+	    debug("Unable to make socket: %s", strerror(errno));
+	    continue;
+	}
 
-    /* Allocate socket */
-    if ((socketfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-    	goto fail;
-    }
+	/* Connect to host */
+	if (connect(socket_fd, p->ai_addr, p->ai_addrlen) < 0) {
+	    debug("Unable to connect: %s", strerror(errno));
+	    close(socket_fd);
+	    continue;
+	}
 
-    /* Connect to host */
-    if (connect(socketfd, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
-    	goto fail;
+	break;
     }
+    freeaddrinfo(serv_info);
 
     /* Open and return FILE from socket */
-    return fdopen(socketfd, "r+");
-
-fail:
-    if (socketfd > 0) {
-    	close(socketfd);
-    }
-    return (NULL);
+    return fdopen(socket_fd, "r+");
 }
