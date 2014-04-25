@@ -32,13 +32,17 @@ add_file(struct files_t *files, const char *path, const time_t mtime, const time
 struct file_t *
 search_files(struct files_t *files, const char *path)
 {
-    struct file_t *np;
-    np = files->tqh_first;
-    while ( strcmp(np->path,path) != 0 && np != NULL){
-        np = np->files.tqe_next;
-    }
+    struct file_t *file;
+    for (file = files->tqh_first; file != NULL; file = file->files.tqe_next){
+        if(strcmp(file->path,path) == 0){
+           break;
+        }    
+    }   
+    //if(strcmp(file->path,path) != 0){
+    //    file = NULL;
+    //}
 
-    return np;
+    return file;
 }
 
 /* vim: set expandtab sts=4 sw=4 ts=8 ft=c: */

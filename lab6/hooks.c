@@ -110,7 +110,6 @@ load_hooks(struct hooks_t *hooks, const char *path)
     } 
 
     while((fgets(buffer, BUFSIZ, fs)) != NULL){
-        printf("%s\n",buffer);
         /*
         event = parse_next_token(event, rule);
         pattern = parse_next_token(pattern, rule);

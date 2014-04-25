@@ -77,30 +77,54 @@ check_file(const char *path, const time_t mtime, struct hooks_t *hooks, struct f
 void
 check_directory(const char *path, struct hooks_t *hooks, struct files_t *files, bool recursive, const time_t timestamp)
 {
-    struct dirent **entries;
+    //struct dirent **entries;
     struct dirent *entry;
     DIR *dp;
     char fullpath[PATH_MAX];
-    //int n;
-    dp=opendir(path);
-    while((entry= readdir(dp))){
-        printf("%s\n", entry->d_name);
-    }
-    /*
-    for dirent
-        if(recursive == true){
-            recursively call check_directory on new directory
-        }
-    if files does not contain dirent
-        add_file (dirent .path, .mtime, timestamp)
 
-    else
-        compare mtime
-        check timestamp
-    
-    look at hooks and files
-    use n as count of files?
-    */
+    dp=opendir(path);
+    if(dp == NULL){
+        fprintf(stderr,"Could not open directory: %s\n", path);   
+        return;
+    } 
+
+    while((entry = readdir(dp)) != NULL){
+        if(streq(entry->d_name, ".") || streq(entry->d_name, "..")){
+            continue;
+        }
+        snprintf(fullpath, PATH_MAX, "%s/%s", path, entry->d_name);
+        //printf("%s\n", fullpath);
+
+        struct stat st;
+        lstat(fullpath, &st);
+        
+
+        if(S_ISDIR(st.st_mode) && recursive){
+            printf("DIRECTORY: %s\n", entry->d_name);
+            if(strcmp(entry->d_name,"..") != 0 && strcmp(entry->d_name, ".") != 0){
+                check_directory(fullpath, hooks, files, recursive, timestamp);
+            }
+
+        }else{
+            printf("\t%s\n", entry->d_name);
+            printf("\t\t FILE\n");
+            
+            if(search_files(files, fullpath) == NULL){ 
+                add_file(files, fullpath, st.st_mtime, timestamp);
+                printf("CREATE EVENT");
+                //CREATE EVENT
+            }
+            else{
+                printf("We have a file match? WTF");
+            //    compare mtime
+            //    check timestamp
+            }
+            //look at hooks and files
+            //use n as count of files?
+        
+        }
+    }
+    closedir(dp);
 }
 
 /**
@@ -162,15 +186,12 @@ main(int argc, char *argv[])
     /* TODO: Load hooks */
     set_hooks(&hooks);
     
-   
-    printf("rules: %s\tdirectory: %s\n", rules, directory);
-
      // TODO: Continuously check directory and timestamps
-    while(true){
+    //while(true){
         char *timestamp = timestamp_string();
         check_directory(directory, &hooks, &files, recursive,(time_t) timestamp);
         sleep(1);
-    }
+    //}
     
     return (EXIT_SUCCESS);
 }
